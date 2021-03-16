@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Interactive Code Hazard Map">
+    <meta name="author" content="SeisTech">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Code Hazard Map</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="map.css"/>
+</head>
+
+<body>
+
+<div id="map"></div>
+<div class="m-2" id="control">
+<div class="d-flex">
+  <div class="dropdown d-inline" id="menu_layer" style="width: 8rem;">
+    <button class="btn btn-secondary btn-sm dropdown-toggle mb-1" type="button" id="menubutton_layer"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code Type</button>
+    <div class="dropdown-menu" aria-labelledby="menubutton_layer">
+      <a class="dropdown-item active" href="#" id="nzcode">NZS 1170.5:2004</a>
+      <a class="dropdown-item" href="#" id="nzta_map_fill">NZTA</a>
+    </div>
+  </div>
+  <div class="d-inline slide-width pl-0 pt-2">
+    <input type="range" id="transparency" onchange="update_transparency();" oninput="update_transparency();" class="form-control-range" min=0 max=1 step=0.01 value=0.8>
+  </div>
+</div>
+<div class="collapse show" id="collapse">
+  <div class="d-flex">
+    <div class="d-inline my-1">
+      <span class="fix-lbl fix-bg rounded justify-content-center py-1 px-2 mr-3">Extrusion</span>
+    </div>
+    <div class="d-inline pl-0 pt-2 slide-width">
+      <input type="range" id="extrusion" onchange="update_extrusion();" oninput="update_extrusion();" class="form-control-range" min=0 max=20000 step=100 value=10000>
+    </div>
+  </div>
+</div>
+<div class="input-group input-group-sm my-1 mt-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_lon">Longitude</span>
+  </div>
+  <input type="text" id="lon" onkeydown="map_lnglatselect(this);" class="form-control" aria-label="Longitude" aria-describedby="lbl_lon">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_lat">Latitude</span>
+  </div>
+  <input type="text" id="lat" onkeydown="map_lnglatselect(this);" class="form-control" aria-label="Latitude" aria-describedby="lbl_lat">
+</div>
+<div class="d-flex justify-content-center my-1 bg-light rounded">
+  <div class="form-check" id="chk_mouse">
+    <input class="form-check-input" type="checkbox" onclick="follow_mouse(this);" id="follow_mouse">
+    <label class="fix-lbl form-check-label" for="follow_mouse">follows mouse</label>
+  </div>
+</div>
+
+<div class="input-group input-group-sm mt-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="geocat">Value</span>
+  </div>
+  <input type="text" id="val_1170" readonly class="form-control" placeholder="NA" aria-label="Geology Category" aria-describedby="geocat">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_aak_vs30">Vs30</span>
+  </div>
+  <input type="text" id="aak_vs30" readonly class="form-control fix-bg" placeholder="NA" aria-label="Vs30 (m/s)" aria-describedby="lbl_aak_vs30">
+  <input type="text" id="aak_stdv" readonly class="form-control fix-bg" placeholder="NA" aria-label="Standard Deviation" aria-describedby="lbl_aak_stdv">
+  <div class="input-group-append">
+    <span class="input-group-text" id="lbl_aak_stdv">stdev</span>
+  </div>
+</div>
+
+</div>
+<div id="logo" class="fixed-bottom mb-4 ml-1">
+  <img src="seistech.png" width="150px">
+</div>
+<div id="spinnero" class="spinner-border text-dark" role="status">
+</div>
+<div id="spinner" class="spinner-border text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<!-- for calculating sun position in mapbox sky layer -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<script type="text/javascript" src="map.js"></script>
+</body>
+</html>
+
