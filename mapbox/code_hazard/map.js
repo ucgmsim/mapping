@@ -1,6 +1,7 @@
 // map layer ids on server
 var ID_1170 = "nzcode"
-var ID_NZTA = "nzta_map_fill"
+var ID_NZTA = "nzta"
+var COLUMN = "00"
 
 
 function roundmax(value, dp=6) {
@@ -41,6 +42,11 @@ function load_map()
     for (var i = 0; i < layers.length; i++) {
         layers[i].onclick = switch_layer;
     }
+    // changing return period / IM
+    var return_periods = document.getElementById('select_rp')
+        .onchange = switch_column;
+    var return_periods = document.getElementById('select_im')
+        .onchange = switch_column;
 
     map.on("click", map_mouseselect);
     map.on('idle', loaded);
@@ -52,7 +58,6 @@ function load_map()
                        'tileSize': 512,
                        'maxzoom': 14
         });
-        enableDEM();
 
         map.addLayer({
             'id': 'sky',
@@ -73,8 +78,15 @@ function load_map()
 }
 
 
-function enableDEM() {
-    map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+function enableDEM(exaggeration) {
+    if (exaggeration === 0) {
+        map.setTerrain(null);
+    } else {
+        map.setTerrain({
+            'source': 'mapbox-dem',
+            'exaggeration': exaggeration || 1.5
+        });
+    }
 }
 
 
@@ -98,7 +110,6 @@ function getSunPosition() {
 function updateSunPosition() {
     map.setPaintProperty('sky', 'sky-atmosphere-sun', getSunPosition());
 }
-
 
 
 function follow_mouse(cb) {
@@ -128,7 +139,7 @@ function update_values(point, follow=true) {
     var val_nzta;
     for (var i=0; i < features.length; i++) {
         if (features[i].layer.id === ID_1170 && val_1170 === undefined) {
-            val_1170 = features[i].properties["00"];
+            val_1170 = features[i].properties[COLUMN];
         } else if (features[i].layer.id === val_nzta && val_nzta === undefined) {
             val_nzta = features[i].properties.val_name;
         }
@@ -223,6 +234,23 @@ function switch_layer(layer) {
 }
 
 
+function switch_column(column) {
+    // when changing IM / RP selection
+    console.log("testing");
+    var layer = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
+    var rp = document.getElementById("select_rp").value;
+    var im = document.getElementById("select_im").value;
+    if (layer === ID_1170) {
+        COLUMN = rp + im;
+    } else if (layer === ID_NZTA) {
+        COLUMN = rp;
+    }
+    update_colour();
+    update_extrusion();
+}
+
+
 function update_transparency() {
     var layer = document.getElementById("menu_layer").getElementsByClassName("active")[0].id;
     if (layer === "none") return;
@@ -233,9 +261,32 @@ function update_transparency() {
 
 
 function update_extrusion() {
-    var layer = document.getElementById("menu_layer").getElementsByClassName("active")[0].id;
+    var layer = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
     var extrusion = parseFloat(document.getElementById("extrusion").value);
-    map.setPaintProperty(layer, "fill-extrusion-height", ["*", extrusion, ["get", "00"]]);
+    map.setPaintProperty(
+        layer,
+        "fill-extrusion-height",
+        ["*", extrusion, ["get", COLUMN]]
+    );
+}
+
+
+function update_colour() {
+    var layer = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
+    map.setPaintProperty(
+        layer,
+        "fill-extrusion-color",
+        ["interpolate", ["linear"], ["get", COLUMN],
+            0, "hsl(0, 0%, 100%)", 0.2, "#000000"]
+    );
+}
+
+
+function update_dem() {
+    updateSunPosition();
+    enableDEM(parseFloat(document.getElementById("dem").value));
 }
 
 

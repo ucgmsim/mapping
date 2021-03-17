@@ -54,7 +54,18 @@ body {
     background: #e9ecef;
 }
 
-.slide-width {
+.slide-width-ext {
     width: 11rem;
 }
 
+.slide-width-dem {
+    width: 13rem;
+}
+
+.fix-label-group {
+  align-items: center;
+}
+
+.fix-label-item {
+  height: calc(1.81rem + 2px);
+}
