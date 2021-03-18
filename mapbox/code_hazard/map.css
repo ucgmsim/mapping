@@ -69,3 +69,9 @@ body {
 .fix-label-item {
   height: calc(1.81rem + 2px);
 }
+
+.table-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}

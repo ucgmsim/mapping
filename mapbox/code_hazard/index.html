@@ -55,40 +55,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text fix-label-item" id="lbl_im">Intensity Measure</span>
   </div>
-  <select class="custom-select" id="select_im">
-        <option value="0" selected>PGA</option>
-        <option value="1">pSA 0.01s</option>
-        <option value="2">pSA 0.02s</option>
-        <option value="3">pSA 0.03s</option>
-        <option value="4">pSA 0.04s</option>
-        <option value="5">pSA 0.05s</option>
-        <option value="6">pSA 0.075s</option>
-        <option value="7">pSA 0.1s</option>
-        <option value="8">pSA 0.12s</option>
-        <option value="9">pSA 0.15s</option>
-        <option value="a">pSA 0.17s</option>
-        <option value="b">pSA 0.2s</option>
-        <option value="c">pSA 0.25s</option>
-        <option value="d">pSA 0.3s</option>
-        <option value="e">pSA 0.4s</option>
-        <option value="f">pSA 0.5s</option>
-        <option value="10">pSA 0.6s</option>
-        <option value="11">pSA 0.7s</option>
-        <option value="12">pSA 0.75s</option>
-        <option value="13">pSA 0.8s</option>
-        <option value="14">pSA 0.9s</option>
-        <option value="15">pSA 1.0s</option>
-        <option value="16">pSA 1.25s</option>
-        <option value="17">pSA 1.5s</option>
-        <option value="18">pSA 2.0s</option>
-        <option value="19">pSA 2.5s</option>
-        <option value="1a">pSA 3.0s</option>
-        <option value="1b">pSA 4.0s</option>
-        <option value="1c">pSA 5.0s</option>
-        <option value="1d">pSA 6.0s</option>
-        <option value="1e">pSA 7.5s</option>
-        <option value="1f">pSA 10.0s</option>
-      </select>
+  <select class="custom-select" id="select_im"></select>
 </div>
 <div class="collapse show" id="collapse">
   <div class="d-flex">
@@ -137,7 +104,7 @@
 
 
 <nav>
-    <div class="nav nav-pills mt-3 fix-bg rounded" id="nav-tab" role="tablist">
+    <div class="nav nav-pills mt-3 fix-bg rounded-top" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active flex-sm-fill text-sm-center" id="nav-rp-tab" data-toggle="tab"
             href="#nav-rp" role="tab" aria-controls="nav-rp"
             aria-selected="true">Return Periods</a>
@@ -147,22 +114,28 @@
     </div>
 </nav>
 <div class="tab-content" id="nav-content">
-    <div class="tab-pane fade show active px-0 pt-1" id="nav-rp"
+    <div class="tab-pane fade show active px-0" id="nav-rp"
         role="tabpanel" aria-labelledby="nav-rp-tab">
-        insert scrollable table here
+        <div class="table-scrollbar">
+            <table class="table table-sm fix-bg mx-0 px-0">
+                <tbody id="table-rp">
+                    <tr><td></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="tab-pane fade show px-0 pt-1" id="nav-im"
+    <div class="tab-pane fade show px-0" id="nav-im"
         role="tabpanel" aria-labelledby="nav-im-tab">
-        insert scrollable table here
+        <div class="table-scrollbar">
+            <table class="table table-sm fix-bg mx-0 px-0">
+                <tbody id="table-im">
+                    <tr><td></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
-<div class="input-group input-group-sm mt-1">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="geocat">Value</span>
-  </div>
-  <input type="text" id="val_1170" readonly class="form-control" placeholder="NA" aria-label="Geology Category" aria-describedby="geocat">
-</div>
 
 </div>
 <div id="logo" class="fixed-bottom mb-4 ml-1">
