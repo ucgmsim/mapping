@@ -56,7 +56,8 @@ function load_map()
     // distance scale
     map.addControl(new mapboxgl.ScaleControl({maxWidth: 200, unit: 'metric'}), 'bottom-right');
     // marker will be used whin location doesn't update with mousemove
-    marker = new mapboxgl.Marker()
+    popup = new mapboxgl.Popup();
+    marker = new mapboxgl.Marker().setPopup(popup);
 
     // control for layer to be visible
     var layers = document.getElementById('menu_layer')
@@ -136,10 +137,41 @@ function updateSunPosition() {
 }
 
 
+function spectra_plot(lon, lat) {
+    document.getElementById("spectra-modal-label").innerText = "Spectra Plot";
+    document.getElementById("spectra-div").innerHTML = "please wait...";
+    $("#spectra-modal").modal("show");
+
+    xhr = $.ajax({
+        type: "GET",
+        url: "http://mantle:10099/nzs1170p5_uhs",
+        headers: {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuemNvZGUiOiJ1aHMifQ.UMRpGrAvwqfiJRPOCv012S1SqKnj1AnJ-5TXSbUSBVg"},
+        data: { lon: lon, lat: lat },
+        success: function(data) {
+            document.getElementById("spectra-modal-label")
+                .innerHTML = 'Spectra Plot <span class="ml-2 badge bg-light">'
+                    + "lon: " + roundmax(data.snap_lon)
+                    + " lat: " + roundmax(data.snap_lat)
+                    + " distance: " + roundmax(data.snap_dist, dp=3) + " km</span>";
+            var img = document.createElement('img');
+            img.src = "data:image/png;base64, " + data.uhs_plot_data;
+            img.className += "mx-auto d-block"
+            document.getElementById("spectra-div").innerHTML = "";
+            document.getElementById("spectra-div").appendChild(img);
+        },
+        error: function(data) {
+            if (data.statusText === "abort") return;
+            $("#spectra-modal").modal("hide");
+            alert("Failed to retrieve Spetra Plot");
+        }
+    });
+}
+
+
 function follow_mouse(cb) {
     if (cb.checked) {
         map.on("mousemove", map_mouseselect);
-        marker.remove();
+        marker.remove().setLngLat([0, 0]);
     } else {
         map.off("mousemove", map_mouseselect);
     }
@@ -153,9 +185,9 @@ function try_markervalues(e) {
         // user has since moved the map in an incompatible manner
         marker.remove().setLngLat([0, 0]);
         document.getElementById("table-rp")
-            .innerHTML = "<tr><td></td></tr>";
+            .innerHTML = "<tr><td>select location</td></tr>";
         document.getElementById("table-im")
-            .innerHTML = "<tr><td></td></tr>";
+            .innerHTML = "<tr><td>select location</td></tr>";
     }
     update_values(map.project(marker.getLngLat()), false);
 }
@@ -263,7 +295,19 @@ function map_mouseselect(e) {
 
 
 function map_runlocation(lngLat, mouse=true) {
+    // lngLat: location of interest
+    // mouse: location from map rather than text box
+
+    // follow mouse mode?
     var follow = document.getElementById("follow_mouse").checked;
+    // don't accept clicks on the marker
+    if (! follow && mouse && (marker.getLngLat() != undefined) && (marker._pos != null)) {
+        // no api so use x,y coords
+        var mpos = marker._pos;
+        var cpos = map.project(lngLat);
+        if (mpos.x - 15  < cpos.x && mpos.x + 15 > cpos.x 
+            && mpos.y - 15 < cpos.y && mpos.y + 15 > cpos.y) return
+    }
 
     // update UI
     if (mouse) {
@@ -272,6 +316,10 @@ function map_runlocation(lngLat, mouse=true) {
     }
     if (! follow) {
         marker.setLngLat([lngLat.lng, lngLat.lat]).addTo(map);
+        popup.setHTML('<button type="button" '
+            + 'onclick="spectra_plot(' + lngLat.lng + ',' + lngLat.lat + ');" '
+            + 'class="btn btn-primary btn-sm mr-2"'
+            + '>Spectra Plot</button>');
         if (map.getZoom() < min_zoom || ! map.areTilesLoaded()
                 || (! mouse && ! map.getBounds().contains(marker.getLngLat()))) {
             document.getElementById("table-rp")
@@ -363,11 +411,14 @@ function update_colour() {
     var im = parseInt(document.getElementById("select_im").value, 16);
     if (layer === ID_1170) var scale = RP_RANGE_1170[rp] * IM_RANGE[im];
     if (layer === ID_NZTA) var scale = RP_RANGE_NZTA[rp];
+    scale = 360 / scale;
     map.setPaintProperty(
         layer,
         "fill-extrusion-color",
-        ["interpolate", ["linear"], ["get", COLUMN],
-            0, "hsl(0, 0%, 100%)", scale, "#000000"]
+        ["concat", 
+            ["literal", "hsl("],
+            ["*", scale, ["get", COLUMN]],
+            ["literal", ",75%,50%)"]]
     );
 }
 
@@ -380,8 +431,15 @@ function update_dem() {
 
 var map;
 var marker;
+var popup;
+var xhr;
 
 $(document).ready(function ()
 {
     load_map();
+});
+
+$('#spectra-modal').on('hidden.bs.modal', function () {
+    if (xhr === undefined) return;
+    xhr.abort();
 });
