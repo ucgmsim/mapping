@@ -49,7 +49,8 @@ y = np.floor((df.northing.values - t[3]) / t[5]).astype(np.int32)
 for i in range(n_rp):
     for j in range(n_im):
         band = ods.GetRasterBand(1 + i * n_im + j)
-        band.SetDescription(hex(i)[2:] + hex(j)[2:])
+        # skip description because qgis will still prepend "Band 00: " anyway
+        #band.SetDescription(hex(i)[2:] + hex(j)[2:])
         band.SetNoDataValue(-1)
         # assume enough RAM to process whole raster
         values = np.full((ny, nx), -1, dtype=np.float32)

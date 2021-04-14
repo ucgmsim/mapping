@@ -45,6 +45,14 @@ body {
     z-index: 1;
 }
 
+#legend {
+    position:absolute;
+    right: 0.7rem;
+    top: 6.5rem;
+    bottom: 3.8rem;
+    pointer-events: none;
+}
+
 .fix-lbl {
     font-size: .875rem;
     color: #495057;

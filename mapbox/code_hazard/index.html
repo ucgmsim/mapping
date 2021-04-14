@@ -27,12 +27,12 @@
     <button class="btn btn-secondary btn-sm dropdown-toggle mb-1" type="button" id="menubutton_layer"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code Type</button>
     <div class="dropdown-menu" aria-labelledby="menubutton_layer">
-      <a class="dropdown-item active" href="#" id="nzcode">NZS 1170.5:2004</a>
+      <a class="dropdown-item active" href="#" id="1170p5">NZS 1170.5:2004</a>
       <a class="dropdown-item" href="#" id="nzta">NZTA</a>
     </div>
   </div>
   <div class="d-inline slide-width pl-0 pt-2">
-    <input type="range" id="transparency" onchange="update_transparency();" oninput="update_transparency();" class="form-control-range" min=0 max=1 step=0.01 value=0.8>
+    <input type="range" id="opacity" onchange="update_opacity();" oninput="update_opacity();" class="form-control-range" min=0 max=1 step=0.01 value=0.8>
   </div>
 </div>
 <div class="input-group input-group-sm my-1 fix-label-group">
@@ -56,18 +56,6 @@
     <span class="input-group-text fix-label-item" id="lbl_im">Intensity Measure</span>
   </div>
   <select class="custom-select" id="select_im"></select>
-</div>
-<div class="collapse show" id="collapse">
-  <div class="d-flex">
-    <div class="d-inline my-1">
-      <span class="fix-lbl fix-bg rounded justify-content-center py-1 px-2 mr-3">Extrusion</span>
-    </div>
-    <div class="d-inline pl-0 pt-2 slide-width-ext">
-      <input type="range" id="extrusion"
-        onchange="update_extrusion();" oninput="update_extrusion();"
-        class="form-control-range" min=0 max=20000 step=100 value=10000>
-    </div>
-  </div>
 </div>
 
 <div class="collapse show" id="collapse_dem">
@@ -168,7 +156,11 @@
     </div>
 </div>
 
-
+<div id="legend" class="d-flex">
+    <div class="align-self-end">
+        <img id="img-legend" class="pull-right">
+    </div>
+</div>
 
 
 <!-- Bootstrap core JavaScript -->
