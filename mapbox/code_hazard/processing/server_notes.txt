@@ -1,29 +1,19 @@
 
-run mapserver with spawn-fcgi because of reason in guide
-https://docs.qgis.org/3.16/en/docs/server_manual/getting_started.html
+# run mapserver with spawn-fcgi because of reason in guide
+# https://docs.qgis.org/3.16/en/docs/server_manual/getting_started.html
 spawn-fcgi -s /run/qgisserver.socket -U nginx -G nginx -n /usr/bin/qgis_mapserv.fcgi
 
-in nginx server config, add path to fcgi socket
-specifying default project file means it doesn't have to be specified by the client
-location /qgisserver {
+# in nginx server config, add path to fcgi socket
+# specifying default project file means it doesn't have to be specified by the client
+ln -s <code_hazard/static> <server-root>
+location /wms {
     gzip off;
     include fastcgi_params;
     fastcgi_param  QGIS_SERVER_LOG_STDERR  1;
     fastcgi_param  QGIS_SERVER_LOG_LEVEL   0;
-    fastcgi_param  QGIS_PROJECT_FILE /usr/home/vap30/server.qgs;
+    fastcgi_param  QGIS_PROJECT_FILE /usr/home/vap30/code_hazard.qgs;
     fastcgi_pass unix:/run/qgisserver.socket;
 }
 
 what you can do with the server is documented here
 https://docs.qgis.org/3.16/en/docs/server_manual/services.html
-
-
-
-# ~1cm precision: +- 0.000001 degrees, split into 20 pixels, get centre
-/qgisserver?service=WMS&version=1.3.0&request=GetFeatureInfo&crs=EPSG:4326&bbox=-43.555557,172.747529,-43.555555,172.747531&width=20&height=20&info_format=application/json&i=10&j=10&query_layers=IwahashiPike
-
-# switch layer displayed
-wms = map.getSource("qgis-wms");
-var tiles = ["/qgisserver?format=image/png&service=WMS&version=1.3.0&request=GetMap&srs=EPSG:3857&transparent=true&width=256&height=256&layer=qmap&BBOX={bbox-epsg-3857}"];
-wms._options.tiles = tiles;
-wms.load();
