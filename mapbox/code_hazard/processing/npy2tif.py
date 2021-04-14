@@ -22,6 +22,10 @@ min_east, min_north = np.round(df.min().values / half_res).astype(np.int32) * ha
 nx = int((max_east - min_east) / (half_res * 2))
 ny = int((max_north - min_north) / (half_res * 2))
 
+
+
+
+
 # numpy array containting location, intensity_measure, return_period
 data = np.load("nzs1170p5_1km.npy")
 n_locations, n_im, n_rp = data.shape
@@ -58,6 +62,43 @@ for i in range(n_rp):
         band.WriteArray(values)
         # finalise
         band = None
+
+# finalise file
+ods = None
+
+
+
+
+
+# numpy array containting location, intensity_measure, return_period
+data = np.load("nzta.npy")
+n_locations, n_rp = data.shape
+
+# create output
+driver = gdal.GetDriverByName("GTiff")
+ods = driver.Create(
+    "nzta.tif",
+    xsize=nx,
+    ysize=ny,
+    bands=n_rp,
+    eType=gdal.GDT_Float32,
+    options=["COMPRESS=DEFLATE", "BIGTIFF=YES"],
+)
+ods.SetGeoTransform(t)
+ods.SetProjection(srs.ExportToWkt())
+
+# fill output
+for i in range(n_rp):
+    band = ods.GetRasterBand(1 + i)
+    # skip description because qgis will still prepend "Band 00: " anyway
+    #band.SetDescription(hex(i)[2:])
+    band.SetNoDataValue(-1)
+    # assume enough RAM to process whole raster
+    values = np.full((ny, nx), -1, dtype=np.float32)
+    values[(y, x)] = np.nan_to_num(data[:, i], nan=-1.0)
+    band.WriteArray(values)
+    # finalise
+    band = None
 
 # finalise file
 ods = None

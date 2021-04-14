@@ -9,12 +9,6 @@ var MAP_STYLE = "mapbox://styles/seistech/cknf8hztm1z5r17l69yxeapzk";
 var PLACE_BELOW = "tunnel-street-minor-low";
 var RP_NAMES = ["20 years", "25 years", "50 years", "100 years", "250 years",
                 "500 years", "1000 years", "2000 years", "2500 years"];
-var RP_RANGE_1170 = [0.2, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.3];
-var IM_RANGE = [1, 1.2, 1.4, 1.5, 1.6, 1.8, 2, 2.5, 2.5, 2.5,
-                2.5, 2.5, 2.5, 2.2, 2, 1.8, 1.7, 1.6, 1.5, 1.4,
-                1.4, 1.4, 1, 1, 1, 1, 1, 0.18, 0.18, 0.1,
-                0.08, 0.05]
-var RP_RANGE_NZTA = [0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9];
 var IM_NAMES = ["PGA", "pSA 0.01s", "pSA 0.02s", "pSA 0.03s", "pSA 0.04s",
                 "pSA 0.05s", "pSA 0.075s", "pSA 0.1s", "pSA 0.12s",
                 "pSA 0.15s", "pSA 0.17s", "pSA 0.2s", "pSA 0.25s", "pSA 0.3s",
@@ -242,8 +236,8 @@ function update_values(bands) {
 
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
-    var rp = document.getElementById("select_rp").value;
-    var im = document.getElementById("select_im").value;
+    var rp = parseInt(document.getElementById("select_rp").value);
+    var im = parseInt(document.getElementById("select_im").value);
 
     if (code_type === ID_1170) {
         for (var j = 0; j < RP_NAMES.length; j++) {
@@ -268,31 +262,31 @@ function update_values(bands) {
             let rp_name = row.insertCell(0);
             let rp_value = row.insertCell(1);
             rp_name.innerHTML = RP_NAMES[j];
-            rp_value.innerHTML = bands["Band " + (1 + j).slice(-3)];
+            rp_value.innerHTML = bands["Band " + (1 + j)];
         }
         let row = table_im.insertRow(0);
         let im_name = row.insertCell(0);
         let im_value = row.insertCell(1);
         im_name.innerHTML = IM_NAMES[0];
-        im_value.innerHTML = bands["Band " + ("00" + (1 + im)).slice(-3)];
+        im_value.innerHTML = bands["Band " + (1 + rp)];
         return;
     }
 }
 
 
-function map_lnglatselect(e) {
-    if (event.which == 13 || event.keyCode == 13) {
+function map_lnglatselect(e, silent=false) {
+    if (event.which == 13 || event.keyCode == 13 || silent) {
         var lng = document.getElementById("lon").value;
         var lat = document.getElementById("lat").value;
-        if (isNaN(lng) || isNaN(lat)) {
-            alert("Not a valid latitude / longitude.");
-            return;
-        }
         lng = parseFloat(lng);
         lat = parseFloat(lat);
+        if (isNaN(lng) || isNaN(lat)) {
+            if (!silent) alert("Not a valid latitude / longitude.");
+            return false;
+        }
         if (lng < -180 || lng > 180 || lat < -90 || lat > 90) {
-            alert("Not a valid latitude / longitude.");
-            return;
+            if (!silent) alert("Not a valid latitude / longitude.");
+            return false;
         }
 
         var checkbox = document.getElementById("follow_mouse");
@@ -300,6 +294,18 @@ function map_lnglatselect(e) {
         follow_mouse(checkbox);
 
         map_runlocation(new mapboxgl.LngLat(lng, lat), false);
+        return true;
+    }
+    return false;
+}
+
+
+function update_table() {
+    // after switching layer/column, update table if applicable
+
+    var checkbox = document.getElementById("follow_mouse");
+    if (!checkbox.checked) {
+        map_lnglatselect(null, silent=true);
     }
 }
 
@@ -350,9 +356,6 @@ function switch_layer(layer) {
     populate_ims();
     // update column name for new layer
     switch_column();
-    // update values if marker still in position
-    // TODO: FIX
-    //try_markervalues();
 }
 
 
@@ -369,9 +372,8 @@ function switch_column(column) {
     layer.load();
     document.getElementById("img-legend").src = WMS_LEGEND + code_type + "rp" + rp + "im" + im;
 
-    // update values if marker still in position
-    // TODO: FIX
-    //try_markervalues();
+    // update values in table
+    update_table();
 }
 
 
