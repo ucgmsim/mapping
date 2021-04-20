@@ -17,13 +17,14 @@ import pandas as pd
 # columns: easting, northing
 half_res = 500
 df = pd.read_csv("vs30points.csv", usecols=[2, 3], dtype=np.float32, engine="c")
-max_east, max_north = np.round(df.max().values / half_res).astype(np.int32) * half_res + 500
-min_east, min_north = np.round(df.min().values / half_res).astype(np.int32) * half_res - 500
+max_east, max_north = (
+    np.round(df.max().values / half_res).astype(np.int32) * half_res + 500
+)
+min_east, min_north = (
+    np.round(df.min().values / half_res).astype(np.int32) * half_res - 500
+)
 nx = int((max_east - min_east) / (half_res * 2))
 ny = int((max_north - min_north) / (half_res * 2))
-
-
-
 
 
 # numpy array containting location, intensity_measure, return_period
@@ -54,7 +55,7 @@ for i in range(n_rp):
     for j in range(n_im):
         band = ods.GetRasterBand(1 + i * n_im + j)
         # skip description because qgis will still prepend "Band 00: " anyway
-        #band.SetDescription(hex(i)[2:] + hex(j)[2:])
+        # band.SetDescription(hex(i)[2:] + hex(j)[2:])
         band.SetNoDataValue(-1)
         # assume enough RAM to process whole raster
         values = np.full((ny, nx), -1, dtype=np.float32)
@@ -65,9 +66,6 @@ for i in range(n_rp):
 
 # finalise file
 ods = None
-
-
-
 
 
 # numpy array containting location, intensity_measure, return_period
@@ -91,12 +89,12 @@ ods.SetProjection(srs.ExportToWkt())
 for i in range(n_rp):
     band = ods.GetRasterBand(1 + i)
     # skip description because qgis will still prepend "Band 00: " anyway
-    #band.SetDescription(hex(i)[2:])
+    # band.SetDescription(hex(i)[2:])
     band.SetNoDataValue(-1)
     # assume enough RAM to process whole raster
     values = np.full((ny, nx), -1, dtype=np.float32)
     values[(y, x)] = np.nan_to_num(data[:, i], nan=-1.0)
-    band.WriteArray(values)
+    band.WriteArray(np.where(values == 0, -1, values))
     # finalise
     band = None
 
