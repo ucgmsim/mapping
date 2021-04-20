@@ -16,16 +16,15 @@ import pandas as pd
 # eg: 1000m grid has eastings and northings ending in 500 always.
 # columns: easting, northing
 half_res = 500
-df = pd.read_csv("vs30points.csv", usecols=[2, 3], dtype=np.float32, engine="c")
+df = pd.read_csv("vs30points.csv", usecols=[2, 3, 7], dtype=np.float32, engine="c")
 max_east, max_north = (
-    np.round(df.max().values / half_res).astype(np.int32) * half_res + 500
+    np.round(df.max().values[:2] / half_res).astype(np.int32) * half_res + 500
 )
 min_east, min_north = (
-    np.round(df.min().values / half_res).astype(np.int32) * half_res - 500
+    np.round(df.min().values[:2] / half_res).astype(np.int32) * half_res - 500
 )
 nx = int((max_east - min_east) / (half_res * 2))
 ny = int((max_north - min_north) / (half_res * 2))
-
 
 # numpy array containting location, intensity_measure, return_period
 data = np.load("nzs1170p5_1km.npy")
@@ -37,7 +36,7 @@ ods = driver.Create(
     "nzs1170p5.tif",
     xsize=nx,
     ysize=ny,
-    bands=n_im * n_rp,
+    bands=n_im * n_rp + 1,
     eType=gdal.GDT_Float32,
     options=["COMPRESS=DEFLATE", "BIGTIFF=YES"],
 )
@@ -64,6 +63,13 @@ for i in range(n_rp):
         # finalise
         band = None
 
+# also add parameters - vs30
+band = ods.GetRasterBand(1 + n_im * n_rp)
+band.SetNoDataValue(-1)
+values = np.full((ny, nx), -1, dtype=np.float32)
+values[(y, x)] = np.nan_to_num(df.geology_mvn_vs30.values, nan=-1.0)
+band.WriteArray(values)
+band = None
 # finalise file
 ods = None
 

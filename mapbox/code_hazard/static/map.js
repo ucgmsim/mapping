@@ -59,6 +59,7 @@ function load_map()
     }
     // changing return period / IM
     populate_ims();
+    document.getElementById('select_display').onchange = switch_column;
     document.getElementById('select_rp').onchange = switch_column;
     document.getElementById('select_im').onchange = switch_column;
 
@@ -231,8 +232,10 @@ function retrieve_values(lngLat) {
 function update_values(bands) {
     var table_rp = document.getElementById("table-rp");
     var table_im = document.getElementById("table-im");
+    var lngLat = marker.getLngLat();
     table_rp.innerHTML = "";
     table_im.innerHTML = "";
+    popup_html = "";
 
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
@@ -240,6 +243,10 @@ function update_values(bands) {
     var im = parseInt(document.getElementById("select_im").value);
 
     if (code_type === ID_1170) {
+        // add site properties to popup
+        let band_offset = 1 + RP_NAMES.length * IM_NAMES.length;
+        popup_html += '<p class="h6">Vs30: ' + bands["Band " + band_offset] + " m/s</p>";
+
         for (var j = 0; j < RP_NAMES.length; j++) {
             let row = table_rp.insertRow(j);
             let rp_name = row.insertCell(0);
@@ -254,7 +261,6 @@ function update_values(bands) {
             im_name.innerHTML = IM_NAMES[j];
             im_value.innerHTML = bands["Band " + ("00" + (1 + j + rp * IM_NAMES.length)).slice(-3)];
         }
-        return;
     }
     if (code_type === ID_NZTA) {
         for (var j = 0; j < RP_NAMES.length; j++) {
@@ -269,8 +275,15 @@ function update_values(bands) {
         let im_value = row.insertCell(1);
         im_name.innerHTML = IM_NAMES[0];
         im_value.innerHTML = bands["Band " + (1 + rp)];
-        return;
     }
+
+
+    if (lngLat === undefined) return;
+    popup_html += '<div id="marker_prop"></div><button type="button" '
+            + 'onclick="spectra_plot(' + lngLat.lng + ',' + lngLat.lat + ');" '
+            + 'class="btn btn-primary btn-sm mr-2"'
+            + '>Spectra Plot</button>'
+    popup.setHTML(popup_html);
 }
 
 
@@ -337,10 +350,6 @@ function map_runlocation(lngLat, mouse=true) {
     }
     if (! follow) {
         marker.setLngLat([lngLat.lng, lngLat.lat]).addTo(map);
-        popup.setHTML('<button type="button" '
-            + 'onclick="spectra_plot(' + lngLat.lng + ',' + lngLat.lat + ');" '
-            + 'class="btn btn-primary btn-sm mr-2"'
-            + '>Spectra Plot</button>');
     }
 
     retrieve_values(lngLat);
@@ -351,6 +360,12 @@ function switch_layer(layer) {
     var old_element = document.getElementById("menu_layer").getElementsByClassName("active")[0]
     old_element.classList.remove("active");
     layer.target.classList.add("active");
+
+    if (layer.target.id === ID_1170) {
+        $("#collapse_display").show();
+    } else {
+        $("#collapse_display").hide();
+    }
 
     // available IMs list
     populate_ims();
@@ -363,14 +378,20 @@ function switch_column(column) {
     // when changing IM / RP selection
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
+    var display = document.getElementById("select_display").value;
     var rp = document.getElementById("select_rp").value;
     var im = document.getElementById("select_im").value;
 
     var layer = map.getSource("qgis-wms");
-    var src = WMS_TILES + code_type + "rp" + rp + 'im' + im;
+    if (display === "hazard" || code_type !== ID_1170) {
+        suffix = "rp" + rp + 'im' + im;
+    } else if (display === "vs30") {
+        suffix = "vs30"
+    }
+    var src = WMS_TILES + code_type + suffix;
     layer._options.tiles = [src];
     layer.load();
-    document.getElementById("img-legend").src = WMS_LEGEND + code_type + "rp" + rp + "im" + im;
+    document.getElementById("img-legend").src = WMS_LEGEND + code_type + suffix;
 
     // update values in table
     update_table();
