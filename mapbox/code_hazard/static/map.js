@@ -1,6 +1,7 @@
 // map layer ids on server
 var ID_1170 = "1170p5";
 var ID_NZTA = "nzta";
+var ID_NZTA_POINTS = "nzta-points";
 var WMS_TILES = '/wms?service=WMS&version=1.3.0&request=GetMap&format=image/png&srs=EPSG:3857&transparent=true&width=256&height=256&BBOX={bbox-epsg-3857}&layer='
 var WMS_LEGEND = '/wms?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=false&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
 var WMS_VALUES = '/wms?service=WMS&version=1.3.0&request=GetFeatureInfo&info_format=application/json&width=20&height=20&i=10&j=10&crs=EPSG:4326'
@@ -64,6 +65,17 @@ function load_map()
     document.getElementById('select_im').onchange = switch_column;
 
     map.on("click", map_mouseselect);
+    map.on("mousemove", ID_NZTA_POINTS, function(e) {
+        var code_type = document.getElementById("menu_layer")
+            .getElementsByClassName("active")[0].id;
+        if (code_type === ID_NZTA) map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('click', ID_NZTA_POINTS, show_nzta_point);
+    map.on('mouseleave', ID_NZTA_POINTS, function() {
+        var code_type = document.getElementById("menu_layer")
+            .getElementsByClassName("active")[0].id;
+        if (code_type === ID_NZTA) map.getCanvas().style.cursor = '';
+    });
     map.on('idle', loaded);
     map.on('dataloading', loading);
     map.on('load', function () {
@@ -106,6 +118,29 @@ function load_map()
             }
         });
     });
+}
+
+
+function show_nzta_point(e) {
+    if (marker_clicked(e.point)) return;
+
+    var code_type = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
+    if (code_type !== ID_NZTA) return;
+
+    var feature = e.features[0];
+    var vs30 = feature.properties.vs30
+    new mapboxgl.Popup({closeButton: true}).setLngLat(feature.geometry.coordinates)
+        .setHTML('<strong>Town/City: ' + feature.properties.place + '</strong><p><table class="table table-sm"><tbody>' +
+            '<tr><th scope="row">Longitude</th><td>' + feature.properties.longitude + '</td></tr>' +
+            '<tr><th scope="row">Latitude</th><td>' + feature.properties.latitude + '</td></tr>' +
+            '<tr><th scope="row">C<sub>0,1000</sub> Class A/B rock</th><td>' + feature.properties.C_0_1000_AB + '</td></tr>' +
+            '<tr><th scope="row">C<sub>0,1000</sub> Class D/E deep/soft soil</th><td>' + feature.properties.C_0_1000_DE + '</td></tr>' +
+            '<tr><th scope="row">M<sub>eff</sub> 500 - 2500 years</th><td>' + feature.properties.Meff_500_2500 + '</td></tr>' +
+            '<tr><th scope="row">M<sub>eff</sub> 50 - 250 years</th><td>' + feature.properties.Meff_50_250 + '</td></tr>' +
+            '<tr><th scope="row">Vs30</th><td>' + feature.properties.vs30 + '</td></tr>' +
+            '</tbody></table></p>')
+        .addTo(map);
 }
 
 
@@ -328,20 +363,33 @@ function map_mouseselect(e) {
 }
 
 
+function marker_clicked(cpos) {
+    if ((marker.getLngLat() === undefined) || (marker._pos === null)) return false;
+    // no api so use x,y coords
+    var mpos = marker._pos;
+    if (mpos.x - 15  < cpos.x && mpos.x + 15 > cpos.x
+            && mpos.y - 15 < cpos.y && mpos.y + 15 > cpos.y) return true;
+    return false;
+}
+
+
 function map_runlocation(lngLat, mouse=true) {
     // lngLat: location of interest
     // mouse: location from map rather than text box
 
+    var code_type = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
     // follow mouse mode?
     var follow = document.getElementById("follow_mouse").checked;
-    // don't accept clicks on the marker
-    if (! follow && mouse && (marker.getLngLat() != undefined) && (marker._pos != null)) {
-        // no api so use x,y coords
-        var mpos = marker._pos;
-        var cpos = map.project(lngLat);
-        if (mpos.x - 15  < cpos.x && mpos.x + 15 > cpos.x 
-            && mpos.y - 15 < cpos.y && mpos.y + 15 > cpos.y) return
+    // don't move marker if clicked on a nzta site and click based selection
+    if (! follow && mouse) {
+        var features = map.queryRenderedFeatures(map.project(lngLat));
+        for (var i=0; i < features.length; i++) {
+            if (features[i].layer.id === ID_NZTA_POINTS && code_type === ID_NZTA) return;
+        }
     }
+    // don't accept clicks on the marker
+    if (! follow && mouse && marker_clicked(map.project(lngLat))) return;
 
     // update UI
     if (mouse) {
@@ -363,8 +411,12 @@ function switch_layer(layer) {
 
     if (layer.target.id === ID_1170) {
         $("#collapse_display").show();
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-opacity", 0);
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-stroke-opacity", 0);
     } else {
         $("#collapse_display").hide();
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-opacity", 1);
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-stroke-opacity", 1);
     }
 
     // available IMs list
