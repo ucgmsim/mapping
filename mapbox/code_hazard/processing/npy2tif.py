@@ -25,84 +25,80 @@ min_east, min_north = (
 )
 nx = int((max_east - min_east) / (half_res * 2))
 ny = int((max_north - min_north) / (half_res * 2))
-
-# numpy array containting location, intensity_measure, return_period
-data = np.load("nzs1170p5_1km.npy")
-n_locations, n_im, n_rp = data.shape
-
-# create output
-driver = gdal.GetDriverByName("GTiff")
-ods = driver.Create(
-    "nzs1170p5.tif",
-    xsize=nx,
-    ysize=ny,
-    bands=n_im * n_rp + 1,
-    eType=gdal.GDT_Float32,
-    options=["COMPRESS=DEFLATE", "BIGTIFF=YES"],
-)
+# more raster properties
 t = (min_east, half_res * 2, 0, max_north, 0, half_res * -2)
-ods.SetGeoTransform(t)
 srs = osr.SpatialReference()
 srs.ImportFromEPSG(2193)
-ods.SetProjection(srs.ExportToWkt())
-
-# fill output
+# index of locations in raster
 x = np.floor((df.easting.values - t[0]) / t[1]).astype(np.int32)
 y = np.floor((df.northing.values - t[3]) / t[5]).astype(np.int32)
 
-for i in range(n_rp):
-    for j in range(n_im):
-        band = ods.GetRasterBand(1 + i * n_im + j)
-        # skip description because qgis will still prepend "Band 00: " anyway
-        # band.SetDescription(hex(i)[2:] + hex(j)[2:])
-        band.SetNoDataValue(-1)
-        # assume enough RAM to process whole raster
-        values = np.full((ny, nx), -1, dtype=np.float32)
-        values[(y, x)] = np.nan_to_num(data[:, j, i], nan=-1.0)
-        band.WriteArray(values)
+
+def create_tif(filename, etype, bands=1):
+    # create output
+    driver = gdal.GetDriverByName("GTiff")
+    ods = driver.Create(
+        filename,
+        xsize=nx,
+        ysize=ny,
+        bands=bands,
+        eType=etype,
+        options=["COMPRESS=DEFLATE", "BIGTIFF=YES"],
+    )
+    ods.SetGeoTransform(t)
+    ods.SetProjection(srs.ExportToWkt())
+    return ods
+
+
+def auto_tif(array, out_file, zero_na=False, is_file=True, etype=gdal.GDT_Float32):
+    na = 255 if etype is gdal.GDT_Byte else -1
+    if is_file:
+        data = np.load(array)
+        # first dimension is location
+        bands = int(np.prod(data.shape[1:]))
+    else:
+        bands = 1
+    ods = create_tif(out_file, etype, bands=bands)
+
+    for i in range(bands):
+        # get data
+        if not is_file:
+            layer = array
+        elif len(data.shape) == 2:
+            layer = data[:, i]
+        elif len(data.shape) == 1:
+            layer = data[:]
+        elif len(data.shape) == 3:
+            layer = data[:, i % data.shape[1], i // data.shape[1]]
+
+        # put in tif
+        band = ods.GetRasterBand(1 + i)
+        band.SetNoDataValue(na)
+        values = np.full((ny, nx), na, dtype=np.float32)
+        values[(y, x)] = np.nan_to_num(layer, nan=na)
+        if zero_na:
+            band.WriteArray(np.where(values == 0, na, values))
+        else:
+            band.WriteArray(values)
         # finalise
         band = None
-
-# also add parameters - vs30
-band = ods.GetRasterBand(1 + n_im * n_rp)
-band.SetNoDataValue(-1)
-values = np.full((ny, nx), -1, dtype=np.float32)
-values[(y, x)] = np.nan_to_num(df.geology_mvn_vs30.values, nan=-1.0)
-band.WriteArray(values)
-band = None
-# finalise file
-ods = None
+    ods = None
 
 
-# numpy array containting location, intensity_measure, return_period
-data = np.load("nzta.npy")
-n_locations, n_rp = data.shape
-
-# create output
-driver = gdal.GetDriverByName("GTiff")
-ods = driver.Create(
-    "nzta.tif",
-    xsize=nx,
-    ysize=ny,
-    bands=n_rp,
-    eType=gdal.GDT_Float32,
-    options=["COMPRESS=DEFLATE", "BIGTIFF=YES"],
+auto_tif("nzs1170p5_1km.npy", "nzs1170p5.tif")
+auto_tif(df.geology_mvn_vs30.values, "vs30.tif", is_file=False)
+auto_tif(
+    np.where(
+        np.isnan(df.geology_mvn_vs30.values),
+        255,
+        np.where(df.geology_mvn_vs30.values > 500, 0, 1),
+    ),
+    "siteclass.tif",
+    is_file=False,
+    etype=gdal.GDT_Byte,
 )
-ods.SetGeoTransform(t)
-ods.SetProjection(srs.ExportToWkt())
-
-# fill output
-for i in range(n_rp):
-    band = ods.GetRasterBand(1 + i)
-    # skip description because qgis will still prepend "Band 00: " anyway
-    # band.SetDescription(hex(i)[2:])
-    band.SetNoDataValue(-1)
-    # assume enough RAM to process whole raster
-    values = np.full((ny, nx), -1, dtype=np.float32)
-    values[(y, x)] = np.nan_to_num(data[:, i], nan=-1.0)
-    band.WriteArray(np.where(values == 0, -1, values))
-    # finalise
-    band = None
-
-# finalise file
-ods = None
+auto_tif("NZS1170p5_Ch_values.npy", "ch.tif")
+auto_tif("NZS1170p5_N_values.npy", "n.tif")
+auto_tif("NZS1170p5_R_values.npy", "r.tif")
+auto_tif("NZS1170p5_Z_values.npy", "z.tif")
+auto_tif("nzta.npy", "nzta.tif", zero_na=True)
