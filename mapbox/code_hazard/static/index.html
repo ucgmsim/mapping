@@ -35,16 +35,13 @@
     <input type="range" id="opacity" onchange="update_opacity();" oninput="update_opacity();" class="form-control-range" min=0 max=1 step=0.01 value=0.8>
   </div>
 </div>
-<div class="collapse show" id="collapse_display">
-    <div class="input-group input-group-sm my-1 fix-label-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text fix-label-item" id="lbl_prop">Display</span>
-        </div>
-        <select class="custom-select" id="select_display">
-            <option value="hazard" selected>Hazard</option>
-            <option value="vs30">Property: Vs30</option>
-        </select>
+<div class="input-group input-group-sm my-1 fix-label-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text fix-label-item" id="lbl_prop">Display</span>
     </div>
+    <select class="custom-select" id="select_display">
+        <option value="hazard" selected>Hazard</option>
+    </select>
 </div>
 <div class="input-group input-group-sm my-1 fix-label-group">
     <div class="input-group-prepend">
