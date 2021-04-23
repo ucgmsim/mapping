@@ -513,6 +513,10 @@ function switch_column(column) {
         alert("Return period factor is " + PARAM_R[rp] + " for " + RP_NAMES[rp])
         document.getElementById("select_display").value = display_previous;
         return;
+    } else if (display === "c01000" || display === "meff50250" || display === "meff5002500") {
+        alert("WIP")
+        document.getElementById("select_display").value = display_previous;
+        return;
     }
     var src = WMS_TILES + suffix;
     layer._options.tiles = [src];
