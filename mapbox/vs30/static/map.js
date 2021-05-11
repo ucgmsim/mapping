@@ -81,7 +81,8 @@ function load_map()
     // distance scale
     map.addControl(new mapboxgl.ScaleControl({maxWidth: 200, unit: 'metric'}), 'bottom-right');
     // marker will be used whin location doesn't update with mousemove
-    marker = new mapboxgl.Marker()
+    popup = new mapboxgl.Popup();
+    marker = new mapboxgl.Marker().setPopup(popup);
 
     // control for layer to be visible
     var layers = document.getElementById('menu_layer')
@@ -101,6 +102,7 @@ function load_map()
     map.on('idle', loaded);
     map.on('dataloading', loading);
     map.on('load', function () {
+        // note: measured sites can be loaded from geojson instead of mapbox
         map.addSource('qgis-wms', {
             'type': 'raster',
             'tiles': [WMS_TILES + ID_COM_MVN],
@@ -152,7 +154,7 @@ function show_measuredsite(e) {
             '<tr><th scope="row">Easting</th><td>' + roundmax(feature.properties.easting) + '</td></tr>' +
             '<tr><th scope="row">Northing</th><td>' + roundmax(feature.properties.northing) + '</td></tr>' +
             '<tr><th scope="row">Vs30 (m/s)</th><td>' + feature.properties.vs30 + '</td></tr>' +
-            '<tr><th scope="row">Standard Deviation</th><td>' + feature.properties.uncertainty + '</td></tr>' +
+            '<tr><th scope="row">Standard Deviation</th><td>' + roundmax(feature.properties.uncertainty) + '</td></tr>' +
             '<tr><th scope="row">Geology Vs30</th><td>' + feature.properties.geology_vs30 + '</td></tr>' +
             '<tr><th scope="row">Geology StDev</th><td>' + roundmax(feature.properties.geology_stdv) + '</td></tr>' +
             '<tr><th scope="row">Terrain Vs30</th><td>' + feature.properties.terrain_vs30 + '</td></tr>' +
@@ -207,70 +209,51 @@ function follow_mouse(cb) {
 }
 
 
-function try_markervalues(e) {
-    map.off("idle", try_markervalues);
+function retrieve_values(lngLat) {
+    var layer = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
+    // bounding box made from expanded point
+    var diff = 0.000001
+    var bbox = (lngLat.lat - diff) + ',' + (lngLat.lng - diff) +
+         ',' + (lngLat.lat + diff) + ',' + (lngLat.lng + diff)
 
-    if ((! map.getBounds().contains(marker.getLngLat())) || (map.getZoom() < 11)) {
-        // user has since moved the map in an incompatible manner
-        marker.remove().setLngLat([0, 0]);
-    }
-    update_values(map.project(marker.getLngLat()), false);
+    // abort previous request in case not completed
+    if (xhr_values !== undefined) xhr_values.abort();
+
+    xhr_values = $.ajax({
+        type: "GET",
+        url: WMS_VALUES + '&bbox=' + bbox +
+            '&query_layers=gid,geology_mvn,tid,terrain_mvn,combined_mvn,slope,coast',
+        success: function(data) {
+            update_values(data["features"]);
+        },
+        error: function(data) {
+            if (data.statusText === "abort") return;
+            alert("Failed to retrieve values.");
+        }
+    });
 }
 
 
-function update_values(point, follow=true) {
-    var features = map.queryRenderedFeatures(point);
-    var geocat;
-    var tercat;
-    var gvs30;
-    var tvs30;
-    var cvs30;
-    for (var i=0; i < features.length; i++) {
-        if (features[i].layer.id === ID_GEOCAT && geocat === undefined) {
-            geocat = features[i].properties.gid;
-        } else if (features[i].layer.id === ID_TERCAT && tercat === undefined) {
-            tercat = features[i].properties.gid;
-        } else if (features[i].layer.id === ID_GEOV30 && gvs30 === undefined) {
-            gvs30 = [features[i].properties.vs30, features[i].properties.stdv];
-        } else if (features[i].layer.id === ID_TERV30 && tvs30 === undefined) {
-            tvs30 = [features[i].properties.vs30, features[i].properties.stdv];
-        } else if (features[i].layer.id === ID_COMV30 && cvs30 === undefined) {
-            cvs30 = [features[i].properties.vs30, features[i].properties.stdv];
-        }
-    }
+function update_values(features) {
+    var lngLat = marker.getLngLat();
+    var coast = features[6]["properties"]["Band 1: Distance to Coast (m)"];
+    if (coast == "65535") coast = "65535+";
+    popup_html = '<p class="h6">Slope: ' +
+        roundmax(parseFloat(features[5]["properties"]["Band 1"])) +
+        '<br />Coast Distance: ' + coast + ' m<p>';
 
-    // UI values
-    if (geocat === undefined) {
-        document.getElementById("gid_aak").value = "NA";
-    } else {
-        document.getElementById("gid_aak").value = NAME_GEOCAT[geocat];
-    }
-    if (tercat === undefined) {
-        document.getElementById("gid_yca").value = "NA";
-    } else {
-        document.getElementById("gid_yca").value = NAME_TERCAT[tercat - 1];
-    }
-    if (gvs30 === undefined) {
-        document.getElementById("aak_vs30").value = "NA";
-        document.getElementById("aak_stdv").value = "NA";
-    } else {
-        document.getElementById("aak_vs30").value = gvs30[0];
-        document.getElementById("aak_stdv").value = gvs30[1];
-    }
-    if (tvs30 === undefined) {
-        document.getElementById("yca_vs30").value = "NA";
-        document.getElementById("yca_stdv").value = "NA";
-    } else {
-        document.getElementById("yca_vs30").value = tvs30[0];
-        document.getElementById("yca_stdv").value = tvs30[1];
-    }
-    if (cvs30 === undefined) {
-        document.getElementById("com_vs30").value = "NA";
-        document.getElementById("com_stdv").value = "NA";
-    } else {
-        document.getElementById("com_vs30").value = cvs30[0];
-        document.getElementById("com_stdv").value = cvs30[1];
-    }
+    $("#gid_aak").val(NAME_GEOCAT[parseInt(features[0]["properties"]["Band 1: Geology ID Index"])]);
+    $("#gid_yca").val(NAME_TERCAT[parseInt(features[2]["properties"]["Band 1"]) - 1]);
+    $("#aak_vs30").val(features[1]["properties"]["Band 1: Vs30"])
+    $("#aak_stdv").val(features[1]["properties"]["Band 2: Standard Deviation"])
+    $("#yca_vs30").val(features[3]["properties"]["Band 1"])
+    $("#yca_stdv").val(features[3]["properties"]["Band 2"])
+    $("#com_vs30").val(features[4]["properties"]["Band 1: Vs30"])
+    $("#com_stdv").val(features[4]["properties"]["Band 2: Standard Deviation"])
+
+    if (lngLat === undefined) return;
+    popup.setHTML(popup_html);
 }
 
 
@@ -300,6 +283,16 @@ function map_lnglatselect(e, silent=false) {
 }
 
 
+function update_table() {
+    // after switching layer, update values if applicable
+
+    var checkbox = document.getElementById("follow_mouse");
+    if (!checkbox.checked) {
+        map_lnglatselect(null, silent=true);
+    }
+}
+
+
 function map_mouseselect(e) {
     map_runlocation(e.lngLat, true);
 }
@@ -324,6 +317,8 @@ function map_runlocation(lngLat, mouse=true) {
             if (features[i].layer.id === ID_MEASURED) return;
         }
     }
+    // don't accept clicks on the marker
+    if (! follow && mouse && marker_clicked(map.project(lngLat))) return;
 
     // update UI
     if (mouse) {
@@ -332,50 +327,25 @@ function map_runlocation(lngLat, mouse=true) {
     }
     if (! follow) {
         marker.setLngLat([lngLat.lng, lngLat.lat]).addTo(map);
-        if (map.getZoom() < 11 || ! map.areTilesLoaded()
-                || (! mouse && ! map.getBounds().contains(marker.getLngLat()))) {
-            document.getElementById("gid_aak").value = "loading...";
-            document.getElementById("gid_yca").value = "loading...";
-            document.getElementById("yca_vs30").value = "loading...";
-            document.getElementById("yca_stdv").value = "loading...";
-            document.getElementById("aak_vs30").value = "loading...";
-            document.getElementById("aak_stdv").value = "loading...";
-            document.getElementById("com_vs30").value = "loading...";
-            document.getElementById("com_stdv").value = "loading...";
-            // can't see 111m grid
-            if (map.getZoom() < 11
-                    || (! mouse && ! map.getBounds().contains(marker.getLngLat()))) {
-                map.flyTo({center: lngLat, zoom: 11});
-            }
-            map.on("idle", try_markervalues);
-            return;
-        }
     }
 
-    update_values(map.project(lngLat), follow);
+    retrieve_values(lngLat);
 }
 
 
-function switch_layer(layer) {
+function switch_layer(e) {
     var old_element = document.getElementById("menu_layer").getElementsByClassName("active")[0]
     old_element.classList.remove("active");
-    var opacity = parseFloat(document.getElementById("transparency").value);
-    if (old_element.id !== "none") {
-        var old_type = map.getLayer(old_element.id).type + "-opacity";
-        map.setPaintProperty(old_element.id, old_type, 0);
-    }
-    if (layer.target.id !== "none") {
-        var new_type = map.getLayer(layer.target.id).type + "-opacity";
-        map.setPaintProperty(layer.target.id, new_type, opacity);
-    }
-    layer.target.classList.add("active");
+    e.target.classList.add("active");
 
-    // show extrusion control if necessary
-    if (layer.target.id.substr(1, 4) === "vs30") {
-        $("#collapse").show();
-    } else {
-        $("#collapse").hide();
-    }
+    var layer = map.getSource("qgis-wms");
+    var src = WMS_TILES + e.target.id;
+    layer._options.tiles = [src];
+    layer.load();
+    document.getElementById("img-legend").src = WMS_LEGEND + e.target.id;
+
+    // update values
+    update_table();
 }
 
 

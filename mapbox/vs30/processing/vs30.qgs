@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="vap30" saveDateTime="2021-04-23T16:43:05" saveUserFull="Live User" projectname="" version="3.16.4-Hannover">
+<qgis version="3.16.4-Hannover" projectname="" saveUser="vap30" saveUserFull="Live User" saveDateTime="2021-05-11T14:56:50">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -20,37 +20,46 @@
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer checked="Qt::Checked" providerKey="gdal" id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" expanded="0" name="combined_mvn" legend_exp="" patch_size="-1,-1" source="./combined_mvn.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" expanded="0" providerKey="gdal" source="./combined_mvn.tif" name="combined_mvn" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="combined_85c20ee4_9a91_4896_a72b_71f4f203be75" expanded="0" name="combined" legend_exp="" patch_size="-1,-1" source="./combined.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./combined_mvn.tif" name="combined_mvn_stdv" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623" expanded="0" name="geology_mvn" legend_exp="" patch_size="-1,-1" source="./geology_mvn.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="combined_85c20ee4_9a91_4896_a72b_71f4f203be75" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./combined.tif" name="combined" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="geology_0dc819a6_a2e0_43c2_8999_f1e0b21ee059" expanded="0" name="geology" legend_exp="" patch_size="-1,-1" source="./geology.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./geology_mvn.tif" name="geology_mvn" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf" expanded="0" name="terrain_mvn" legend_exp="" patch_size="-1,-1" source="./terrain_mvn.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./geology_mvn.tif" name="geology_mvn_stdv" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="terrain_b1d07f45_d298_4e36_91f7_8fef80e315c1" expanded="0" name="terrain" legend_exp="" patch_size="-1,-1" source="./terrain.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="geology_0dc819a6_a2e0_43c2_8999_f1e0b21ee059" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./geology.tif" name="geology" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5" expanded="0" name="gid" legend_exp="" patch_size="-1,-1" source="./gid.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./terrain_mvn.tif" name="terrain_mvn" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="ogr" id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" expanded="1" name="qmap" legend_exp="" patch_size="-1,-1" source="./qmap/qmap.shp" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./terrain_mvn.tif" name="terrain_mvn_stdv" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d" expanded="0" name="tid" legend_exp="" patch_size="-1,-1" source="./tid.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="terrain_b1d07f45_d298_4e36_91f7_8fef80e315c1" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./terrain.tif" name="terrain" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e" expanded="0" name="slope" legend_exp="" patch_size="-1,-1" source="./slope.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./gid.tif" name="gid" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer checked="Qt::Unchecked" providerKey="gdal" id="coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0" expanded="0" name="coast" legend_exp="" patch_size="-1,-1" source="./coast.tif" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" checked="Qt::Unchecked" expanded="1" providerKey="ogr" source="./qmap/qmap.shp" name="qmap" patch_size="-1,-1" legend_split_behavior="0">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer legend_exp="" id="tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./tid.tif" name="tid" patch_size="-1,-1" legend_split_behavior="0">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer legend_exp="" id="slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e" checked="Qt::Unchecked" expanded="0" providerKey="gdal" source="./slope.tif" name="slope" patch_size="-1,-1" legend_split_behavior="0">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer legend_exp="" id="coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0" checked="Qt::Unchecked" expanded="1" providerKey="gdal" source="./coast.tif" name="coast" patch_size="-1,-1" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
@@ -65,21 +74,24 @@
       <item>terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf</item>
       <item>combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f</item>
       <item>qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c</item>
+      <item>combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691</item>
+      <item>geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b</item>
+      <item>terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings mode="2" intersection-snapping="0" minScale="0" enabled="0" scaleDependencyMode="0" type="1" tolerance="12" self-snapping="0" unit="1" maxScale="0">
+  <snapping-settings type="1" minScale="0" mode="2" self-snapping="0" unit="1" maxScale="0" scaleDependencyMode="0" enabled="0" tolerance="12" intersection-snapping="0">
     <individual-layer-settings>
-      <layer-setting minScale="0" enabled="0" id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" type="1" tolerance="12" units="1" maxScale="0"/>
+      <layer-setting id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" type="1" minScale="0" maxScale="0" units="1" enabled="0" tolerance="12"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>1425073.98576986836269498</xmin>
-      <ymin>4826154.64870788808912039</ymin>
-      <xmax>2446517.49671900318935513</xmax>
-      <ymax>6045833.13897087331861258</ymax>
+      <xmin>1556998.30608922895044088</xmin>
+      <ymin>5151003.20869915187358856</ymin>
+      <xmax>1588918.41580638941377401</xmax>
+      <ymax>5189118.16151987016201019</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -99,65 +111,80 @@
     <expressionContextScope/>
   </mapcanvas>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" checked="Qt::Checked" name="combined_mvn" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Checked" open="false" drawingOrder="-1" name="combined_mvn" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" visible="1" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="combined" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="combined_mvn_stdv" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile layerid="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691" visible="0" isInOverview="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="combined" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="combined_85c20ee4_9a91_4896_a72b_71f4f203be75" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="geology_mvn" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="geology_mvn" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="geology" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="geology_mvn_stdv" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile layerid="geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b" visible="0" isInOverview="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="geology" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="geology_0dc819a6_a2e0_43c2_8999_f1e0b21ee059" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="terrain_mvn" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="terrain_mvn" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="terrain" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="terrain_mvn_stdv" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile layerid="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df" visible="0" isInOverview="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="terrain" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="terrain_b1d07f45_d298_4e36_91f7_8fef80e315c1" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="gid" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="gid" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="qmap" showFeatureCount="0" open="true">
-      <filegroup hidden="false" open="true">
+    <legendlayer checked="Qt::Unchecked" open="true" drawingOrder="-1" name="qmap" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
         <legendlayerfile layerid="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="tid" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="tid" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="slope" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="false" drawingOrder="-1" name="slope" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile layerid="slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" checked="Qt::Unchecked" name="coast" showFeatureCount="0" open="false">
-      <filegroup hidden="false" open="false">
+    <legendlayer checked="Qt::Unchecked" open="true" drawingOrder="-1" name="coast" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
         <legendlayerfile layerid="coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0" visible="0" isInOverview="0"/>
       </filegroup>
     </legendlayer>
   </legend>
   <mapViewDocks/>
   <mapViewDocks3D/>
-  <main-annotation-layer type="annotation" autoRefreshTime="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0">
+  <main-annotation-layer type="annotation" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="">
     <id>Annotations_021bb3ce_6ef8_4a9f_adde_4ef3adf7bff4</id>
     <datasource></datasource>
     <keywordList>
@@ -174,7 +201,7 @@
         <description></description>
         <projectionacronym></projectionacronym>
         <ellipsoidacronym></ellipsoidacronym>
-        <geographicflag>false</geographicflag>
+        <geographicflag>true</geographicflag>
       </spatialrefsys>
     </srs>
     <resourceMetadata>
@@ -197,7 +224,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </crs>
       <extent/>
@@ -206,7 +233,7 @@
     <layerOpacity>1</layerOpacity>
   </main-annotation-layer>
   <projectlayers>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -261,11 +288,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -286,23 +313,23 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="20" nodataColor="" type="singlebandpseudocolor" classificationMax="65535" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="65535" nodataColor="" band="1" classificationMin="20" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -313,31 +340,31 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="20" classificationMode="1" maximumValue="65535" clip="0" labelPrecision="0">
+            <colorrampshader minimumValue="20" colorRampType="INTERPOLATED" clip="0" maximumValue="65535" classificationMode="1" labelPrecision="0">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="20" alpha="255" color="#ff4040" value="20"/>
-              <item label="13123" alpha="255" color="#ffff40" value="13123"/>
-              <item label="26226" alpha="255" color="#40ff40" value="26226"/>
-              <item label="39329" alpha="255" color="#40ffff" value="39329"/>
-              <item label="52432" alpha="255" color="#4040ff" value="52432"/>
-              <item label="65535+" alpha="255" color="#ff40ff" value="65535"/>
+              <item color="#ff4040" value="20" label="20" alpha="255"/>
+              <item color="#ffff40" value="13123" label="13123" alpha="255"/>
+              <item color="#40ff40" value="26226" label="26226" alpha="255"/>
+              <item color="#40ffff" value="39329" label="39329" alpha="255"/>
+              <item color="#4040ff" value="52432" label="52432" alpha="255"/>
+              <item color="#ff40ff" value="65535" label="65535+" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -392,11 +419,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -418,23 +445,23 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="179.88237" nodataColor="" type="singlebandpseudocolor" classificationMax="614.7868652" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="614.7868652" nodataColor="" band="1" classificationMin="179.88237" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -445,31 +472,163 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="179.88237000000001" classificationMode="1" maximumValue="614.78686519999997" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="179.88237000000001" colorRampType="INTERPOLATED" clip="0" maximumValue="614.78686519999997" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="179.8824" alpha="255" color="#ff4040" value="179.88237"/>
-              <item label="266.8633" alpha="255" color="#ffff40" value="266.86326904"/>
-              <item label="353.8442" alpha="255" color="#40ff40" value="353.84416808000003"/>
-              <item label="440.8251" alpha="255" color="#40ffff" value="440.82506711999997"/>
-              <item label="527.8060" alpha="255" color="#4040ff" value="527.80596616"/>
-              <item label="614.7869" alpha="255" color="#ff40ff" value="614.7868652"/>
+              <item color="#ff4040" value="179.88237" label="179.8824" alpha="255"/>
+              <item color="#ffff40" value="266.86326904" label="266.8633" alpha="255"/>
+              <item color="#40ff40" value="353.84416808000003" label="353.8442" alpha="255"/>
+              <item color="#40ffff" value="440.82506711999997" label="440.8251" alpha="255"/>
+              <item color="#4040ff" value="527.80596616" label="527.8060" alpha="255"/>
+              <item color="#ff40ff" value="614.7868652" label="614.7869" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691</id>
+      <datasource>./combined_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>combined_mvn_stdv</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["New Zealand - North Island, South Island, Stewart Island - onshore."],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList useSrcNoData="1" bandNo="1"/>
+        <noDataList useSrcNoData="1" bandNo="2"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" mode="0" enabled="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
+        </provider>
+        <rasterrenderer alphaBand="-1" classificationMax="0.9239391" nodataColor="" band="2" classificationMin="0.0830088" type="singlebandpseudocolor" opacity="1">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader minimumValue="0.083008799999999994" colorRampType="INTERPOLATED" clip="0" maximumValue="0.92393910000000001" classificationMode="1" labelPrecision="4">
+              <colorramp type="gradient" name="[source]">
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
+              </colorramp>
+              <item color="#ff4040" value="0.0830088" label="0.0830" alpha="255"/>
+              <item color="#ffff40" value="0.25119486" label="0.2512" alpha="255"/>
+              <item color="#40ff40" value="0.41938092" label="0.4194" alpha="255"/>
+              <item color="#40ffff" value="0.58756698" label="0.5876" alpha="255"/>
+              <item color="#4040ff" value="0.75575304" label="0.7558" alpha="255"/>
+              <item color="#ff40ff" value="0.9239391" label="0.9239" alpha="255"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -524,11 +683,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -550,23 +709,23 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="136.3252869" nodataColor="" type="singlebandpseudocolor" classificationMax="880.1893311" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="880.1893311" nodataColor="" band="1" classificationMin="136.3252869" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -577,31 +736,31 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="136.32528690000001" classificationMode="1" maximumValue="880.1893311" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="136.32528690000001" colorRampType="INTERPOLATED" clip="0" maximumValue="880.1893311" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="136.3253" alpha="255" color="#ff4040" value="136.3252869"/>
-              <item label="285.0981" alpha="255" color="#ffff40" value="285.09809574"/>
-              <item label="433.8709" alpha="255" color="#40ff40" value="433.87090458"/>
-              <item label="582.6437" alpha="255" color="#40ffff" value="582.6437134199999"/>
-              <item label="731.4165" alpha="255" color="#4040ff" value="731.4165222600001"/>
-              <item label="880.1893" alpha="255" color="#ff40ff" value="880.1893311"/>
+              <item color="#ff4040" value="136.3252869" label="136.3253" alpha="255"/>
+              <item color="#ffff40" value="285.09809574" label="285.0981" alpha="255"/>
+              <item color="#40ff40" value="433.87090458" label="433.8709" alpha="255"/>
+              <item color="#40ffff" value="582.6437134199999" label="582.6437" alpha="255"/>
+              <item color="#4040ff" value="731.4165222600001" label="731.4165" alpha="255"/>
+              <item color="#ff40ff" value="880.1893311" label="880.1893" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -656,11 +815,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -682,23 +841,23 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="162.8921204" nodataColor="" type="singlebandpseudocolor" classificationMax="690.9743652" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="690.9743652" nodataColor="" band="1" classificationMin="162.8921204" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -709,31 +868,163 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="162.89212040000001" classificationMode="1" maximumValue="690.97436519999997" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="162.89212040000001" colorRampType="INTERPOLATED" clip="0" maximumValue="690.97436519999997" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="162.8921" alpha="255" color="#ff4040" value="162.8921204"/>
-              <item label="268.5086" alpha="255" color="#ffff40" value="268.50856936"/>
-              <item label="374.1250" alpha="255" color="#40ff40" value="374.12501832"/>
-              <item label="479.7415" alpha="255" color="#40ffff" value="479.74146727999994"/>
-              <item label="585.3579" alpha="255" color="#4040ff" value="585.3579162399999"/>
-              <item label="690.9744" alpha="255" color="#ff40ff" value="690.9743652"/>
+              <item color="#ff4040" value="162.8921204" label="162.8921" alpha="255"/>
+              <item color="#ffff40" value="268.50856936" label="268.5086" alpha="255"/>
+              <item color="#40ff40" value="374.12501832" label="374.1250" alpha="255"/>
+              <item color="#40ffff" value="479.74146727999994" label="479.7415" alpha="255"/>
+              <item color="#4040ff" value="585.3579162399999" label="585.3579" alpha="255"/>
+              <item color="#ff40ff" value="690.9743652" label="690.9744" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b</id>
+      <datasource>./geology_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>geology_mvn_stdv</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["New Zealand - North Island, South Island, Stewart Island - onshore."],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList useSrcNoData="1" bandNo="1"/>
+        <noDataList useSrcNoData="1" bandNo="2"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" mode="0" enabled="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
+        </provider>
+        <rasterrenderer alphaBand="-1" classificationMax="0.9949647" nodataColor="" band="2" classificationMin="0.0797546" type="singlebandpseudocolor" opacity="1">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader minimumValue="0.079754599999999995" colorRampType="INTERPOLATED" clip="0" maximumValue="0.99496470000000004" classificationMode="1" labelPrecision="4">
+              <colorramp type="gradient" name="[source]">
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
+              </colorramp>
+              <item color="#ff4040" value="0.0797546" label="0.0798" alpha="255"/>
+              <item color="#ffff40" value="0.26279662" label="0.2628" alpha="255"/>
+              <item color="#40ff40" value="0.44583864" label="0.4458" alpha="255"/>
+              <item color="#40ffff" value="0.62888066" label="0.6289" alpha="255"/>
+              <item color="#4040ff" value="0.81192268" label="0.8119" alpha="255"/>
+              <item color="#ff40ff" value="0.9949647" label="0.9950" alpha="255"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -788,11 +1079,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -814,23 +1105,23 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="128.3021698" nodataColor="" type="singlebandpseudocolor" classificationMax="933.5745239" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="933.5745239" nodataColor="" band="1" classificationMin="128.3021698" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -841,31 +1132,31 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="128.3021698" classificationMode="1" maximumValue="933.57452390000003" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="128.3021698" colorRampType="INTERPOLATED" clip="0" maximumValue="933.57452390000003" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="128.3022" alpha="255" color="#ff4040" value="128.3021698"/>
-              <item label="289.3566" alpha="255" color="#ffff40" value="289.35664062"/>
-              <item label="450.4111" alpha="255" color="#40ff40" value="450.41111144"/>
-              <item label="611.4656" alpha="255" color="#40ffff" value="611.46558226"/>
-              <item label="772.5201" alpha="255" color="#4040ff" value="772.52005308"/>
-              <item label="933.5745" alpha="255" color="#ff40ff" value="933.5745239"/>
+              <item color="#ff4040" value="128.3021698" label="128.3022" alpha="255"/>
+              <item color="#ffff40" value="289.35664062" label="289.3566" alpha="255"/>
+              <item color="#40ff40" value="450.41111144" label="450.4111" alpha="255"/>
+              <item color="#40ffff" value="611.46558226" label="611.4656" alpha="255"/>
+              <item color="#4040ff" value="772.52005308" label="772.5201" alpha="255"/>
+              <item color="#ff40ff" value="933.5745239" label="933.5745" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -920,11 +1211,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -945,23 +1236,23 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="0" nodataColor="" type="singlebandpseudocolor" classificationMax="15" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="15" nodataColor="" band="1" classificationMin="0" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -972,31 +1263,41 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="0" classificationMode="1" maximumValue="15" clip="0" labelPrecision="0">
+            <colorrampshader minimumValue="0" colorRampType="INTERPOLATED" clip="0" maximumValue="15" classificationMode="2" labelPrecision="0">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="0" alpha="255" color="#ff4040" value="0"/>
-              <item label="3" alpha="255" color="#ffff40" value="3"/>
-              <item label="6" alpha="255" color="#40ff40" value="6"/>
-              <item label="9" alpha="255" color="#40ffff" value="9"/>
-              <item label="12" alpha="255" color="#4040ff" value="12"/>
-              <item label="15" alpha="255" color="#ff40ff" value="15"/>
+              <item color="#ff4040" value="0" label="G00" alpha="255"/>
+              <item color="#ff8040" value="1" label="G01" alpha="255"/>
+              <item color="#ffbf40" value="2" label="G04" alpha="255"/>
+              <item color="#ffff40" value="3" label="G05" alpha="255"/>
+              <item color="#bfff40" value="4" label="G06" alpha="255"/>
+              <item color="#80ff40" value="5" label="G08" alpha="255"/>
+              <item color="#40ff40" value="6" label="G09" alpha="255"/>
+              <item color="#40ff80" value="7" label="G10" alpha="255"/>
+              <item color="#40ffbf" value="8" label="G11" alpha="255"/>
+              <item color="#40ffff" value="9" label="G12" alpha="255"/>
+              <item color="#40bfff" value="10" label="G13" alpha="255"/>
+              <item color="#4080ff" value="11" label="G14" alpha="255"/>
+              <item color="#4040ff" value="12" label="G15" alpha="255"/>
+              <item color="#8040ff" value="13" label="G16" alpha="255"/>
+              <item color="#bf40ff" value="14" label="G17" alpha="255"/>
+              <item color="#ff40ff" value="15" label="G18" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer readOnly="0" refreshOnNotifyMessage="" wkbType="MultiPolygon" simplifyLocal="1" styleCategories="AllStyleCategories" labelsEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="100000000" type="vector" simplifyAlgorithm="0" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" autoRefreshEnabled="0" simplifyMaxScale="1" autoRefreshTime="0" maxScale="0" simplifyDrawingHints="1" geometry="Polygon">
+    <maplayer styleCategories="AllStyleCategories" refreshOnNotifyMessage="" wkbType="MultiPolygon" readOnly="0" simplifyAlgorithm="0" hasScaleBasedVisibilityFlag="0" minScale="100000000" maxScale="0" type="vector" simplifyDrawingTol="1" simplifyLocal="1" simplifyDrawingHints="1" autoRefreshEnabled="0" geometry="Polygon" refreshOnNotifyEnabled="0" labelsEnabled="0" simplifyMaxScale="1" autoRefreshTime="0">
       <extent>
         <xmin>1089955.19689999986439943</xmin>
         <ymin>4747863.66160000022500753</ymin>
@@ -1051,11 +1352,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1078,58 +1379,58 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" endExpression="" enabled="0" startExpression="" startField="" durationUnit="min" endField="" durationField="" fixedDuration="0" accumulate="0">
+      <temporal startExpression="" startField="" durationUnit="min" fixedDuration="0" mode="0" endExpression="" endField="" accumulate="0" durationField="" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
-      <renderer-v2 forceraster="0" type="singleSymbol" enableorderby="0" symbollevels="0">
+      <renderer-v2 enableorderby="0" type="singleSymbol" symbollevels="0" forceraster="0">
         <symbols>
-          <symbol force_rhr="0" type="fill" name="0" alpha="1" clip_to_extent="1">
-            <layer class="SimpleFill" enabled="1" locked="0" pass="0">
-              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="color" v="114,155,111,0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="35,35,35,255"/>
-              <prop k="outline_style" v="no"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
+          <symbol force_rhr="0" clip_to_extent="1" type="fill" alpha="1" name="0">
+            <layer class="SimpleFill" locked="0" pass="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="114,155,111,0" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="35,35,35,255" k="outline_color"/>
+              <prop v="no" k="outline_style"/>
+              <prop v="0" k="outline_width"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option type="QString" name="name" value=""/>
+                  <Option type="QString" value="" name="name"/>
                   <Option type="Map" name="properties">
                     <Option type="Map" name="fillColor">
-                      <Option type="bool" name="active" value="true"/>
-                      <Option type="QString" name="field" value="gid"/>
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="gid" name="field"/>
                       <Option type="Map" name="transformer">
                         <Option type="Map" name="d">
                           <Option type="Map" name="colorramp">
-                            <Option type="QString" name="name" value="[source]"/>
+                            <Option type="QString" value="[source]" name="name"/>
                             <Option type="Map" name="properties">
-                              <Option type="QString" name="color1" value="255,64,64,255"/>
-                              <Option type="QString" name="color2" value="255,64,255,255"/>
-                              <Option type="QString" name="discrete" value="0"/>
-                              <Option type="QString" name="rampType" value="gradient"/>
-                              <Option type="QString" name="stops" value="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                              <Option type="QString" value="255,64,64,255" name="color1"/>
+                              <Option type="QString" value="255,64,255,255" name="color2"/>
+                              <Option type="QString" value="0" name="discrete"/>
+                              <Option type="QString" value="gradient" name="rampType"/>
+                              <Option type="QString" value="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" name="stops"/>
                             </Option>
-                            <Option type="QString" name="type" value="gradient"/>
+                            <Option type="QString" value="gradient" name="type"/>
                           </Option>
-                          <Option type="double" name="maxValue" value="14"/>
-                          <Option type="double" name="minValue" value="0"/>
-                          <Option type="QString" name="nullColor" value="0,0,0,255"/>
-                          <Option type="QString" name="rampName" value=""/>
+                          <Option type="double" value="14" name="maxValue"/>
+                          <Option type="double" value="0" name="minValue"/>
+                          <Option type="QString" value="0,0,0,255" name="nullColor"/>
+                          <Option type="QString" value="" name="rampName"/>
                         </Option>
-                        <Option type="int" name="t" value="2"/>
+                        <Option type="int" value="2" name="t"/>
                       </Option>
-                      <Option type="int" name="type" value="2"/>
+                      <Option type="int" value="2" name="type"/>
                     </Option>
                   </Option>
-                  <Option type="QString" name="type" value="collection"/>
+                  <Option type="QString" value="collection" name="type"/>
                 </Option>
               </data_defined_properties>
             </layer>
@@ -1140,126 +1441,126 @@
       </renderer-v2>
       <labeling type="simple">
         <settings calloutType="simple">
-          <text-style allowHtml="0" textOrientation="horizontal" isExpression="0" fontWordSpacing="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" capitalization="0" textOpacity="1" fontWeight="50" useSubstitutions="0" blendMode="0" fontKerning="1" fontStrikeout="0" fontLetterSpacing="0" fontUnderline="0" multilineHeight="1" textColor="0,0,0,255" fontFamily="Noto Sans" fontSizeUnit="Point" namedStyle="Regular" fontItalic="0" fieldName="gid" fontSize="10" previewBkgrdColor="255,255,255,255">
-            <text-buffer bufferNoFill="1" bufferDraw="0" bufferBlendMode="0" bufferOpacity="1" bufferJoinStyle="128" bufferSizeUnits="MM" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferColor="255,255,255,255"/>
-            <text-mask maskJoinStyle="128" maskEnabled="0" maskType="0" maskSize="1.5" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskedSymbolLayers="" maskOpacity="1" maskSizeUnits="MM"/>
-            <background shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeRotation="0" shapeBorderWidthUnit="MM" shapeJoinStyle="64" shapeOffsetUnit="MM" shapeRadiiX="0" shapeSizeX="0" shapeFillColor="255,255,255,255" shapeType="0" shapeSVGFile="" shapeOffsetX="0" shapeRadiiUnit="MM" shapeDraw="0" shapeSizeType="0" shapeOffsetY="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRotationType="0" shapeBorderColor="128,128,128,255" shapeSizeUnit="MM" shapeRadiiY="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidth="0" shapeBlendMode="0" shapeOpacity="1" shapeSizeY="0">
-              <symbol force_rhr="0" type="marker" name="markerSymbol" alpha="1" clip_to_extent="1">
-                <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
-                  <prop k="angle" v="0"/>
-                  <prop k="color" v="213,180,60,255"/>
-                  <prop k="horizontal_anchor_point" v="1"/>
-                  <prop k="joinstyle" v="bevel"/>
-                  <prop k="name" v="circle"/>
-                  <prop k="offset" v="0,0"/>
-                  <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="outline_color" v="35,35,35,255"/>
-                  <prop k="outline_style" v="solid"/>
-                  <prop k="outline_width" v="0"/>
-                  <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                  <prop k="outline_width_unit" v="MM"/>
-                  <prop k="scale_method" v="diameter"/>
-                  <prop k="size" v="2"/>
-                  <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                  <prop k="size_unit" v="MM"/>
-                  <prop k="vertical_anchor_point" v="1"/>
+          <text-style fontSizeUnit="Point" textColor="0,0,0,255" capitalization="0" fontKerning="1" fontLetterSpacing="0" fontUnderline="0" fontWordSpacing="0" fontWeight="50" allowHtml="0" isExpression="0" namedStyle="Regular" fontSize="10" fontStrikeout="0" multilineHeight="1" fontFamily="Noto Sans" fieldName="gid" fontSizeMapUnitScale="3x:0,0,0,0,0,0" useSubstitutions="0" textOrientation="horizontal" textOpacity="1" blendMode="0" fontItalic="0" previewBkgrdColor="255,255,255,255">
+            <text-buffer bufferOpacity="1" bufferJoinStyle="128" bufferNoFill="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSize="1" bufferBlendMode="0" bufferDraw="0" bufferColor="255,255,255,255"/>
+            <text-mask maskEnabled="0" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskOpacity="1" maskType="0" maskedSymbolLayers="" maskSizeUnits="MM" maskJoinStyle="128" maskSize="1.5"/>
+            <background shapeBlendMode="0" shapeDraw="0" shapeOpacity="1" shapeSVGFile="" shapeFillColor="255,255,255,255" shapeRadiiY="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeSizeType="0" shapeOffsetX="0" shapeBorderWidthUnit="MM" shapeRadiiX="0" shapeType="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidth="0" shapeSizeUnit="MM" shapeSizeX="0" shapeSizeY="0" shapeRotationType="0" shapeOffsetY="0" shapeOffsetUnit="MM" shapeRotation="0" shapeJoinStyle="64" shapeRadiiUnit="MM" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBorderColor="128,128,128,255" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0">
+              <symbol force_rhr="0" clip_to_extent="1" type="marker" alpha="1" name="markerSymbol">
+                <layer class="SimpleMarker" locked="0" pass="0" enabled="1">
+                  <prop v="0" k="angle"/>
+                  <prop v="213,180,60,255" k="color"/>
+                  <prop v="1" k="horizontal_anchor_point"/>
+                  <prop v="bevel" k="joinstyle"/>
+                  <prop v="circle" k="name"/>
+                  <prop v="0,0" k="offset"/>
+                  <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                  <prop v="MM" k="offset_unit"/>
+                  <prop v="35,35,35,255" k="outline_color"/>
+                  <prop v="solid" k="outline_style"/>
+                  <prop v="0" k="outline_width"/>
+                  <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+                  <prop v="MM" k="outline_width_unit"/>
+                  <prop v="diameter" k="scale_method"/>
+                  <prop v="2" k="size"/>
+                  <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+                  <prop v="MM" k="size_unit"/>
+                  <prop v="1" k="vertical_anchor_point"/>
                   <data_defined_properties>
                     <Option type="Map">
-                      <Option type="QString" name="name" value=""/>
+                      <Option type="QString" value="" name="name"/>
                       <Option name="properties"/>
-                      <Option type="QString" name="type" value="collection"/>
+                      <Option type="QString" value="collection" name="type"/>
                     </Option>
                   </data_defined_properties>
                 </layer>
               </symbol>
             </background>
-            <shadow shadowOffsetUnit="MM" shadowScale="100" shadowUnder="0" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowRadius="1.5" shadowDraw="0" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowRadiusAlphaOnly="0" shadowBlendMode="6" shadowOffsetGlobal="1" shadowOpacity="0.69999999999999996" shadowOffsetDist="1" shadowColor="0,0,0,255" shadowOffsetAngle="135" shadowRadiusUnit="MM"/>
+            <shadow shadowOffsetAngle="135" shadowOffsetDist="1" shadowRadius="1.5" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowDraw="0" shadowOffsetUnit="MM" shadowOffsetGlobal="1" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowRadiusAlphaOnly="0" shadowScale="100" shadowRadiusUnit="MM" shadowOpacity="0.69999999999999996" shadowUnder="0" shadowBlendMode="6" shadowColor="0,0,0,255"/>
             <dd_properties>
               <Option type="Map">
-                <Option type="QString" name="name" value=""/>
+                <Option type="QString" value="" name="name"/>
                 <Option name="properties"/>
-                <Option type="QString" name="type" value="collection"/>
+                <Option type="QString" value="collection" name="type"/>
               </Option>
             </dd_properties>
             <substitutions/>
           </text-style>
-          <text-format addDirectionSymbol="0" rightDirectionSymbol=">" autoWrapLength="0" placeDirectionSymbol="0" formatNumbers="0" wrapChar="" useMaxLineLengthForAutoWrap="1" reverseDirectionSymbol="0" decimals="3" multilineAlign="3" plussign="0" leftDirectionSymbol="&lt;"/>
-          <placement layerType="PolygonGeometry" placement="0" lineAnchorPercent="0.5" maxCurvedCharAngleIn="25" centroidInside="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" xOffset="0" offsetUnits="MM" rotationAngle="0" overrunDistance="0" lineAnchorType="0" fitInPolygonOnly="0" dist="0" repeatDistanceUnits="MM" centroidWhole="0" overrunDistanceUnit="MM" distMapUnitScale="3x:0,0,0,0,0,0" quadOffset="4" geometryGeneratorEnabled="0" distUnits="MM" placementFlags="10" maxCurvedCharAngleOut="-25" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" preserveRotation="1" offsetType="0" polygonPlacementFlags="2" repeatDistance="0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" geometryGeneratorType="PointGeometry" priority="5" geometryGenerator="" overrunDistanceMapUnitScale="3x:0,0,0,0,0,0" yOffset="0"/>
-          <rendering obstacle="1" fontLimitPixelSize="0" scaleMin="0" fontMaxPixelSize="10000" limitNumLabels="0" mergeLines="0" obstacleType="1" fontMinPixelSize="3" maxNumLabels="2000" labelPerPart="0" obstacleFactor="1" upsidedownLabels="0" zIndex="0" displayAll="0" minFeatureSize="0" drawLabels="1" scaleVisibility="0" scaleMax="0"/>
+          <text-format leftDirectionSymbol="&lt;" multilineAlign="3" rightDirectionSymbol=">" formatNumbers="0" useMaxLineLengthForAutoWrap="1" autoWrapLength="0" addDirectionSymbol="0" reverseDirectionSymbol="0" plussign="0" decimals="3" placeDirectionSymbol="0" wrapChar=""/>
+          <placement centroidInside="0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" layerType="PolygonGeometry" maxCurvedCharAngleOut="-25" rotationAngle="0" placement="0" fitInPolygonOnly="0" preserveRotation="1" xOffset="0" geometryGeneratorType="PointGeometry" geometryGenerator="" overrunDistanceUnit="MM" distUnits="MM" repeatDistanceUnits="MM" dist="0" distMapUnitScale="3x:0,0,0,0,0,0" lineAnchorPercent="0.5" polygonPlacementFlags="2" maxCurvedCharAngleIn="25" yOffset="0" quadOffset="4" overrunDistanceMapUnitScale="3x:0,0,0,0,0,0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" lineAnchorType="0" geometryGeneratorEnabled="0" overrunDistance="0" offsetUnits="MM" placementFlags="10" priority="5" offsetType="0" repeatDistance="0" centroidWhole="0"/>
+          <rendering fontMinPixelSize="3" scaleMin="0" minFeatureSize="0" obstacle="1" drawLabels="1" obstacleFactor="1" fontMaxPixelSize="10000" scaleMax="0" limitNumLabels="0" labelPerPart="0" zIndex="0" mergeLines="0" scaleVisibility="0" maxNumLabels="2000" fontLimitPixelSize="0" upsidedownLabels="0" obstacleType="1" displayAll="0"/>
           <dd_properties>
             <Option type="Map">
-              <Option type="QString" name="name" value=""/>
+              <Option type="QString" value="" name="name"/>
               <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
+              <Option type="QString" value="collection" name="type"/>
             </Option>
           </dd_properties>
           <callout type="simple">
             <Option type="Map">
-              <Option type="QString" name="anchorPoint" value="pole_of_inaccessibility"/>
+              <Option type="QString" value="pole_of_inaccessibility" name="anchorPoint"/>
               <Option type="Map" name="ddProperties">
-                <Option type="QString" name="name" value=""/>
+                <Option type="QString" value="" name="name"/>
                 <Option name="properties"/>
-                <Option type="QString" name="type" value="collection"/>
+                <Option type="QString" value="collection" name="type"/>
               </Option>
-              <Option type="bool" name="drawToAllParts" value="false"/>
-              <Option type="QString" name="enabled" value="0"/>
-              <Option type="QString" name="labelAnchorPoint" value="point_on_exterior"/>
-              <Option type="QString" name="lineSymbol" value="&lt;symbol force_rhr=&quot;0&quot; type=&quot;line&quot; name=&quot;symbol&quot; alpha=&quot;1&quot; clip_to_extent=&quot;1&quot;>&lt;layer class=&quot;SimpleLine&quot; enabled=&quot;1&quot; locked=&quot;0&quot; pass=&quot;0&quot;>&lt;prop k=&quot;align_dash_pattern&quot; v=&quot;0&quot;/>&lt;prop k=&quot;capstyle&quot; v=&quot;square&quot;/>&lt;prop k=&quot;customdash&quot; v=&quot;5;2&quot;/>&lt;prop k=&quot;customdash_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;prop k=&quot;customdash_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;dash_pattern_offset&quot; v=&quot;0&quot;/>&lt;prop k=&quot;dash_pattern_offset_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;prop k=&quot;dash_pattern_offset_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;draw_inside_polygon&quot; v=&quot;0&quot;/>&lt;prop k=&quot;joinstyle&quot; v=&quot;bevel&quot;/>&lt;prop k=&quot;line_color&quot; v=&quot;60,60,60,255&quot;/>&lt;prop k=&quot;line_style&quot; v=&quot;solid&quot;/>&lt;prop k=&quot;line_width&quot; v=&quot;0.3&quot;/>&lt;prop k=&quot;line_width_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;offset&quot; v=&quot;0&quot;/>&lt;prop k=&quot;offset_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;prop k=&quot;offset_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;ring_filter&quot; v=&quot;0&quot;/>&lt;prop k=&quot;tweak_dash_pattern_on_corners&quot; v=&quot;0&quot;/>&lt;prop k=&quot;use_custom_dash&quot; v=&quot;0&quot;/>&lt;prop k=&quot;width_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;data_defined_properties>&lt;Option type=&quot;Map&quot;>&lt;Option type=&quot;QString&quot; name=&quot;name&quot; value=&quot;&quot;/>&lt;Option name=&quot;properties&quot;/>&lt;Option type=&quot;QString&quot; name=&quot;type&quot; value=&quot;collection&quot;/>&lt;/Option>&lt;/data_defined_properties>&lt;/layer>&lt;/symbol>"/>
-              <Option type="double" name="minLength" value="0"/>
-              <Option type="QString" name="minLengthMapUnitScale" value="3x:0,0,0,0,0,0"/>
-              <Option type="QString" name="minLengthUnit" value="MM"/>
-              <Option type="double" name="offsetFromAnchor" value="0"/>
-              <Option type="QString" name="offsetFromAnchorMapUnitScale" value="3x:0,0,0,0,0,0"/>
-              <Option type="QString" name="offsetFromAnchorUnit" value="MM"/>
-              <Option type="double" name="offsetFromLabel" value="0"/>
-              <Option type="QString" name="offsetFromLabelMapUnitScale" value="3x:0,0,0,0,0,0"/>
-              <Option type="QString" name="offsetFromLabelUnit" value="MM"/>
+              <Option type="bool" value="false" name="drawToAllParts"/>
+              <Option type="QString" value="0" name="enabled"/>
+              <Option type="QString" value="point_on_exterior" name="labelAnchorPoint"/>
+              <Option type="QString" value="&lt;symbol force_rhr=&quot;0&quot; clip_to_extent=&quot;1&quot; type=&quot;line&quot; alpha=&quot;1&quot; name=&quot;symbol&quot;>&lt;layer class=&quot;SimpleLine&quot; locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot;>&lt;prop v=&quot;0&quot; k=&quot;align_dash_pattern&quot;/>&lt;prop v=&quot;square&quot; k=&quot;capstyle&quot;/>&lt;prop v=&quot;5;2&quot; k=&quot;customdash&quot;/>&lt;prop v=&quot;3x:0,0,0,0,0,0&quot; k=&quot;customdash_map_unit_scale&quot;/>&lt;prop v=&quot;MM&quot; k=&quot;customdash_unit&quot;/>&lt;prop v=&quot;0&quot; k=&quot;dash_pattern_offset&quot;/>&lt;prop v=&quot;3x:0,0,0,0,0,0&quot; k=&quot;dash_pattern_offset_map_unit_scale&quot;/>&lt;prop v=&quot;MM&quot; k=&quot;dash_pattern_offset_unit&quot;/>&lt;prop v=&quot;0&quot; k=&quot;draw_inside_polygon&quot;/>&lt;prop v=&quot;bevel&quot; k=&quot;joinstyle&quot;/>&lt;prop v=&quot;60,60,60,255&quot; k=&quot;line_color&quot;/>&lt;prop v=&quot;solid&quot; k=&quot;line_style&quot;/>&lt;prop v=&quot;0.3&quot; k=&quot;line_width&quot;/>&lt;prop v=&quot;MM&quot; k=&quot;line_width_unit&quot;/>&lt;prop v=&quot;0&quot; k=&quot;offset&quot;/>&lt;prop v=&quot;3x:0,0,0,0,0,0&quot; k=&quot;offset_map_unit_scale&quot;/>&lt;prop v=&quot;MM&quot; k=&quot;offset_unit&quot;/>&lt;prop v=&quot;0&quot; k=&quot;ring_filter&quot;/>&lt;prop v=&quot;0&quot; k=&quot;tweak_dash_pattern_on_corners&quot;/>&lt;prop v=&quot;0&quot; k=&quot;use_custom_dash&quot;/>&lt;prop v=&quot;3x:0,0,0,0,0,0&quot; k=&quot;width_map_unit_scale&quot;/>&lt;data_defined_properties>&lt;Option type=&quot;Map&quot;>&lt;Option type=&quot;QString&quot; value=&quot;&quot; name=&quot;name&quot;/>&lt;Option name=&quot;properties&quot;/>&lt;Option type=&quot;QString&quot; value=&quot;collection&quot; name=&quot;type&quot;/>&lt;/Option>&lt;/data_defined_properties>&lt;/layer>&lt;/symbol>" name="lineSymbol"/>
+              <Option type="double" value="0" name="minLength"/>
+              <Option type="QString" value="3x:0,0,0,0,0,0" name="minLengthMapUnitScale"/>
+              <Option type="QString" value="MM" name="minLengthUnit"/>
+              <Option type="double" value="0" name="offsetFromAnchor"/>
+              <Option type="QString" value="3x:0,0,0,0,0,0" name="offsetFromAnchorMapUnitScale"/>
+              <Option type="QString" value="MM" name="offsetFromAnchorUnit"/>
+              <Option type="double" value="0" name="offsetFromLabel"/>
+              <Option type="QString" value="3x:0,0,0,0,0,0" name="offsetFromLabelMapUnitScale"/>
+              <Option type="QString" value="MM" name="offsetFromLabelUnit"/>
             </Option>
           </callout>
         </settings>
       </labeling>
       <customproperties>
-        <property key="embeddedWidgets/count" value="0"/>
+        <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
-      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-        <DiagramCategory backgroundAlpha="255" spacingUnitScale="3x:0,0,0,0,0,0" spacingUnit="MM" rotationOffset="270" height="15" scaleBasedVisibility="0" barWidth="5" showAxis="1" opacity="1" sizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" labelPlacementMethod="XHeight" penAlpha="255" penColor="#000000" width="15" spacing="5" backgroundColor="#ffffff" minScaleDenominator="0" sizeScale="3x:0,0,0,0,0,0" scaleDependency="Area" minimumSize="0" maxScaleDenominator="1e+08" lineSizeType="MM" enabled="0" diagramOrientation="Up" direction="0" penWidth="0">
-          <fontProperties description="Noto Sans,10,-1,0,50,0,0,0,0,0,Regular" style="Regular"/>
-          <attribute label="" field="" color="#000000"/>
+      <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+        <DiagramCategory backgroundAlpha="255" diagramOrientation="Up" penAlpha="255" labelPlacementMethod="XHeight" rotationOffset="270" penWidth="0" opacity="1" enabled="0" spacingUnit="MM" scaleDependency="Area" barWidth="5" height="15" spacingUnitScale="3x:0,0,0,0,0,0" width="15" lineSizeType="MM" maxScaleDenominator="1e+08" sizeScale="3x:0,0,0,0,0,0" direction="0" penColor="#000000" sizeType="MM" scaleBasedVisibility="0" backgroundColor="#ffffff" minimumSize="0" minScaleDenominator="0" spacing="5" lineSizeScale="3x:0,0,0,0,0,0" showAxis="1">
+          <fontProperties style="Regular" description="Noto Sans,10,-1,0,50,0,0,0,0,0,Regular"/>
+          <attribute color="#000000" field="" label=""/>
           <axisSymbol>
-            <symbol force_rhr="0" type="line" name="" alpha="1" clip_to_extent="1">
-              <layer class="SimpleLine" enabled="1" locked="0" pass="0">
-                <prop k="align_dash_pattern" v="0"/>
-                <prop k="capstyle" v="square"/>
-                <prop k="customdash" v="5;2"/>
-                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="customdash_unit" v="MM"/>
-                <prop k="dash_pattern_offset" v="0"/>
-                <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="dash_pattern_offset_unit" v="MM"/>
-                <prop k="draw_inside_polygon" v="0"/>
-                <prop k="joinstyle" v="bevel"/>
-                <prop k="line_color" v="35,35,35,255"/>
-                <prop k="line_style" v="solid"/>
-                <prop k="line_width" v="0.26"/>
-                <prop k="line_width_unit" v="MM"/>
-                <prop k="offset" v="0"/>
-                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="ring_filter" v="0"/>
-                <prop k="tweak_dash_pattern_on_corners" v="0"/>
-                <prop k="use_custom_dash" v="0"/>
-                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+            <symbol force_rhr="0" clip_to_extent="1" type="line" alpha="1" name="">
+              <layer class="SimpleLine" locked="0" pass="0" enabled="1">
+                <prop v="0" k="align_dash_pattern"/>
+                <prop v="square" k="capstyle"/>
+                <prop v="5;2" k="customdash"/>
+                <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+                <prop v="MM" k="customdash_unit"/>
+                <prop v="0" k="dash_pattern_offset"/>
+                <prop v="3x:0,0,0,0,0,0" k="dash_pattern_offset_map_unit_scale"/>
+                <prop v="MM" k="dash_pattern_offset_unit"/>
+                <prop v="0" k="draw_inside_polygon"/>
+                <prop v="bevel" k="joinstyle"/>
+                <prop v="35,35,35,255" k="line_color"/>
+                <prop v="solid" k="line_style"/>
+                <prop v="0.26" k="line_width"/>
+                <prop v="MM" k="line_width_unit"/>
+                <prop v="0" k="offset"/>
+                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                <prop v="MM" k="offset_unit"/>
+                <prop v="0" k="ring_filter"/>
+                <prop v="0" k="tweak_dash_pattern_on_corners"/>
+                <prop v="0" k="use_custom_dash"/>
+                <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
                 <data_defined_properties>
                   <Option type="Map">
-                    <Option type="QString" name="name" value=""/>
+                    <Option type="QString" value="" name="name"/>
                     <Option name="properties"/>
-                    <Option type="QString" name="type" value="collection"/>
+                    <Option type="QString" value="collection" name="type"/>
                   </Option>
                 </data_defined_properties>
               </layer>
@@ -1267,12 +1568,12 @@
           </axisSymbol>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings placement="1" zIndex="0" priority="0" obstacle="0" linePlacementFlags="18" dist="0" showAll="1">
+      <DiagramLayerSettings placement="1" showAll="1" priority="0" zIndex="0" linePlacementFlags="18" obstacle="0" dist="0">
         <properties>
           <Option type="Map">
-            <Option type="QString" name="name" value=""/>
+            <Option type="QString" value="" name="name"/>
             <Option name="properties"/>
-            <Option type="QString" name="type" value="collection"/>
+            <Option type="QString" value="collection" name="type"/>
           </Option>
         </properties>
       </DiagramLayerSettings>
@@ -1280,16 +1581,16 @@
         <activeChecks/>
         <checkConfiguration type="Map">
           <Option type="Map" name="QgsGeometryGapCheck">
-            <Option type="double" name="allowedGapsBuffer" value="0"/>
-            <Option type="bool" name="allowedGapsEnabled" value="false"/>
-            <Option type="QString" name="allowedGapsLayer" value=""/>
+            <Option type="double" value="0" name="allowedGapsBuffer"/>
+            <Option type="bool" value="false" name="allowedGapsEnabled"/>
+            <Option type="QString" value="" name="allowedGapsLayer"/>
           </Option>
         </checkConfiguration>
       </geometryOptions>
       <legend type="default-vector"/>
       <referencedLayers/>
       <fieldConfiguration>
-        <field name="gid" configurationFlags="None">
+        <field configurationFlags="None" name="gid">
           <editWidget type="Range">
             <config>
               <Option/>
@@ -1298,25 +1599,25 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias name="" field="gid" index="0"/>
+        <alias field="gid" index="0" name=""/>
       </aliases>
       <defaults>
-        <default applyOnUpdate="0" field="gid" expression=""/>
+        <default expression="" field="gid" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint unique_strength="0" constraints="0" notnull_strength="0" field="gid" exp_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="gid" unique_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint exp="" desc="" field="gid"/>
+        <constraint desc="" field="gid" exp=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
-        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
-          <column width="-1" type="field" name="gid" hidden="0"/>
-          <column width="-1" type="actions" hidden="1"/>
+          <column type="field" width="-1" hidden="0" name="gid"/>
+          <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -1358,7 +1659,7 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>"gid"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -1413,11 +1714,11 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1438,23 +1739,23 @@ def my_form_open(dialog, layer, feature):
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="0" nodataColor="" type="singlebandpseudocolor" classificationMax="1.6886621" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="1.6886621" nodataColor="" band="1" classificationMin="0" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -1465,31 +1766,31 @@ def my_form_open(dialog, layer, feature):
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="0" classificationMode="1" maximumValue="1.6886620999999999" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="0" colorRampType="INTERPOLATED" clip="0" maximumValue="1.6886620999999999" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="0.0000" alpha="255" color="#ff4040" value="0"/>
-              <item label="0.3377" alpha="255" color="#ffff40" value="0.33773242"/>
-              <item label="0.6755" alpha="255" color="#40ff40" value="0.67546484"/>
-              <item label="1.0132" alpha="255" color="#40ffff" value="1.01319726"/>
-              <item label="1.3509" alpha="255" color="#4040ff" value="1.35092968"/>
-              <item label="1.6887" alpha="255" color="#ff40ff" value="1.6886621"/>
+              <item color="#ff4040" value="0" label="0.0000" alpha="255"/>
+              <item color="#ffff40" value="0.33773242" label="0.3377" alpha="255"/>
+              <item color="#40ff40" value="0.67546484" label="0.6755" alpha="255"/>
+              <item color="#40ffff" value="1.01319726" label="1.0132" alpha="255"/>
+              <item color="#4040ff" value="1.35092968" label="1.3509" alpha="255"/>
+              <item color="#ff40ff" value="1.6886621" label="1.6887" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -1544,11 +1845,11 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1570,23 +1871,23 @@ def my_form_open(dialog, layer, feature):
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="198.6448059" nodataColor="" type="singlebandpseudocolor" classificationMax="547" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="547" nodataColor="" band="1" classificationMin="198.6448059" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -1597,31 +1898,31 @@ def my_form_open(dialog, layer, feature):
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="198.64480589999999" classificationMode="1" maximumValue="547" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="198.64480589999999" colorRampType="INTERPOLATED" clip="0" maximumValue="547" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="198.6448" alpha="255" color="#ff4040" value="198.6448059"/>
-              <item label="268.3158" alpha="255" color="#ffff40" value="268.31584472"/>
-              <item label="337.9869" alpha="255" color="#40ff40" value="337.98688354"/>
-              <item label="407.6579" alpha="255" color="#40ffff" value="407.65792236"/>
-              <item label="477.3290" alpha="255" color="#4040ff" value="477.32896118"/>
-              <item label="547.0000" alpha="255" color="#ff40ff" value="547"/>
+              <item color="#ff4040" value="198.6448059" label="198.6448" alpha="255"/>
+              <item color="#ffff40" value="268.31584472" label="268.3158" alpha="255"/>
+              <item color="#40ff40" value="337.98688354" label="337.9869" alpha="255"/>
+              <item color="#40ffff" value="407.65792236" label="407.6579" alpha="255"/>
+              <item color="#4040ff" value="477.32896118" label="477.3290" alpha="255"/>
+              <item color="#ff40ff" value="547" label="547.0000" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -1676,11 +1977,11 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1702,23 +2003,23 @@ def my_form_open(dialog, layer, feature):
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="144.3945007" nodataColor="" type="singlebandpseudocolor" classificationMax="830.2351685" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="830.2351685" nodataColor="" band="1" classificationMin="144.3945007" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -1729,31 +2030,163 @@ def my_form_open(dialog, layer, feature):
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="144.39450070000001" classificationMode="1" maximumValue="830.23516849999999" clip="0" labelPrecision="4">
+            <colorrampshader minimumValue="144.39450070000001" colorRampType="INTERPOLATED" clip="0" maximumValue="830.23516849999999" classificationMode="1" labelPrecision="4">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="144.3945" alpha="255" color="#ff4040" value="144.3945007"/>
-              <item label="281.5626" alpha="255" color="#ffff40" value="281.56263426"/>
-              <item label="418.7308" alpha="255" color="#40ff40" value="418.73076782"/>
-              <item label="555.8989" alpha="255" color="#40ffff" value="555.89890138"/>
-              <item label="693.0670" alpha="255" color="#4040ff" value="693.06703494"/>
-              <item label="830.2352" alpha="255" color="#ff40ff" value="830.2351685"/>
+              <item color="#ff4040" value="144.3945007" label="144.3945" alpha="255"/>
+              <item color="#ffff40" value="281.56263426" label="281.5626" alpha="255"/>
+              <item color="#40ff40" value="418.73076782" label="418.7308" alpha="255"/>
+              <item color="#40ffff" value="555.89890138" label="555.8989" alpha="255"/>
+              <item color="#4040ff" value="693.06703494" label="693.0670" alpha="255"/>
+              <item color="#ff40ff" value="830.2351685" label="830.2352" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minScale="1e+08" styleCategories="AllStyleCategories" type="raster" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0">
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df</id>
+      <datasource>./terrain_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>terrain_mvn_stdv</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["New Zealand - North Island, South Island, Stewart Island - onshore."],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList useSrcNoData="1" bandNo="1"/>
+        <noDataList useSrcNoData="1" bandNo="2"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" mode="0" enabled="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
+        </provider>
+        <rasterrenderer alphaBand="-1" classificationMax="0.4999748" nodataColor="" band="2" classificationMin="0.08614" type="singlebandpseudocolor" opacity="1">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader minimumValue="0.086139999999999994" colorRampType="INTERPOLATED" clip="0" maximumValue="0.4999748" classificationMode="1" labelPrecision="4">
+              <colorramp type="gradient" name="[source]">
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
+              </colorramp>
+              <item color="#ff4040" value="0.08614" label="0.0861" alpha="255"/>
+              <item color="#ffff40" value="0.16890696" label="0.1689" alpha="255"/>
+              <item color="#40ff40" value="0.25167392" label="0.2517" alpha="255"/>
+              <item color="#40ffff" value="0.33444088" label="0.3344" alpha="255"/>
+              <item color="#4040ff" value="0.41720784" label="0.4172" alpha="255"/>
+              <item color="#ff40ff" value="0.4999748" label="0.5000" alpha="255"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer styleCategories="AllStyleCategories" type="raster" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" minScale="1e+08" autoRefreshTime="0" refreshOnNotifyEnabled="0" maxScale="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>1060050</xmin>
         <ymin>4730050</ymin>
@@ -1808,11 +2241,11 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" dimensions="2" minz="0" minx="0" maxy="0" maxz="0" crs="" maxx="0"/>
+          <spatial minz="0" maxx="0" crs="" maxz="0" miny="0" maxy="0" dimensions="2" minx="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1833,23 +2266,23 @@ def my_form_open(dialog, layer, feature):
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="WMSBackgroundLayer" value="false"/>
-        <property key="WMSPublishDataSourceUrl" value="false"/>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="identify/format" value="Value"/>
+        <property value="false" key="WMSBackgroundLayer"/>
+        <property value="false" key="WMSPublishDataSourceUrl"/>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
         <provider>
-          <resampling zoomedOutResamplingMethod="bilinear" enabled="false" maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour"/>
+          <resampling zoomedInResamplingMethod="nearestNeighbour" maxOversampling="2" zoomedOutResamplingMethod="bilinear" enabled="false"/>
         </provider>
-        <rasterrenderer opacity="1" band="1" classificationMin="1" nodataColor="" type="singlebandpseudocolor" classificationMax="16" alphaBand="-1">
+        <rasterrenderer alphaBand="-1" classificationMax="16" nodataColor="" band="1" classificationMin="1" type="singlebandpseudocolor" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>None</limits>
@@ -1860,36 +2293,36 @@ def my_form_open(dialog, layer, feature):
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" minimumValue="1" classificationMode="2" maximumValue="16" clip="0" labelPrecision="0">
+            <colorrampshader minimumValue="1" colorRampType="INTERPOLATED" clip="0" maximumValue="16" classificationMode="2" labelPrecision="0">
               <colorramp type="gradient" name="[source]">
-                <prop k="color1" v="255,64,64,255"/>
-                <prop k="color2" v="255,64,255,255"/>
-                <prop k="discrete" v="0"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+                <prop v="255,64,64,255" k="color1"/>
+                <prop v="255,64,255,255" k="color2"/>
+                <prop v="0" k="discrete"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" k="stops"/>
               </colorramp>
-              <item label="1" alpha="255" color="#ff4040" value="1"/>
-              <item label="2" alpha="255" color="#ff8040" value="2"/>
-              <item label="3" alpha="255" color="#ffbf40" value="3"/>
-              <item label="4" alpha="255" color="#ffff40" value="4"/>
-              <item label="5" alpha="255" color="#bfff40" value="5"/>
-              <item label="6" alpha="255" color="#80ff40" value="6"/>
-              <item label="7" alpha="255" color="#40ff40" value="7"/>
-              <item label="8" alpha="255" color="#40ff80" value="8"/>
-              <item label="9" alpha="255" color="#40ffbf" value="9"/>
-              <item label="10" alpha="255" color="#40ffff" value="10"/>
-              <item label="11" alpha="255" color="#40bfff" value="11"/>
-              <item label="12" alpha="255" color="#4080ff" value="12"/>
-              <item label="13" alpha="255" color="#4040ff" value="13"/>
-              <item label="14" alpha="255" color="#8040ff" value="14"/>
-              <item label="15" alpha="255" color="#bf40ff" value="15"/>
-              <item label="16" alpha="255" color="#ff40ff" value="16"/>
+              <item color="#ff4040" value="1" label="1" alpha="255"/>
+              <item color="#ff8040" value="2" label="2" alpha="255"/>
+              <item color="#ffbf40" value="3" label="3" alpha="255"/>
+              <item color="#ffff40" value="4" label="4" alpha="255"/>
+              <item color="#bfff40" value="5" label="5" alpha="255"/>
+              <item color="#80ff40" value="6" label="6" alpha="255"/>
+              <item color="#40ff40" value="7" label="7" alpha="255"/>
+              <item color="#40ff80" value="8" label="8" alpha="255"/>
+              <item color="#40ffbf" value="9" label="9" alpha="255"/>
+              <item color="#40ffff" value="10" label="10" alpha="255"/>
+              <item color="#40bfff" value="11" label="11" alpha="255"/>
+              <item color="#4080ff" value="12" label="12" alpha="255"/>
+              <item color="#4040ff" value="13" label="13" alpha="255"/>
+              <item color="#8040ff" value="14" label="14" alpha="255"/>
+              <item color="#bf40ff" value="15" label="15" alpha="255"/>
+              <item color="#ff40ff" value="16" label="16" alpha="255"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
-        <brightnesscontrast gamma="1" contrast="0" brightness="0"/>
-        <huesaturation colorizeRed="255" saturation="0" colorizeBlue="128" colorizeOn="0" grayscaleMode="0" colorizeStrength="100" colorizeGreen="128"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="2"/>
+        <brightnesscontrast brightness="0" gamma="1" contrast="0"/>
+        <huesaturation saturation="0" colorizeBlue="128" colorizeRed="255" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
@@ -1907,6 +2340,9 @@ def my_form_open(dialog, layer, feature):
     <layer id="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf"/>
     <layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f"/>
     <layer id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c"/>
+    <layer id="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691"/>
+    <layer id="geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b"/>
+    <layer id="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df"/>
   </layerorder>
   <properties>
     <Digitizing>
@@ -1957,9 +2393,9 @@ def my_form_open(dialog, layer, feature):
   </properties>
   <dataDefinedServerProperties>
     <Option type="Map">
-      <Option type="QString" name="name" value=""/>
+      <Option type="QString" value="" name="name"/>
       <Option name="properties"/>
-      <Option type="QString" name="type" value="collection"/>
+      <Option type="QString" value="collection" name="type"/>
     </Option>
   </dataDefinedServerProperties>
   <visibility-presets/>
@@ -1980,7 +2416,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmax="3123184.30757747450843453" ymin="4826154.64870788808912039" ymax="6045833.13897087331861258" xmin="748407.17491139704361558">
+    <DefaultViewExtent ymax="5189118.16151987016201019" ymin="5151003.20869915187358856" xmin="1535852.46824990166351199" xmax="1610064.25364571670070291">
       <spatialrefsys>
         <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["New Zealand - North Island, South Island, Stewart Island - onshore."],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
         <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
@@ -1994,18 +2430,18 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </DefaultViewExtent>
   </ProjectViewSettings>
-  <ProjectTimeSettings cumulativeTemporalRange="0" timeStepUnit="h" timeStep="1" frameRate="1"/>
+  <ProjectTimeSettings cumulativeTemporalRange="0" frameRate="1" timeStep="1" timeStepUnit="h"/>
   <ProjectDisplaySettings>
     <BearingFormat id="bearing">
       <Option type="Map">
-        <Option type="QChar" name="decimal_separator" value=""/>
-        <Option type="int" name="decimals" value="6"/>
-        <Option type="int" name="direction_format" value="0"/>
-        <Option type="int" name="rounding_type" value="0"/>
-        <Option type="bool" name="show_plus" value="false"/>
-        <Option type="bool" name="show_thousand_separator" value="true"/>
-        <Option type="bool" name="show_trailing_zeros" value="false"/>
-        <Option type="QChar" name="thousand_separator" value=""/>
+        <Option type="QChar" value="" name="decimal_separator"/>
+        <Option type="int" value="6" name="decimals"/>
+        <Option type="int" value="0" name="direction_format"/>
+        <Option type="int" value="0" name="rounding_type"/>
+        <Option type="bool" value="false" name="show_plus"/>
+        <Option type="bool" value="true" name="show_thousand_separator"/>
+        <Option type="bool" value="false" name="show_trailing_zeros"/>
+        <Option type="QChar" value="" name="thousand_separator"/>
       </Option>
     </BearingFormat>
   </ProjectDisplaySettings>

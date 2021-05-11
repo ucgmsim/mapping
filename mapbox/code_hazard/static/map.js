@@ -98,6 +98,7 @@ function load_map()
     map.on('idle', loaded);
     map.on('dataloading', loading);
     map.on('load', function () {
+        // note: nzta points can be loaded from geojson instead of mapbox
         map.addSource('qgis-wms', {
             'type': 'raster',
             'tiles': [WMS_TILES + ID_1170 + 'rp0im0'],
@@ -191,6 +192,7 @@ function getSunPosition() {
     var sunAltitude = 90 - (sunPos.altitude * 180) / Math.PI;
     return [sunAzimuth, sunAltitude];
 }
+
 
 function updateSunPosition() {
     map.setPaintProperty('sky', 'sky-atmosphere-sun', getSunPosition());
