@@ -210,8 +210,6 @@ function follow_mouse(cb) {
 
 
 function retrieve_values(lngLat) {
-    var layer = document.getElementById("menu_layer")
-        .getElementsByClassName("active")[0].id;
     // bounding box made from expanded point
     var diff = 0.000001
     var bbox = (lngLat.lat - diff) + ',' + (lngLat.lng - diff) +

@@ -31,10 +31,12 @@ var DISPLAY_NZTA = [
     ["hazard", "Hazard"],
     ["siteclass", "Parameter: Site Class"],
     ["vs30", "Parameter: Vs30"],
-    ["c01000", "Property: 1000 year return"],
     ["meff50250", "Property: Meff for design period 50 - 250 years"],
     ["meff5002500", "Property: Meff for design period 500 - 2500 years"],
 ];
+var SITE_CLASS_1170 = ["A: Rock", "B: Weak Rock", "C: Intermediate Rock",
+                       "D: Soft or Deep Soil", "E: Very Soft"];
+var SITE_CLASS_NZTA = ["A/B rock", "D/E deep/soft soil"];
 
 
 function roundmax(value, dp=6) {
@@ -84,7 +86,7 @@ function load_map()
     document.getElementById('select_im').onchange = switch_column;
 
     map.on("click", map_mouseselect);
-    map.on("mousemove", ID_NZTA_POINTS, function(e) {
+    map.on("mousemove", ID_NZTA_POINTS, function() {
         var code_type = document.getElementById("menu_layer")
             .getElementsByClassName("active")[0].id;
         if (code_type === ID_NZTA) map.getCanvas().style.cursor = 'pointer';
@@ -98,7 +100,6 @@ function load_map()
     map.on('idle', loaded);
     map.on('dataloading', loading);
     map.on('load', function () {
-        // note: nzta points can be loaded from geojson instead of mapbox
         map.addSource('qgis-wms', {
             'type': 'raster',
             'tiles': [WMS_TILES + ID_1170 + 'rp0im0'],
@@ -149,7 +150,6 @@ function show_nzta_point(e) {
     if (code_type !== ID_NZTA) return;
 
     var feature = e.features[0];
-    var vs30 = feature.properties.vs30
     new mapboxgl.Popup({closeButton: true}).setLngLat(feature.geometry.coordinates)
         .setHTML('<strong>Town/City: ' + feature.properties.place + '</strong><p><table class="table table-sm"><tbody>' +
             '<tr><th scope="row">Longitude</th><td>' + feature.properties.longitude + '</td></tr>' +
@@ -192,7 +192,6 @@ function getSunPosition() {
     var sunAltitude = 90 - (sunPos.altitude * 180) / Math.PI;
     return [sunAzimuth, sunAltitude];
 }
-
 
 function updateSunPosition() {
     map.setPaintProperty('sky', 'sky-atmosphere-sun', getSunPosition());
@@ -283,8 +282,6 @@ function populate_display() {
 function retrieve_values(lngLat) {
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
-    var rp = document.getElementById("select_rp").value;
-    var im = document.getElementById("select_im").value;
     // bounding box made from expanded point
     var diff = 0.000001
     var bbox = (lngLat.lat - diff) + ',' + (lngLat.lng - diff) +
@@ -294,15 +291,15 @@ function retrieve_values(lngLat) {
     if (xhr_values !== undefined) xhr_values.abort();
 
     if (code_type === ID_1170) {
-        var code_layers = ",chim0,z";
+        var code_layers = ",nzs1170p5_siteclass,chim0,z";
     } else if (code_type === ID_NZTA) {
-        var code_layers = "";
+        var code_layers = ",siteclass,nzta_meff50250,nzta_meff5002500";
     }
 
     xhr_values = $.ajax({
         type: "GET",
         url: WMS_VALUES + '&bbox=' + bbox +
-            '&query_layers=' + code_type + 'rp0im0,vs30,siteclass' + code_layers,
+            '&query_layers=' + code_type + 'rp0im0,vs30' + code_layers,
         success: function(data) {
             update_values(data["features"]);
         },
@@ -318,8 +315,8 @@ function update_values(features) {
     var table_rp = document.getElementById("table-rp");
     var table_im = document.getElementById("table-im");
     var lngLat = marker.getLngLat();
-    table_rp.innerHTML = "";
-    table_im.innerHTML = "";
+    table_rp.innerHTML = '<thead><tr><th scope="col">RP</th><th scope="col">IM value (g)</th></tr></thead>';
+    table_im.innerHTML = '<thead><tr><th scope="col">IM</th><th scope="col">RP value (g)</th></tr></thead>';
     popup_html = "";
 
     var code_type = document.getElementById("menu_layer")
@@ -329,29 +326,25 @@ function update_values(features) {
 
     // add site properties to popup
     popup_html += '<p class="h6">Vs30: ' + features[1]["properties"]["Band 1"] + " m/s<br />";
-    if (features[2]["properties"]["Band 1"] == "0") {
-        var siteclass = "A/B rock";
-    } else if (features[2]["properties"]["Band 1"] == "1") {
-        var siteclass = "D/E deep/soft soil"
-    }
-    popup_html += 'Site class: ' + siteclass + "<br />"
 
     bands = features[0]["properties"];
     if (code_type === ID_1170) {
+        popup_html += "Site class: " +
+            SITE_CLASS_1170[parseInt(features[2]["properties"]["Band 1"])] + "<br />";
         popup_html += "Ch, spectral shape factor: " +
             features[3]["properties"]["Band " + ("0" + (im + 1)).slice(-2)] + "<br />";
         popup_html += "N, near-fault factor: 1<br />";
         popup_html += "R, return period factor: " + PARAM_R[rp] + "<br />";
         popup_html += "Z, Z factor: " + features[4]["properties"]["Band 1"] + "<br />";
         for (var j = 0; j < RP_NAMES.length; j++) {
-            let row = table_rp.insertRow(j);
+            let row = table_rp.insertRow(j + 1);
             let rp_name = row.insertCell(0);
             let rp_value = row.insertCell(1);
             rp_name.innerHTML = RP_NAMES[j];
             rp_value.innerHTML = bands["Band " + ("00" + (1 + im + j * IM_NAMES.length)).slice(-3)];
         }
         for (var j = 0; j < IM_NAMES.length; j++) {
-            let row = table_im.insertRow(j);
+            let row = table_im.insertRow(j + 1);
             let im_name = row.insertCell(0);
             let im_value = row.insertCell(1);
             im_name.innerHTML = IM_NAMES[j];
@@ -359,14 +352,20 @@ function update_values(features) {
         }
     }
     if (code_type === ID_NZTA) {
+        popup_html += "Site class: " +
+            SITE_CLASS_NZTA[parseInt(features[2]["properties"]["Band 1"])] + "<br />";
+        popup_html += "M<sub>eff</sub> 50 - 250 years: " +
+            features[3]["properties"]["Band 1"] + "<br />";
+        popup_html += "M<sub>eff</sub> 500 - 2500 years: " +
+            features[4]["properties"]["Band 1"] + "<br />";
         for (var j = 0; j < RP_NAMES.length; j++) {
-            let row = table_rp.insertRow(j);
+            let row = table_rp.insertRow(j + 1);
             let rp_name = row.insertCell(0);
             let rp_value = row.insertCell(1);
             rp_name.innerHTML = RP_NAMES[j];
             rp_value.innerHTML = bands["Band " + (1 + j)];
         }
-        let row = table_im.insertRow(0);
+        let row = table_im.insertRow(1);
         let im_name = row.insertCell(0);
         let im_value = row.insertCell(1);
         im_name.innerHTML = IM_NAMES[0];
@@ -380,6 +379,7 @@ function update_values(features) {
             + 'class="btn btn-primary btn-sm mr-2"'
             + '>Spectra Plot</button>'
     popup.setHTML(popup_html);
+    if (! popup.isOpen()) marker.togglePopup();
 }
 
 
@@ -488,7 +488,7 @@ function switch_layer(layer) {
 }
 
 
-function switch_column(column) {
+function switch_column() {
     // when changing IM / RP selection
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
@@ -502,7 +502,11 @@ function switch_column(column) {
     } else if (display === "vs30") {
         suffix = "vs30";
     } else if (display === "siteclass") {
-        suffix = "siteclass";
+        if (code_type === ID_1170) {
+            suffix = "nzs1170p5_siteclass";
+        } else if (code_type === ID_NZTA) {
+            suffix = "siteclass";
+        }
     } else if (display === "ch") {
         suffix = "chim" + im;
     } else if (display === "z") {
@@ -515,10 +519,8 @@ function switch_column(column) {
         alert("Return period factor is " + PARAM_R[rp] + " for " + RP_NAMES[rp])
         document.getElementById("select_display").value = display_previous;
         return;
-    } else if (display === "c01000" || display === "meff50250" || display === "meff5002500") {
-        alert("WIP")
-        document.getElementById("select_display").value = display_previous;
-        return;
+    } else if (display === "meff50250" || display === "meff5002500") {
+        suffix = "nzta_" + display;
     }
     var src = WMS_TILES + suffix;
     layer._options.tiles = [src];
