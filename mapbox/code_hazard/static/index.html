@@ -36,10 +36,18 @@
   </div>
 </div>
 <div class="input-group input-group-sm my-1 fix-label-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text fix-label-item" id="lbl_rp">Return Period</span>
-  </div>
-  <select class="custom-select" id="select_rp">
+    <div class="input-group-prepend">
+        <span class="input-group-text fix-label-item" id="lbl_prop">Display</span>
+    </div>
+    <select class="custom-select" id="select_display">
+        <option value="hazard" selected>Hazard</option>
+    </select>
+</div>
+<div class="input-group input-group-sm my-1 fix-label-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text fix-label-item" id="lbl_rp">Return Period</span>
+    </div>
+    <select class="custom-select" id="select_rp">
         <option value="0" selected>20 years</option>
         <option value="1">25 years</option>
         <option value="2">50 years</option>
@@ -49,13 +57,13 @@
         <option value="6">1000 years</option>
         <option value="7">2000 years</option>
         <option value="8">2500 years</option>
-      </select>
+    </select>
 </div>
 <div class="input-group input-group-sm my-1 fix-label-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text fix-label-item" id="lbl_im">Intensity Measure</span>
-  </div>
-  <select class="custom-select" id="select_im"></select>
+    <div class="input-group-prepend">
+        <span class="input-group-text fix-label-item" id="lbl_im">Intensity Measure</span>
+    </div>
+    <select class="custom-select" id="select_im"></select>
 </div>
 
 <div class="collapse show" id="collapse_dem">
@@ -127,7 +135,7 @@
 
 </div>
 <div id="logo" class="fixed-bottom mb-4 ml-1">
-  <img src="seistech.png" width="150px">
+  <img src="watermark.png" width="508.5px">
 </div>
 <div id="spinnero" class="spinner-border text-dark" role="status">
 </div>

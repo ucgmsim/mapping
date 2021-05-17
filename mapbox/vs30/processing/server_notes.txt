@@ -1,0 +1,21 @@
+
+# run mapserver with spawn-fcgi because of reason in guide
+# https://docs.qgis.org/3.16/en/docs/server_manual/getting_started.html
+spawn-fcgi -s /run/qgisserver.socket -U nginx -G nginx -n /usr/bin/qgis_mapserv.fcgi
+
+# link server root or copy files to server root
+ln -s <code_hazard/static> <server-root>
+# in nginx server config, add path to fcgi socket
+# specifying default project file means it doesn't have to be specified by the client
+# change server root in nginx server section and add the block:
+location /wms_vs30 {
+    gzip off;
+    include fastcgi_params;
+    fastcgi_param  QGIS_SERVER_LOG_STDERR  1;
+    fastcgi_param  QGIS_SERVER_LOG_LEVEL   0;
+    fastcgi_param  QGIS_PROJECT_FILE /path/to/vs30.qgs;
+    fastcgi_pass unix:/run/qgisserver.socket;
+}
+
+what you can do with the server is documented here
+https://docs.qgis.org/3.16/en/docs/server_manual/services.html

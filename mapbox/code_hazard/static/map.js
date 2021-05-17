@@ -1,6 +1,7 @@
 // map layer ids on server
 var ID_1170 = "1170p5";
 var ID_NZTA = "nzta";
+var ID_NZTA_POINTS = "nzta-points";
 var WMS_TILES = '/wms?service=WMS&version=1.3.0&request=GetMap&format=image/png&srs=EPSG:3857&transparent=true&width=256&height=256&BBOX={bbox-epsg-3857}&layer='
 var WMS_LEGEND = '/wms?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=false&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
 var WMS_VALUES = '/wms?service=WMS&version=1.3.0&request=GetFeatureInfo&info_format=application/json&width=20&height=20&i=10&j=10&crs=EPSG:4326'
@@ -16,6 +17,26 @@ var IM_NAMES = ["PGA", "pSA 0.01s", "pSA 0.02s", "pSA 0.03s", "pSA 0.04s",
                 "pSA 0.8s", "pSA 0.9s", "pSA 1.0s", "pSA 1.25s", "pSA 1.5s",
                 "pSA 2.0s", "pSA 2.5s", "pSA 3.0s", "pSA 4.0s", "pSA 5.0s",
                 "pSA 6.0s", "pSA 7.5s", "pSA 10.0s"];
+var PARAM_R = [0.2, 0.25, 0.35, 0.5, 0.75, 1, 1.3, 1.7, 1.8];
+var DISPLAY_1170 = [
+    ["hazard", "Hazard"],
+    ["siteclass", "Parameter: Site Class"],
+    ["vs30", "Parameter: Vs30"],
+    ["ch", "Parameter: Ch, spectral shape factor"],
+    ["n", "Parameter: N, near-fault factor"],
+    ["r", "Parameter: R, return period factor"],
+    ["z", "Parameter: Z, Z factor"],
+];
+var DISPLAY_NZTA = [
+    ["hazard", "Hazard"],
+    ["siteclass", "Parameter: Site Class"],
+    ["vs30", "Parameter: Vs30"],
+    ["meff50250", "Property: Meff for design period 50 - 250 years"],
+    ["meff5002500", "Property: Meff for design period 500 - 2500 years"],
+];
+var SITE_CLASS_1170 = ["A: Rock", "B: Weak Rock", "C: Intermediate Rock",
+                       "D: Soft or Deep Soil", "E: Very Soft"];
+var SITE_CLASS_NZTA = ["A/B rock", "D/E deep/soft soil"];
 
 
 function roundmax(value, dp=6) {
@@ -59,10 +80,23 @@ function load_map()
     }
     // changing return period / IM
     populate_ims();
+    populate_display();
+    document.getElementById('select_display').onchange = switch_column;
     document.getElementById('select_rp').onchange = switch_column;
     document.getElementById('select_im').onchange = switch_column;
 
     map.on("click", map_mouseselect);
+    map.on("mousemove", ID_NZTA_POINTS, function() {
+        var code_type = document.getElementById("menu_layer")
+            .getElementsByClassName("active")[0].id;
+        if (code_type === ID_NZTA) map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('click', ID_NZTA_POINTS, show_nzta_point);
+    map.on('mouseleave', ID_NZTA_POINTS, function() {
+        var code_type = document.getElementById("menu_layer")
+            .getElementsByClassName("active")[0].id;
+        if (code_type === ID_NZTA) map.getCanvas().style.cursor = '';
+    });
     map.on('idle', loaded);
     map.on('dataloading', loading);
     map.on('load', function () {
@@ -105,6 +139,28 @@ function load_map()
             }
         });
     });
+}
+
+
+function show_nzta_point(e) {
+    if (marker_clicked(e.point)) return;
+
+    var code_type = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
+    if (code_type !== ID_NZTA) return;
+
+    var feature = e.features[0];
+    new mapboxgl.Popup({closeButton: true}).setLngLat(feature.geometry.coordinates)
+        .setHTML('<strong>Town/City: ' + feature.properties.place + '</strong><p><table class="table table-sm"><tbody>' +
+            '<tr><th scope="row">Longitude</th><td>' + feature.properties.longitude + '</td></tr>' +
+            '<tr><th scope="row">Latitude</th><td>' + feature.properties.latitude + '</td></tr>' +
+            '<tr><th scope="row">C<sub>0,1000</sub> Class A/B rock</th><td>' + feature.properties.C_0_1000_AB + '</td></tr>' +
+            '<tr><th scope="row">C<sub>0,1000</sub> Class D/E deep/soft soil</th><td>' + feature.properties.C_0_1000_DE + '</td></tr>' +
+            '<tr><th scope="row">M<sub>eff</sub> 500 - 2500 years</th><td>' + feature.properties.Meff_500_2500 + '</td></tr>' +
+            '<tr><th scope="row">M<sub>eff</sub> 50 - 250 years</th><td>' + feature.properties.Meff_50_250 + '</td></tr>' +
+            '<tr><th scope="row">Vs30</th><td>' + feature.properties.vs30 + '</td></tr>' +
+            '</tbody></table></p>')
+        .addTo(map);
 }
 
 
@@ -204,6 +260,25 @@ function populate_ims() {
 }
 
 
+function populate_display() {
+    var code_type = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
+    var select = document.getElementById("select_display");
+    select.innerHTML = "";
+    if (code_type === ID_NZTA) {
+        var options = DISPLAY_NZTA;
+    } else if (code_type === ID_1170) {
+        var options = DISPLAY_1170;
+    }
+    for (var i = 0; i < options.length; i++) {
+        var option = document.createElement("option");
+        option.text = options[i][1];
+        option.value = options[i][0];
+        select.add(option);
+    }
+}
+
+
 function retrieve_values(lngLat) {
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
@@ -214,11 +289,19 @@ function retrieve_values(lngLat) {
 
     // abort previous request in case not completed
     if (xhr_values !== undefined) xhr_values.abort();
+
+    if (code_type === ID_1170) {
+        var code_layers = ",nzs1170p5_siteclass,chim0,z";
+    } else if (code_type === ID_NZTA) {
+        var code_layers = ",siteclass,nzta_meff50250,nzta_meff5002500";
+    }
+
     xhr_values = $.ajax({
         type: "GET",
-        url: WMS_VALUES + '&bbox=' + bbox + '&query_layers=' + code_type + 'rp0im0',
+        url: WMS_VALUES + '&bbox=' + bbox +
+            '&query_layers=' + code_type + 'rp0im0,vs30' + code_layers,
         success: function(data) {
-            update_values(data["features"][0]["properties"]);
+            update_values(data["features"]);
         },
         error: function(data) {
             if (data.statusText === "abort") return;
@@ -228,49 +311,75 @@ function retrieve_values(lngLat) {
 }
 
 
-function update_values(bands) {
+function update_values(features) {
     var table_rp = document.getElementById("table-rp");
     var table_im = document.getElementById("table-im");
-    table_rp.innerHTML = "";
-    table_im.innerHTML = "";
+    var lngLat = marker.getLngLat();
+    table_rp.innerHTML = '<thead><tr><th scope="col">RP</th><th scope="col">IM value (g)</th></tr></thead>';
+    table_im.innerHTML = '<thead><tr><th scope="col">IM</th><th scope="col">RP value (g)</th></tr></thead>';
+    popup_html = "";
 
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
     var rp = parseInt(document.getElementById("select_rp").value);
     var im = parseInt(document.getElementById("select_im").value);
 
+    // add site properties to popup
+    popup_html += '<p class="h6">Vs30: ' + features[1]["properties"]["Band 1"] + " m/s<br />";
+
+    bands = features[0]["properties"];
     if (code_type === ID_1170) {
+        popup_html += "Site class: " +
+            SITE_CLASS_1170[parseInt(features[2]["properties"]["Band 1"])] + "<br />";
+        popup_html += "Ch, spectral shape factor: " +
+            features[3]["properties"]["Band " + ("0" + (im + 1)).slice(-2)] + "<br />";
+        popup_html += "N, near-fault factor: 1<br />";
+        popup_html += "R, return period factor: " + PARAM_R[rp] + "<br />";
+        popup_html += "Z, Z factor: " + features[4]["properties"]["Band 1"] + "<br />";
         for (var j = 0; j < RP_NAMES.length; j++) {
-            let row = table_rp.insertRow(j);
+            let row = table_rp.insertRow(j + 1);
             let rp_name = row.insertCell(0);
             let rp_value = row.insertCell(1);
             rp_name.innerHTML = RP_NAMES[j];
             rp_value.innerHTML = bands["Band " + ("00" + (1 + im + j * IM_NAMES.length)).slice(-3)];
         }
         for (var j = 0; j < IM_NAMES.length; j++) {
-            let row = table_im.insertRow(j);
+            let row = table_im.insertRow(j + 1);
             let im_name = row.insertCell(0);
             let im_value = row.insertCell(1);
             im_name.innerHTML = IM_NAMES[j];
             im_value.innerHTML = bands["Band " + ("00" + (1 + j + rp * IM_NAMES.length)).slice(-3)];
         }
-        return;
     }
     if (code_type === ID_NZTA) {
+        popup_html += "Site class: " +
+            SITE_CLASS_NZTA[parseInt(features[2]["properties"]["Band 1"])] + "<br />";
+        popup_html += "M<sub>eff</sub> 50 - 250 years: " +
+            features[3]["properties"]["Band 1"] + "<br />";
+        popup_html += "M<sub>eff</sub> 500 - 2500 years: " +
+            features[4]["properties"]["Band 1"] + "<br />";
         for (var j = 0; j < RP_NAMES.length; j++) {
-            let row = table_rp.insertRow(j);
+            let row = table_rp.insertRow(j + 1);
             let rp_name = row.insertCell(0);
             let rp_value = row.insertCell(1);
             rp_name.innerHTML = RP_NAMES[j];
             rp_value.innerHTML = bands["Band " + (1 + j)];
         }
-        let row = table_im.insertRow(0);
+        let row = table_im.insertRow(1);
         let im_name = row.insertCell(0);
         let im_value = row.insertCell(1);
         im_name.innerHTML = IM_NAMES[0];
         im_value.innerHTML = bands["Band " + (1 + rp)];
-        return;
     }
+    popup_html += "</p>";
+
+    if (lngLat === undefined) return;
+    popup_html += '<div id="marker_prop"></div><button type="button" '
+            + 'onclick="spectra_plot(' + lngLat.lng + ',' + lngLat.lat + ');" '
+            + 'class="btn btn-primary btn-sm mr-2"'
+            + '>Spectra Plot</button>'
+    popup.setHTML(popup_html);
+    if (! popup.isOpen()) marker.togglePopup();
 }
 
 
@@ -315,20 +424,33 @@ function map_mouseselect(e) {
 }
 
 
+function marker_clicked(cpos) {
+    if ((marker.getLngLat() === undefined) || (marker._pos === null)) return false;
+    // no api so use x,y coords
+    var mpos = marker._pos;
+    if (mpos.x - 15  < cpos.x && mpos.x + 15 > cpos.x
+            && mpos.y - 15 < cpos.y && mpos.y + 15 > cpos.y) return true;
+    return false;
+}
+
+
 function map_runlocation(lngLat, mouse=true) {
     // lngLat: location of interest
     // mouse: location from map rather than text box
 
+    var code_type = document.getElementById("menu_layer")
+        .getElementsByClassName("active")[0].id;
     // follow mouse mode?
     var follow = document.getElementById("follow_mouse").checked;
-    // don't accept clicks on the marker
-    if (! follow && mouse && (marker.getLngLat() != undefined) && (marker._pos != null)) {
-        // no api so use x,y coords
-        var mpos = marker._pos;
-        var cpos = map.project(lngLat);
-        if (mpos.x - 15  < cpos.x && mpos.x + 15 > cpos.x 
-            && mpos.y - 15 < cpos.y && mpos.y + 15 > cpos.y) return
+    // don't move marker if clicked on a nzta site and click based selection
+    if (! follow && mouse) {
+        var features = map.queryRenderedFeatures(map.project(lngLat));
+        for (var i=0; i < features.length; i++) {
+            if (features[i].layer.id === ID_NZTA_POINTS && code_type === ID_NZTA) return;
+        }
     }
+    // don't accept clicks on the marker
+    if (! follow && mouse && marker_clicked(map.project(lngLat))) return;
 
     // update UI
     if (mouse) {
@@ -337,10 +459,6 @@ function map_runlocation(lngLat, mouse=true) {
     }
     if (! follow) {
         marker.setLngLat([lngLat.lng, lngLat.lat]).addTo(map);
-        popup.setHTML('<button type="button" '
-            + 'onclick="spectra_plot(' + lngLat.lng + ',' + lngLat.lat + ');" '
-            + 'class="btn btn-primary btn-sm mr-2"'
-            + '>Spectra Plot</button>');
     }
 
     retrieve_values(lngLat);
@@ -352,28 +470,66 @@ function switch_layer(layer) {
     old_element.classList.remove("active");
     layer.target.classList.add("active");
 
-    // available IMs list
+    if (layer.target.id === ID_1170) {
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-opacity", 0);
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-stroke-opacity", 0);
+    } else {
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-opacity", 1);
+        map.setPaintProperty(ID_NZTA_POINTS, "circle-stroke-opacity", 1);
+    }
+
+    // available items in selects list
+    populate_display();
     populate_ims();
     // update column name for new layer
+    document.getElementById("select_display").value = "hazard";
+    display_previous = "hazard";
     switch_column();
 }
 
 
-function switch_column(column) {
+function switch_column() {
     // when changing IM / RP selection
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
+    var display = document.getElementById("select_display").value;
     var rp = document.getElementById("select_rp").value;
     var im = document.getElementById("select_im").value;
 
     var layer = map.getSource("qgis-wms");
-    var src = WMS_TILES + code_type + "rp" + rp + 'im' + im;
+    if (display === "hazard") {
+        suffix = code_type + "rp" + rp + 'im' + im;
+    } else if (display === "vs30") {
+        suffix = "vs30";
+    } else if (display === "siteclass") {
+        if (code_type === ID_1170) {
+            suffix = "nzs1170p5_siteclass";
+        } else if (code_type === ID_NZTA) {
+            suffix = "siteclass";
+        }
+    } else if (display === "ch") {
+        suffix = "chim" + im;
+    } else if (display === "z") {
+        suffix = "z";
+    } else if (display === "n") {
+        alert("Near fault factor is 1");
+        document.getElementById("select_display").value = display_previous;
+        return;
+    } else if (display === "r") {
+        alert("Return period factor is " + PARAM_R[rp] + " for " + RP_NAMES[rp])
+        document.getElementById("select_display").value = display_previous;
+        return;
+    } else if (display === "meff50250" || display === "meff5002500") {
+        suffix = "nzta_" + display;
+    }
+    var src = WMS_TILES + suffix;
     layer._options.tiles = [src];
     layer.load();
-    document.getElementById("img-legend").src = WMS_LEGEND + code_type + "rp" + rp + "im" + im;
+    document.getElementById("img-legend").src = WMS_LEGEND + suffix;
 
     // update values in table
     update_table();
+    display_previous = display;
 }
 
 
@@ -394,6 +550,7 @@ var marker;
 var popup;
 var xhr_spectra;
 var xhr_values;
+var display_previous = "hazard";
 
 $(document).ready(function ()
 {
