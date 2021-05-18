@@ -32,7 +32,7 @@ Specifying default project file means it doesn't have to be specified by the cli
 server {
     ...
 
-    location /wms_vs30 {
+    location /wms {
         gzip off;
         include fastcgi_params;
         fastcgi_param  QGIS_SERVER_LOG_STDERR  1;
