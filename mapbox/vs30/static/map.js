@@ -9,7 +9,7 @@ var ID_COM_MVN = "combined_mvn";
 var WMS_TILES = '/wms_vs30?service=WMS&version=1.3.0&request=GetMap&format=image/png&srs=EPSG:3857&transparent=true&width=256&height=256&BBOX={bbox-epsg-3857}&layer='
 var WMS_LEGEND = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=false&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
 var WMS_VALUES = '/wms_vs30?service=WMS&version=1.3.0&request=GetFeatureInfo&info_format=application/json&width=20&height=20&i=10&j=10&crs=EPSG:4326'
-var ACCESS_TOKEN = "pk.eyJ1Ijoic2Vpc3RlY2giLCJhIjoiY2ttNDd1ZnNoMDF5NjJubHB2NGlzMzU3eiJ9.jNpCQH_wa0p60xgKQ_HXBA";
+var ACCESS_TOKEN = "pk.eyJ1Ijoic2Vpc3RlY2giLCJhIjoiY2tvdDZjYjNkMDdhNTJ3azc0YTlrZjR2MSJ9.OIyhZMUOlFfy54r2STMVDg";
 var MAP_STYLE = "mapbox://styles/seistech/cknqzrykt0eim17pdaq79jkv2";
 var PLACE_BELOW = "tunnel-street-minor-low";
 
