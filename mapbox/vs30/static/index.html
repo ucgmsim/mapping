@@ -74,6 +74,7 @@
     <label class="fix-lbl form-check-label" for="follow_mouse">follows mouse</label>
   </div>
 </div>
+<!-- geology -->
 <div class="input-group input-group-sm mt-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="geocat">Geology</span>
@@ -90,6 +91,7 @@
     <span class="input-group-text" id="lbl_aak_stdv">stdev</span>
   </div>
 </div>
+<!-- terrain -->
 <div class="input-group input-group-sm mt-2">
   <div class="input-group-prepend">
     <span class="input-group-text" id="tercat">Terrain</span>
@@ -106,6 +108,7 @@
     <span class="input-group-text" id="lbl_yca_stdv">stdev</span>
   </div>
 </div>
+<!-- combined -->
 <label class="fix-lbl fix-bg rounded d-flex justify-content-center mt-2 mb-1" for="com_vs30">Combined Geology / Terrain</label>
 <div class="input-group input-group-sm my-1">
   <div class="input-group-prepend">
@@ -117,6 +120,24 @@
     <span class="input-group-text" id="lbl_com_stdv">stdev</span>
   </div>
 </div>
+<!-- z -->
+<div class="input-group input-group-sm mt-2">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basin">Basin</span>
+  </div>
+  <input type="text" id="id_basin" readonly class="form-control" placeholder="NA" aria-label="Basin Description" aria-describedby="basin">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_z1p0">Z<sub>1.0</sub></span>
+  </div>
+  <input type="text" id="z1p0" readonly class="form-control fix-bg" placeholder="NA" aria-label="Z 1.0" aria-describedby="lbl_z1p0">
+  <input type="text" id="z2p5" readonly class="form-control fix-bg" placeholder="NA" aria-label="Z 2.5" aria-describedby="lbl_z2p5">
+  <div class="input-group-append">
+    <span class="input-group-text" id="lbl_z2p5">Z<sub>2.5</sub></span>
+  </div>
+</div>
+
 
 </div>
 <div id="logo" class="fixed-bottom mb-4 ml-1">
