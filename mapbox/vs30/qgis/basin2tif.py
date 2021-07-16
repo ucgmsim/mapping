@@ -151,7 +151,7 @@ def fill_tif(csv, t, bands):
     bands["z2p5"].WriteArray(z2p5 * mask)
     del z2p5
     ids = bands["id"].ReadAsArray()
-    ids[[y, x]] = [BASINS[b][1] for b in list(map(str.strip, csv["basin_name"].values))]
+    ids[[y, x]] = [BASINS[b] for b in list(map(str.strip, csv["basin_name"].values))]
     bands["id"].WriteArray(ids * mask)
     del ids
 
