@@ -2,7 +2,7 @@
 
 ## Requirements
 * static webserver
-* QGIS server
+* v3 <= QGIS server <= v3.16 - versions prior to ~3 won't have JSON support, 3.18 introduces better support for continuous colour palettes but will produce undesirable results with this repo. To fix, the height of the legend for the continuous block should be made greater and discrete data such as IDs should be made to show discrete for 3.18+.
 
 ## Mapbox Service Requirements
 Map data is hosted by Mapbox. Currently this just contains the standard satelite imagery along with the vs30 points which should be updated via the studio.mapbox.com tilesets section. To make updates more simple, vs30 points can be formatted as geojson and loaded from a static file from the webserver using mapbox gl js.
@@ -18,7 +18,7 @@ The paths and accounts may be different by machine. Debian based distros are usu
 ```
 spawn-fcgi -s /run/qgisserver.socket -U www-data -G www-data -n /usr/lib/cgi-bin/qgis_mapserv.fcgi
 ```
-More information: [https://docs.qgis.org/3.16/en/docs/server_manual/getting_started.html]
+More information: [https://docs.qgis.org/3.16/en/docs/server_manual/getting_started.html]<br />
 QGIS Server capabilities: [https://docs.qgis.org/en/docs/server_manual/services.html]
 
 NGINX configuration:

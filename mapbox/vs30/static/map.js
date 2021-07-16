@@ -48,7 +48,34 @@ var NAME_TERCAT = [
     "14: Eroded alluvial fan, till plain, etc.",
     "15: Dune, incised terrace, etc.",
     "16: Fluvial plain, alluvial fan, low-lying flat plains, etc."
-]
+];
+var NAME_BASIN = [
+    "<unused_index>",
+    "Banks Peninsula Volcanics",
+    "Cheviot",
+    "Collingwood",
+    "Hanmer",
+    "Kaikoura",
+    "Karamea",
+    "Marlborough",
+    "Murchison",
+    "NE Otago",
+    "Nelson",
+    "Canterbury",
+    "North Canterbury",
+    "Springs Junction",
+    "Waikato / Hauraki",
+    "Wakatipu",
+    "Wanaka",
+    "Wellington / Hutt Valley",
+    "Alexandra",
+    "Balclutha",
+    "Dunedin",
+    "Hakataramea",
+    "Mosgiel",
+    "Ranfurly",
+    "Waitaki",
+];
 
 
 function roundmax(value, dp=6) {
@@ -221,7 +248,7 @@ function retrieve_values(lngLat) {
     xhr_values = $.ajax({
         type: "GET",
         url: WMS_VALUES + '&bbox=' + bbox +
-            '&query_layers=gid,geology_mvn,tid,terrain_mvn,combined_mvn,slope,coast',
+            '&query_layers=gid,geology_mvn,tid,terrain_mvn,combined_mvn,slope,coast,z1p0',
         success: function(data) {
             update_values(data["features"]);
         },
@@ -243,12 +270,21 @@ function update_values(features) {
 
     $("#gid_aak").val(NAME_GEOCAT[parseInt(features[0]["properties"]["Band 1: Geology ID Index"])]);
     $("#gid_yca").val(NAME_TERCAT[parseInt(features[2]["properties"]["Band 1"]) - 1]);
-    $("#aak_vs30").val(features[1]["properties"]["Band 1: Vs30"])
-    $("#aak_stdv").val(features[1]["properties"]["Band 2: Standard Deviation"])
-    $("#yca_vs30").val(features[3]["properties"]["Band 1"])
-    $("#yca_stdv").val(features[3]["properties"]["Band 2"])
-    $("#com_vs30").val(features[4]["properties"]["Band 1: Vs30"])
-    $("#com_stdv").val(features[4]["properties"]["Band 2: Standard Deviation"])
+    $("#aak_vs30").val(features[1]["properties"]["Band 1: Vs30"]);
+    $("#aak_stdv").val(features[1]["properties"]["Band 2: Standard Deviation"]);
+    $("#yca_vs30").val(features[3]["properties"]["Band 1"]);
+    $("#yca_stdv").val(features[3]["properties"]["Band 2"]);
+    $("#com_vs30").val(features[4]["properties"]["Band 1: Vs30"]);
+    $("#com_stdv").val(features[4]["properties"]["Band 2: Standard Deviation"]);
+    if (features[7]["properties"]["Band 1"] === "null") {
+        $("#id_basin").val("Outside Basin");
+        $("#val_z1p0").val("NA");
+        $("#val_z2p5").val("NA");
+    } else {
+        $("#id_basin").val(NAME_BASIN[parseInt(features[7]["properties"]["Band 1"])]);
+        $("#val_z1p0").val(features[7]["properties"]["Band 2"]);
+        $("#val_z2p5").val(features[7]["properties"]["Band 3"]);
+    }
 
     if (lngLat === undefined) return;
     popup.setHTML(popup_html);
