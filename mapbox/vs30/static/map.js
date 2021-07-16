@@ -67,7 +67,7 @@ var NAME_BASIN = [
     "Waikato / Hauraki",
     "Wakatipu",
     "Wanaka",
-    "Wellington / Wainuiomata / Hutt Valley",
+    "Wellington / Hutt Valley",
     "Alexandra",
     "Balclutha",
     "Dunedin",
