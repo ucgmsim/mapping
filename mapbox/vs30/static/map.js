@@ -1,13 +1,9 @@
 // map layer ids on server
 var ID_MEASURED = "measured-sites";
-var ID_GEO = "geology";
-var ID_GEO_MVN = "geology_mvn";
-var ID_TER = "terrain";
-var ID_TER_MVN = "terrain_mvn";
-var ID_COM = "combined";
-var ID_COM_MVN = "combined_mvn";
+var ID_COM_MVN = "Combined Vs30 (m/s)";
 var WMS_TILES = '/wms_vs30?service=WMS&version=1.3.0&request=GetMap&format=image/png&srs=EPSG:3857&transparent=true&width=256&height=256&BBOX={bbox-epsg-3857}&layer='
-var WMS_LEGEND = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=false&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
+var WMS_LEGEND = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=True&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&symbolspace=0&iconlabelspace=4&LAYER='
+var WMS_LEGEND_CAT = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=True&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
 var WMS_VALUES = '/wms_vs30?service=WMS&version=1.3.0&request=GetFeatureInfo&info_format=application/json&width=20&height=20&i=10&j=10&crs=EPSG:4326'
 var ACCESS_TOKEN = "pk.eyJ1Ijoic2Vpc3RlY2giLCJhIjoiY2tvdDZjYjNkMDdhNTJ3azc0YTlrZjR2MSJ9.OIyhZMUOlFfy54r2STMVDg";
 var MAP_STYLE = "mapbox://styles/seistech/cknqzrykt0eim17pdaq79jkv2";
@@ -248,7 +244,7 @@ function retrieve_values(lngLat) {
     xhr_values = $.ajax({
         type: "GET",
         url: WMS_VALUES + '&bbox=' + bbox +
-            '&query_layers=gid,geology_mvn,tid,terrain_mvn,combined_mvn,slope,coast,z1p0',
+            '&query_layers=Geology ID,Geology Vs30 (m/s),Terrain ID,Terrain Vs30 (m/s),Combined Vs30 (m/s),Slope,Coast Distance (m),Z 1.0',
         success: function(data) {
             update_values(data["features"]);
         },

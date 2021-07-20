@@ -104,7 +104,7 @@ def create_landmask(grid):
             grid.dy,
         )
     # read result
-    ds = gdal.Open("landmask.tif", gdal.GA_ReadOnly)
+    ds = gdal.Open(LAND_PATH, gdal.GA_ReadOnly)
     band = ds.GetRasterBand(1)
     mask = ds.ReadAsArray()
     band = None
