@@ -274,7 +274,7 @@ function update_values(features) {
     $("#com_stdv").val(features[4]["properties"]["Band 2: Standard Deviation"]);
     // older QGIS server (3.10) will return 0 instead of null (3.16)
     if (features[7]["properties"]["Band 1"] === "null" || features[7]["properties"]["Band 1"] === "0") {
-        $("#id_basin").val("Outside Basin");
+        $("#id_basin").val("Outside Modelled Basin");
         $("#val_z1p0").val("NA");
         $("#val_z2p5").val("NA");
     } else {
