@@ -1,13 +1,9 @@
 // map layer ids on server
 var ID_MEASURED = "measured-sites";
-var ID_GEO = "geology";
-var ID_GEO_MVN = "geology_mvn";
-var ID_TER = "terrain";
-var ID_TER_MVN = "terrain_mvn";
-var ID_COM = "combined";
-var ID_COM_MVN = "combined_mvn";
+var ID_COM_MVN = "Combined Vs30 (m/s)";
 var WMS_TILES = '/wms_vs30?service=WMS&version=1.3.0&request=GetMap&format=image/png&srs=EPSG:3857&transparent=true&width=256&height=256&BBOX={bbox-epsg-3857}&layer='
-var WMS_LEGEND = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=false&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
+var WMS_LEGEND = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=True&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&symbolspace=0&iconlabelspace=4&LAYER='
+var WMS_LEGEND_CAT = '/wms_vs30?&service=WMS&version=1.3.0&request=GetLegendGraphic&format=image/png&STYLE=default&sld_version=1.1.0&layertitle=True&symbolwidth=16&symbolheight=9&itemfontsize=16&boxspace=2&iconlabelspace=4&LAYER='
 var WMS_VALUES = '/wms_vs30?service=WMS&version=1.3.0&request=GetFeatureInfo&info_format=application/json&width=20&height=20&i=10&j=10&crs=EPSG:4326'
 var ACCESS_TOKEN = "pk.eyJ1Ijoic2Vpc3RlY2giLCJhIjoiY2tvdDZjYjNkMDdhNTJ3azc0YTlrZjR2MSJ9.OIyhZMUOlFfy54r2STMVDg";
 var MAP_STYLE = "mapbox://styles/seistech/cknqzrykt0eim17pdaq79jkv2";
@@ -248,7 +244,7 @@ function retrieve_values(lngLat) {
     xhr_values = $.ajax({
         type: "GET",
         url: WMS_VALUES + '&bbox=' + bbox +
-            '&query_layers=gid,geology_mvn,tid,terrain_mvn,combined_mvn,slope,coast,z1p0',
+            '&query_layers=Geology ID,Geology Vs30 (m/s),Terrain ID,Terrain Vs30 (m/s),Combined Vs30 (m/s),Slope,Coast Distance (m),Z 1.0',
         success: function(data) {
             update_values(data["features"]);
         },
@@ -276,8 +272,9 @@ function update_values(features) {
     $("#yca_stdv").val(features[3]["properties"]["Band 2"]);
     $("#com_vs30").val(features[4]["properties"]["Band 1: Vs30"]);
     $("#com_stdv").val(features[4]["properties"]["Band 2: Standard Deviation"]);
-    if (features[7]["properties"]["Band 1"] === "null") {
-        $("#id_basin").val("Outside Basin");
+    // older QGIS server (3.10) will return 0 instead of null (3.16)
+    if (features[7]["properties"]["Band 1"] === "null" || features[7]["properties"]["Band 1"] === "0") {
+        $("#id_basin").val("Outside Modelled Basin");
         $("#val_z1p0").val("NA");
         $("#val_z2p5").val("NA");
     } else {
@@ -376,7 +373,11 @@ function switch_layer(e) {
     var src = WMS_TILES + e.target.id;
     layer._options.tiles = [src];
     layer.load();
-    document.getElementById("img-legend").src = WMS_LEGEND + e.target.id;
+    if (e.target.id.substr(e.target.id.length - 2) === "ID") {
+        document.getElementById("img-legend").src = WMS_LEGEND_CAT + e.target.id;
+    } else {
+        document.getElementById("img-legend").src = WMS_LEGEND + e.target.id;
+    }
 
     // update values
     update_table();
