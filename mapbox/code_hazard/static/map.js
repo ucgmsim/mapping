@@ -86,7 +86,7 @@ function load_map()
     document.getElementById('select_im').onchange = switch_column;
 
     map.on("click", map_mouseselect);
-    map.on("mousemove", ID_NZTA_POINTS, function() {
+    map.on("mousemove", ID_NZTA_POINTS, function(e) {
         var code_type = document.getElementById("menu_layer")
             .getElementsByClassName("active")[0].id;
         if (code_type === ID_NZTA) map.getCanvas().style.cursor = 'pointer';
@@ -150,6 +150,7 @@ function show_nzta_point(e) {
     if (code_type !== ID_NZTA) return;
 
     var feature = e.features[0];
+    var vs30 = feature.properties.vs30
     new mapboxgl.Popup({closeButton: true}).setLngLat(feature.geometry.coordinates)
         .setHTML('<strong>Town/City: ' + feature.properties.place + '</strong><p><table class="table table-sm"><tbody>' +
             '<tr><th scope="row">Longitude</th><td>' + feature.properties.longitude + '</td></tr>' +
@@ -282,6 +283,8 @@ function populate_display() {
 function retrieve_values(lngLat) {
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;
+    var rp = document.getElementById("select_rp").value;
+    var im = document.getElementById("select_im").value;
     // bounding box made from expanded point
     var diff = 0.000001
     var bbox = (lngLat.lat - diff) + ',' + (lngLat.lng - diff) +
@@ -488,7 +491,7 @@ function switch_layer(layer) {
 }
 
 
-function switch_column() {
+function switch_column(column) {
     // when changing IM / RP selection
     var code_type = document.getElementById("menu_layer")
         .getElementsByClassName("active")[0].id;

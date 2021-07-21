@@ -50,7 +50,9 @@ def create_tif(filename, etype, bands=1):
     return ods
 
 
-def auto_tif(array, out_file, zero_na=False, is_file=True, etype=gdal.GDT_Float32):
+def auto_tif(
+    array, out_file, zero_na=False, is_file=True, etype=gdal.GDT_Float32, replace=None
+):
     na = 255 if etype is gdal.GDT_Byte else -1
     if is_file:
         data = np.load(array)
@@ -71,6 +73,11 @@ def auto_tif(array, out_file, zero_na=False, is_file=True, etype=gdal.GDT_Float3
         elif len(data.shape) == 3:
             layer = data[:, i % data.shape[1], i // data.shape[1]]
 
+        # index based replacement array
+        if replace is not None:
+            replace = np.append(replace, na)
+            layer = replace[np.nan_to_num(layer, nan=-1).astype(np.int32)]
+
         # put in tif
         band = ods.GetRasterBand(1 + i)
         band.SetNoDataValue(na)
@@ -85,15 +92,32 @@ def auto_tif(array, out_file, zero_na=False, is_file=True, etype=gdal.GDT_Float3
     ods = None
 
 
+vs30 = df.geology_mvn_vs30.values
 auto_tif("nzs1170p5_1km.npy", "nzs1170p5.tif")
-auto_tif(df.geology_mvn_vs30.values, "vs30.tif", is_file=False)
+auto_tif(vs30, "vs30.tif", is_file=False)
 auto_tif(
     np.where(
-        np.isnan(df.geology_mvn_vs30.values),
+        np.isnan(vs30),
         255,
-        np.where(df.geology_mvn_vs30.values > 500, 0, 1),
+        np.where(vs30 > 500, 0, 1),
     ),
     "siteclass.tif",
+    is_file=False,
+    etype=gdal.GDT_Byte,
+)
+auto_tif(
+    np.where(
+        np.isnan(vs30),
+        255,
+        np.where(
+            vs30 < 180,
+            4,
+            np.where(
+                vs30 < 350, 3, np.where(vs30 < 500, 2, np.where(vs30 < 2500, 1, 0))
+            ),
+        ),
+    ),
+    "nzs1170p5_siteclass.tif",
     is_file=False,
     etype=gdal.GDT_Byte,
 )
@@ -101,4 +125,31 @@ auto_tif("NZS1170p5_Ch_values.npy", "ch.tif")
 auto_tif("NZS1170p5_N_values.npy", "n.tif")
 auto_tif("NZS1170p5_R_values.npy", "r.tif")
 auto_tif("NZS1170p5_Z_values.npy", "z.tif")
-auto_tif("nzta.npy", "nzta.tif", zero_na=True)
+auto_tif("NZTA_PGA_values.npy", "nzta.tif", zero_na=True)
+
+# fmt: off
+meff_50_250 = np.array([
+    5.75, 5.75, 5.75, 5.75, 5.8, 5.8, 5.9, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.9, 5.8,
+    5.8, 5.8, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 6, 6, 6, 5.9, 5.9, 6, 6, 6.2, 6.1,
+    6.1, 6.1, 6.3, 6.1, 6, 6.25, 6.4, 6.5, 6, 6, 6.1, 6.2, 6.1, 6.2, 6.2, 6, 6.2, 6.2,
+    6.25, 6.2, 6.2, 6.25, 6.25, 6.3, 6.25, 6.3, 6.1, 6.1, 6.2, 6.2, 6.2, 6.3, 6.1,
+    6.1, 6.2, 6.2, 6.2, 6.2, 6.2, 6.25, 6.2, 6.2, 5.8, 5.9, 6.1, 6.1, 6.1, 6.1, 5.7,
+    6, 6.2, 6.5, 6.1, 6.6, 6.5, 6.3, 6.3, 6.4, 6.25, 6.4, 0, 6.25, 6.1, 6, 6, 6.1,
+    6.2, 6, 6, 6.1, 6.1, 6.25, 6.3, 6.4, 6.5, 6.1, 6, 6, 6, 6, 6.4, 6.2, 6.2, 6.2,
+    6.1, 6, 6.1, 6.1, 6.1
+])
+meff_500_2500 = np.array([
+    5.75, 5.75, 5.75, 5.75, 5.8, 5.8, 5.9, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.9, 5.8,
+    5.8, 5.8, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 6, 6, 6, 5.9, 5.9, 6, 6, 6.2, 6.1,
+    6.1, 6.1, 6.3, 6.1, 6, 6.25, 6.4, 6.5, 6, 6, 6.1, 6.2, 6.1, 6.2, 6.2, 6, 6.2, 6.2,
+    6.25, 6.9, 6.9, 6.75, 6.75, 6.3, 6.25, 6.3, 6.7, 6.9, 7, 7, 7.1, 7, 6.7, 6.8, 6.8,
+    6.9, 7.1, 7, 7.1, 7.1, 7.1, 7.1, 5.8, 5.9, 6.1, 6.6, 6.75, 6.9, 5.7, 6, 6.2, 7,
+    6.7, 6.6, 6.5, 6.75, 7, 7.1, 6.25, 6.4, 0, 5.8, 6.1, 6, 6, 6.1, 6.9, 6, 6, 6.1,
+    6.1, 6.25, 6.3, 6.4, 6.5, 7.1, 6, 6, 6, 6, 6.4, 6.2, 6.2, 6.2, 6.1, 6, 6.1, 6.1,
+    6.1
+])
+# fmt: on
+auto_tif("NZTA_town_index.npy", "nzta_meff50250.tif", replace=meff_50_250, zero_na=True)
+auto_tif(
+    "NZTA_town_index.npy", "nzta_meff5002500.tif", replace=meff_500_2500, zero_na=True
+)
