@@ -45,3 +45,6 @@ server {
 
 Don't forget to add the GeoTIFF files into the qgis directory containing the qgs project file.
 And then access it at [http://hostname.canterbury.ac.nz](http://hostname.canterbury.ac.nz) for the map access token to work.
+
+## Basin Data
+After retrieving data (sample in `qgis/sample_out_raster.csv`), update params and run `basin2tif.py`.
