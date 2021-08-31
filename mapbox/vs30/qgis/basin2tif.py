@@ -13,7 +13,7 @@ from vs30 import model, model_geology, params
 # input params must be correct
 X_SPACE = 500
 Y_SPACE = 500
-CSV_PATH = "out_raster.csv"
+CSV_PATH = "/Users/sungbae/mapping/out_raster_100m.csv"
 # output params
 OUT_PATH = "basins.tif"
 # misc
@@ -51,6 +51,17 @@ BASINS = {
     "mos_outline_WGS84.txt": 22,
     "ranfurly_outline.txt": 23,
     "waitaki_outline_WGS84.txt": 24,
+    "HawkesBay1_Outline_WGS84_delim.dat": 25,
+    "HawkesBay2_Outline_WGS84_delim.dat": 26,
+    "HawkesBay3_Outline_WGS84_delim.dat": 27,
+    "HawkesBay4_Outline_WGS84_delim.dat": 28,
+    "Napier1_Outline_WGS84_delim.dat" : 29,
+    "Napier2_Outline_WGS84_delim.dat" : 30,
+    "Napier3_Outline_WGS84_delim.dat" : 31,
+    "Napier4_Outline_WGS84_delim.dat" : 32,
+    "Napier5_Outline_WGS84_delim.dat" : 33,
+    "Napier6_Outline_WGS84_delim.dat" : 34,
+    "mackenzie_basin_outline_nzmg.txt" : 35,
 }
 
 
