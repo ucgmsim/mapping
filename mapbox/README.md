@@ -13,6 +13,9 @@ QGIS is a little fiddly here. To make sure the min and max are updated, try some
 <img width="1063" alt="Screen Shot 2021-09-01 at 10 18 22 AM" src="https://user-images.githubusercontent.com/466989/131585393-e94bddf7-87f4-41df-b209-9c138a5d350d.png">
 
 Click "Classify" and make sure the color scale now uses the new Min and Max values.
+
+<img width="869" alt="Screen Shot 2021-09-01 at 10 50 06 AM" src="https://user-images.githubusercontent.com/466989/131586674-3d00b6f9-01ed-44bd-a971-b2c2934fb69f.png">
+
 Also note that the number of steps in the colour scale or labels for each colour may have been customised so you will need to make those changes again.
 Save the file, and upload to /data/vs30 at RCC (10.195.0.37), and restart the server.
 
