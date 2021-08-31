@@ -48,3 +48,9 @@ And then access it at [http://hostname.canterbury.ac.nz](http://hostname.canterb
 
 ## Basin Data
 After retrieving data (sample in `qgis/sample_out_raster.csv`), update params and run `basin2tif.py`.
+When adding new basins, update `basin2tif.py`, grouping multiple segments of the same basin together with the same index.
+![Screen Shot 2021-09-01 at 11 14 51 AM](https://user-images.githubusercontent.com/466989/131588062-7584cba9-8bd6-4f95-b117-8069910c2a08.png)
+
+After that, update `map.js` and add new basin names
+![Screen Shot 2021-09-01 at 11 16 27 AM](https://user-images.githubusercontent.com/466989/131588093-80383082-5675-48fc-92f9-af37dfbfef66.png)
+
