@@ -71,6 +71,9 @@ var NAME_BASIN = [
     "Mosgiel",
     "Ranfurly",
     "Waitaki",
+    "Hawke's Bay",
+    "Napier",
+    "Mackenzie",
 ];
 
 
