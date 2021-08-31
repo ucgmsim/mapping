@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Sung Bae" saveDateTime="2021-08-31T15:42:12" saveUser="sungbae" projectname="" version="3.16.4-Hannover">
+<qgis saveUserFull="Sung Bae" saveDateTime="2021-08-31T16:29:41" saveUser="sungbae" projectname="" version="3.16.4-Hannover">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -20,7 +20,7 @@
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" source="../../../../Vs30/vs30/data/combined_mvn.tif" expanded="1" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Vs30 (m/s)" providerKey="gdal">
+    <layer-tree-layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" source="../../../../Vs30/vs30/data/combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Vs30 (m/s)" providerKey="gdal">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer id="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Standard Deviation" providerKey="gdal">
@@ -38,10 +38,10 @@
     <layer-tree-layer id="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/terrain_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Terrain Standard Deviation" providerKey="gdal">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer id="basins_a4116292_a19e_4c66_ba17_5beee17ea12e" checked="Qt::Unchecked" source="../basins.tif" expanded="1" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Z 1.0" providerKey="gdal">
+    <layer-tree-layer id="basins_a4116292_a19e_4c66_ba17_5beee17ea12e" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/basins.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Z 1.0" providerKey="gdal">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer id="basins_e7f45375_24f2_488d_96d0_ae7963b6de4f" checked="Qt::Unchecked" source="../basins.tif" expanded="1" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Z 2.5" providerKey="gdal">
+    <layer-tree-layer id="basins_e7f45375_24f2_488d_96d0_ae7963b6de4f" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/basins.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Z 2.5" providerKey="gdal">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer id="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/gid.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Geology ID" providerKey="gdal">
@@ -108,8 +108,8 @@
   </mapcanvas>
   <projectModels/>
   <legend updateDrawingOrder="true">
-    <legendlayer checked="Qt::Checked" open="true" showFeatureCount="0" drawingOrder="-1" name="Combined Vs30 (m/s)">
-      <filegroup open="true" hidden="false">
+    <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Combined Vs30 (m/s)">
+      <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" visible="1"/>
       </filegroup>
     </legendlayer>
@@ -138,13 +138,13 @@
         <legendlayerfile isInOverview="0" layerid="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer checked="Qt::Unchecked" open="true" showFeatureCount="0" drawingOrder="-1" name="Z 1.0">
-      <filegroup open="true" hidden="false">
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Z 1.0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="basins_a4116292_a19e_4c66_ba17_5beee17ea12e" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer checked="Qt::Unchecked" open="true" showFeatureCount="0" drawingOrder="-1" name="Z 2.5">
-      <filegroup open="true" hidden="false">
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Z 2.5">
+      <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="basins_e7f45375_24f2_488d_96d0_ae7963b6de4f" visible="0"/>
       </filegroup>
     </legendlayer>
@@ -233,7 +233,7 @@
         <ymax>5905150</ymax>
       </extent>
       <id>basins_a4116292_a19e_4c66_ba17_5beee17ea12e</id>
-      <datasource>../basins.tif</datasource>
+      <datasource>../../../../Vs30/vs30/data/basins.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -323,10 +323,10 @@
         <provider>
           <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer band="2" nodataColor="" classificationMax="1.355" alphaBand="-1" opacity="1" classificationMin="0.005" type="singlebandpseudocolor">
+        <rasterrenderer band="2" nodataColor="" classificationMax="1.345" alphaBand="-1" opacity="1" classificationMin="0" type="singlebandpseudocolor">
           <rasterTransparency/>
           <minMaxOrigin>
-            <limits>MinMax</limits>
+            <limits>None</limits>
             <extent>WholeRaster</extent>
             <statAccuracy>Estimated</statAccuracy>
             <cumulativeCutLower>0.02</cumulativeCutLower>
@@ -334,7 +334,7 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="1.355" labelPrecision="4" minimumValue="0.0050000000000000001" clip="0">
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="1.345" labelPrecision="4" minimumValue="0" clip="0">
               <colorramp name="[source]" type="gradient">
                 <prop k="color1" v="255,64,64,255"/>
                 <prop k="color2" v="255,64,255,255"/>
@@ -372,7 +372,7 @@
         <ymax>5905150</ymax>
       </extent>
       <id>basins_e7f45375_24f2_488d_96d0_ae7963b6de4f</id>
-      <datasource>../basins.tif</datasource>
+      <datasource>../../../../Vs30/vs30/data/basins.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -886,7 +886,7 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <rastershader>
-            <colorrampshader colorRampType="EXACT" classificationMode="2" maximumValue="880.1893311" labelPrecision="0" minimumValue="136.32528690000001" clip="0">
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="880.1893311" labelPrecision="0" minimumValue="136.32528690000001" clip="0">
               <colorramp name="[source]" type="gradient">
                 <prop k="color1" v="255,64,64,255"/>
                 <prop k="color2" v="255,64,255,255"/>
@@ -894,18 +894,18 @@
                 <prop k="rampType" v="gradient"/>
                 <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
               </colorramp>
-              <item alpha="255" label="136" color="#ff4040" value="136.3252869"/>
-              <item alpha="255" label="204" color="#ff9740" value="203.94929091818182"/>
-              <item alpha="255" label="272" color="#ffee40" value="271.57329493636365"/>
-              <item alpha="255" label="339" color="#baff40" value="339.19729895454543"/>
-              <item alpha="255" label="407" color="#63ff40" value="406.82130297272727"/>
-              <item alpha="255" label="474" color="#40ff74" value="474.4453069909091"/>
-              <item alpha="255" label="542" color="#40ffcb" value="542.0693110090909"/>
-              <item alpha="255" label="610" color="#40ddff" value="609.6933150272728"/>
-              <item alpha="255" label="677" color="#4085ff" value="677.3173190454546"/>
-              <item alpha="255" label="745" color="#5140ff" value="744.9413230636364"/>
-              <item alpha="255" label="813" color="#a840ff" value="812.5653270818183"/>
-              <item alpha="255" label="880" color="#ff40ff" value="880.1893311000001"/>
+              <item alpha="255" label="0" color="#ff4040" value="0"/>
+              <item alpha="255" label="91" color="#ff9740" value="90.9090909090909"/>
+              <item alpha="255" label="182" color="#ffee40" value="181.8181818181818"/>
+              <item alpha="255" label="273" color="#baff40" value="272.72727272727275"/>
+              <item alpha="255" label="364" color="#63ff40" value="363.6363636363636"/>
+              <item alpha="255" label="455" color="#40ff74" value="454.5454545454545"/>
+              <item alpha="255" label="545" color="#40ffcb" value="545.4545454545455"/>
+              <item alpha="255" label="636" color="#40ddff" value="636.3636363636364"/>
+              <item alpha="255" label="727" color="#4085ff" value="727.2727272727273"/>
+              <item alpha="255" label="818" color="#5140ff" value="818.1818181818181"/>
+              <item alpha="255" label="909" color="#a840ff" value="909.090909090909"/>
+              <item alpha="255" label="1000" color="#ff40ff" value="1000"/>
             </colorrampshader>
           </rastershader>
         </rasterrenderer>
