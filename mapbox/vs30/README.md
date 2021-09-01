@@ -56,3 +56,14 @@ After that, update `map.js` and add new basin names
 
 ![Screen Shot 2021-09-01 at 11 16 27 AM](https://user-images.githubusercontent.com/466989/131588093-80383082-5675-48fc-92f9-af37dfbfef66.png)
 
+Note that map.js alongside index.html are hosted on /var/www/Vs30 @ ucquakecore1p server
+
+### Steps.
+1. Run basin2tif.py and produce basins.tif. 
+2. Copy this to where vs30.qgs is located. Open vs30.qgs with QGIS. Make it find basins.tif at ./basins.tif
+3. Update color scale for each property.
+4. Save vs30.qgs
+5. Copy vs30.qgs and basins.tif to vs30 @ RCS
+6. Copy map.js to /var/www/Vs30 @ ucquakecore1p
+7. Restart qgis server
+8. Check the service status - if .tif files are not found, edit vs30.qgs with an editor and fix the paths.
