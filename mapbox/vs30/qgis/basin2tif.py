@@ -13,7 +13,7 @@ from vs30 import model, model_geology, params
 # input params must be correct
 X_SPACE = 500
 Y_SPACE = 500
-CSV_PATH = "/Users/sungbae/mapping/out_raster_100m.csv"
+CSV_PATH = "./out_raster_100m.csv"
 # output params
 OUT_PATH = "basins.tif"
 # misc
