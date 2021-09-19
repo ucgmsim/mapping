@@ -63,7 +63,7 @@ Note that map.js alongside index.html are hosted on /var/www/Vs30 @ ucquakecore1
 2. Copy this to where vs30.qgs is located. Open vs30.qgs with QGIS. Make it find basins.tif at ./basins.tif
 3. Update color scale for each property.
 4. Save vs30.qgs
-5. Copy vs30.qgs and basins.tif to vs30 @ RCS
+5. Copy vs30.qgs and basins.tif to /data/vs30/ @ RCC
 6. Copy map.js to /var/www/Vs30 @ ucquakecore1p
 7. Restart qgis server
 8. Check the service status - if .tif files are not found, edit vs30.qgs with an editor and fix the paths.
