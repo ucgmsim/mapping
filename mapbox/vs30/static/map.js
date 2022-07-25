@@ -74,6 +74,12 @@ var NAME_BASIN = [
     "Hawke's Bay",
     "Napier",
     "Mackenzie",
+    "Greater Wellington",
+    "Porirua",
+    "Gisborne",
+    "SHB",
+    "Wairarapa",
+    "Motu Bay",
 ];
 
 
@@ -268,14 +274,13 @@ function update_values(features) {
         '<br />Coast Distance: ' + coast + ' m<p>';
 
     $("#gid_aak").val(NAME_GEOCAT[parseInt(features[0]["properties"]["Band 1: Geology ID Index"])]);
-    $("#gid_yca").val(NAME_TERCAT[parseInt(features[2]["properties"]["Band 1"]) - 1]);
+    $("#gid_yca").val(NAME_TERCAT[parseInt(features[2]["properties"]["Band 1: Terrain ID Index"]) - 1]);
     $("#aak_vs30").val(features[1]["properties"]["Band 1: Vs30"]);
     $("#aak_stdv").val(features[1]["properties"]["Band 2: Standard Deviation"]);
     $("#yca_vs30").val(features[3]["properties"]["Band 1"]);
     $("#yca_stdv").val(features[3]["properties"]["Band 2"]);
     $("#com_vs30").val(features[4]["properties"]["Band 1: Vs30"]);
     $("#com_stdv").val(features[4]["properties"]["Band 2: Standard Deviation"]);
-    // older QGIS server (3.10) will return 0 instead of null (3.16)
     if (features[7]["properties"]["Band 1"] === "null" || features[7]["properties"]["Band 1"] === "0") {
         $("#id_basin").val("Outside Modelled Basin");
         $("#val_z1p0").val("NA");
