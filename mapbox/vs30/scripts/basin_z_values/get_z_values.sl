@@ -17,9 +17,11 @@
 #SBATCH --hint=nomultithread    # don't use hyperthreading
 
 
-#submit with sbatch --export=ALL
+#USAGE:
+#1. locate the root dir of Velocity-Model (VMDIR), then
+#2. submit with sbatch --export=ALL,VMDIR=.... get_z_values.sl
 
-#Here, we have
+#We are using SLURM job arrays. As defined above, we ave
 #$SLURM_ARRAY_TASK_ID  0-79
 #echo $SLURM_ARRAY_TASK_MIN 0
 #echo $SLURM_ARRAY_TASK_MAX 79
@@ -39,7 +41,7 @@ echo $infile
 echo $outfile
 mkdir -p $outdir
 
-cmd="python get_z.py -ll $indir/$infile --nzvm-path `which NZVM` -v 2.07 -z Z1.0 Z2.5 -o $outdir/$outfile --no_header"
+cmd="python $VMDIR/Velocity_Model/scripts/get_z.py -ll $indir/$infile --nzvm-path `which NZVM` -v 2.07 -z Z1.0 Z2.5 -o $outdir/$outfile --no_header"
 echo $cmd
 `$cmd`
 
