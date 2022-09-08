@@ -26,7 +26,7 @@ num_cores =  comm.Get_size()
 
 
 BASIN_VER = "2.07"
-basins = basin_dict[BASIN_VER]
+basin_files = basin_dict[BASIN_VER]
 
 outdir = Path("outdir")
 out_csv = outdir / f"basin_stats_{rank:04d}.csv" # lon, lat, nztm_x, nztm_y, True, basin_name
@@ -129,7 +129,7 @@ if __name__ == "__main__":
         last_basin_idx = 0
 
         #load the first basin details
-        basin_fp = basins[last_basin_idx]
+        basin_fp = basin_files[last_basin_idx]
         basin = np.loadtxt(basin_fp)
         basin_outline = mpltPath.Path(basin)
 
