@@ -12,10 +12,18 @@ It takes about 3 days to complete the steps given in this manual.
 
 (Duration: 2 days 7 hours)
 
-If there are more basins added, update basins.py
+If there are more basins added, update basins.py in Velocity_Model
+
+Also find the location of your basin files (eg. Wellington_Polygon_Wainuiomata_WGS84.txt).
+We need the root Velocity-Model directory that contains Data.
+eg. 
+If basin files are unde  /scale_wlg_persistent/filesets/home/baes/Velocity-Model/Data/Basins/,
+VMDIR will be /scale_wlg_persistent/filesets/home/baes/Velocity-Model
+(it must be an absolute path)
 
 ```
-sbatch --export=ALL gen_basin_stats.sl
+sbatch --export=ALL,VMDIR=/scale_wlg_persistent/filesets/home/baes/Velocity-Model gen_basin_stats.sl
+
 ```
 This will take 2 days and about 7 hours using 1340 cores on Maui. As Maui has 24 hours wall clock limit, you will need to resubmit twice after the 24 hours of run.
 Simply enter the same command, and it will resume from the checkpoint.
@@ -80,9 +88,11 @@ This creates 80 splits named `basin_stats.ll_0001` etc.
 We will be computing Z values using NZVM. This requires quite a large memory (96Gb peak), and it is recommended to run on Maui using the supplied SLURM script.
 From above, we have 80 split files to process - if you chose to go with a different number, update the SLURM script.
 
+Find your VMDIR as above and replace it in the below example
+
 ```
-mkdir -p z_values
-sbatch --export=ALL get_z_values.sl # update the command therein to use the correct version eg. -v 2.07
+sbatch --export=ALL,VMDIR=/scale_wlg_persistent/filesets/home/baes/Velocity-Model get_z_values.sl # update the command therein to use the correct version eg. -v 2.07
+
 ```
 
 This will keep 4 array jobs running at a time, each job takes less than 30 mins.

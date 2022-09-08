@@ -106,61 +106,63 @@ class Buffer:
  
 
 
-x_range_per_core = int(np.ceil(len(x_range) /num_cores)) 
-rank_x_range = x_range[rank*x_range_per_core: (rank+1)*x_range_per_core]
+if __name__ == "__main__":
 
-# the whole x_range x y_range grid is split into strips of (x_range_per_core x y_range)
-nztm_points = list(itertools.product(rank_x_range,y_range)) 
+    x_range_per_core = int(np.ceil(len(x_range) /num_cores)) 
+    rank_x_range = x_range[rank*x_range_per_core: (rank+1)*x_range_per_core]
 
-if len(nztm_points) > 0:
-    
-    start = datetime.datetime.now()
-    ll_points = geo.wgs_nztm2000x(nztm_points) # nztm_points shouldn't be empty
-    n_points = len(ll_points)
+    # the whole x_range x y_range grid is split into strips of (x_range_per_core x y_range)
+    nztm_points = list(itertools.product(rank_x_range,y_range)) 
 
-    buffer = Buffer(rank, out_csv, out_ll, checkpoint, n_points-1, start_time=start)
+    if len(nztm_points) > 0:
+        
+        start = datetime.datetime.now()
+        ll_points = geo.wgs_nztm2000x(nztm_points) # nztm_points shouldn't be empty
+        n_points = len(ll_points)
 
-    now = datetime.datetime.now()
-    print(f"rank:{rank} Took {(start - now).seconds}s to load data, {n_points} points")
+        buffer = Buffer(rank, out_csv, out_ll, checkpoint, n_points-1, start_time=start)
 
-
-    last_basin_idx = 0
-
-    #load the first basin details
-    basin_fp = basins[last_basin_idx]
-    basin = np.loadtxt(basin_fp)
-    basin_outline = mpltPath.Path(basin)
-
-    for i in range(buffer.checkpoint_idx+1,n_points):
-
-        basin_tested = 0
-
-        while basin_tested < len(basins):
-            # we try the same basin (ie. basin), it's highly likely neighbouring locations belong to the same basin
-            if basin_outline.contains_point((ll_points[i][0],ll_points[i][1])):
-
-                to_print_csv = f"{ll_points[i][0]}, {ll_points[i][1]}, {nztm_points[i][0]}, {nztm_points[i][1]}, {True}, {basin_fp.name}\n"
-                to_print_ll = f"{ll_points[i][0]} {ll_points[i][1]} {nztm_points[i][0]}_{nztm_points[i][1]}\n"
-                buffer.write(to_print_csv, to_print_ll)
-                break
-
-            # the basin we tried doesn't contain this point. Try the next one 
-            last_basin_idx += 1
-            last_basin_idx = last_basin_idx % len(basins) # go back to the first basin
-            basin_tested+= 1
-
-            basin_fp = basins[last_basin_idx] #load the details. will be using this for the next iteration
-            basin = np.loadtxt(basin_fp)
-            basin_outline = mpltPath.Path(basin)
+        now = datetime.datetime.now()
+        print(f"rank:{rank} Took {(start - now).seconds}s to load data, {n_points} points")
 
 
-        buffer.tick(i) # counter increases regardless of this point being in/out of  basin
+        last_basin_idx = 0
+
+        #load the first basin details
+        basin_fp = basins[last_basin_idx]
+        basin = np.loadtxt(basin_fp)
+        basin_outline = mpltPath.Path(basin)
+
+        for i in range(buffer.checkpoint_idx+1,n_points):
+
+            basin_tested = 0
+
+            while basin_tested < len(basins):
+                # we try the same basin (ie. basin), it's highly likely neighbouring locations belong to the same basin
+                if basin_outline.contains_point((ll_points[i][0],ll_points[i][1])):
+
+                    to_print_csv = f"{ll_points[i][0]}, {ll_points[i][1]}, {nztm_points[i][0]}, {nztm_points[i][1]}, {True}, {basin_fp.name}\n"
+                    to_print_ll = f"{ll_points[i][0]} {ll_points[i][1]} {nztm_points[i][0]}_{nztm_points[i][1]}\n"
+                    buffer.write(to_print_csv, to_print_ll)
+                    break
+
+                # the basin we tried doesn't contain this point. Try the next one 
+                last_basin_idx += 1
+                last_basin_idx = last_basin_idx % len(basins) # go back to the first basin
+                basin_tested+= 1
+
+                basin_fp = basins[last_basin_idx] #load the details. will be using this for the next iteration
+                basin = np.loadtxt(basin_fp)
+                basin_outline = mpltPath.Path(basin)
 
 
-    #all finished. there may be some contents in buffer that needs to be written to file
+            buffer.tick(i) # counter increases regardless of this point being in/out of  basin
 
-    print(f"rank:{rank}, All completed {buffer.max_idx}")
-    buffer.checkpoint(buffer.max_idx)
-else:
-    print(f"rank:{rank}, Nothing to do")
+
+        #all finished. there may be some contents in buffer that needs to be written to file
+
+        print(f"rank:{rank}, All completed {buffer.max_idx}")
+        buffer.checkpoint(buffer.max_idx)
+    else:
+        print(f"rank:{rank}, Nothing to do")
 

@@ -1,8 +1,6 @@
 #!/bin/bash
 # script version: slurm
 #
-# must be run with sbatch c2o.sl [realisationDirectory] [managementDBLocation]
-
 #SBATCH --job-name=gen_basin_stats
 #SBATCH --account=nesi00213
 #SBATCH --partition=nesi_research
@@ -13,6 +11,8 @@
 #SBATCH -e %x.%j.err
 #SBATCH --hint=nomultithread    # don't use hyperthreading
 
-export PYTHONPATH=`pwd`/../../:$PYTHONPATH
+echo $VMDIR
+export PYTHONPATH=$VMDIR:$PYTHONPATH 
+mkdir -p outdir
 srun python gen_basin_stats.py
 

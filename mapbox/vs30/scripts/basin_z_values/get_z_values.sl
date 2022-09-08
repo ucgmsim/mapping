@@ -26,9 +26,7 @@
 
 #at a time. we have only 4 array jobs running. each array job its own task id 0-79
 
-which python
-
-export PYTHONPATH=`pwd`/../../:$PYTHONPATH
+export PYTHONPATH=$VMDIR:$PYTHONPATH
 
 i=`printf %04d $SLURM_ARRAY_TASK_ID` # convert to 4-digit number eg. 1 --> 0001
 infile=basin_stats.ll_${i} # eg. basin_stats.ll_0001
@@ -39,6 +37,7 @@ outdir=z_values
 
 echo $infile
 echo $outfile
+mkdir -p $outdir
 
 cmd="python get_z.py -ll $indir/$infile --nzvm-path `which NZVM` -v 2.07 -z Z1.0 Z2.5 -o $outdir/$outfile --no_header"
 echo $cmd
