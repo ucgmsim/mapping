@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 
-
 out_file = "basin_stats_z.csv"
 
-
-from pathlib import Path
 import pandas as pd
 import argparse
-
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
