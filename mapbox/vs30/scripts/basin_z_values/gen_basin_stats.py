@@ -8,7 +8,7 @@ import numpy as np
 
 from qcore import geo
 
-from Velocity_Model.z import basin_dict
+from Velocity_Model.z import basin_outlines_dict
 from mpi4py import MPI
 
 
@@ -26,7 +26,8 @@ num_cores =  comm.Get_size()
 
 
 BASIN_VER = "2.07"
-basin_files = basin_dict[BASIN_VER]
+basin_outlines = basin_outlines_dict[BASIN_VER]
+
 
 outdir = Path("outdir")
 out_csv = outdir / f"basin_stats_{rank:04d}.csv" # lon, lat, nztm_x, nztm_y, True, basin_name
@@ -129,31 +130,29 @@ if __name__ == "__main__":
         last_basin_idx = 0
 
         #load the first basin details
-        basin_fp = basin_files[last_basin_idx]
-        basin = np.loadtxt(basin_fp)
-        basin_outline = mpltPath.Path(basin)
+        outline_fp = basin_outlines[last_basin_idx]
+        outline_path = mpltPath.Path(np.loadtxt(outline_fp))
 
         for i in range(buffer.checkpoint_idx+1,n_points):
 
             basin_tested = 0
 
-            while basin_tested < len(basins):
+            while basin_tested < len(basin_outlines):
                 # we try the same basin (ie. basin), it's highly likely neighbouring locations belong to the same basin
-                if basin_outline.contains_point((ll_points[i][0],ll_points[i][1])):
+                if outline_path.contains_point((ll_points[i][0],ll_points[i][1])):
 
-                    to_print_csv = f"{ll_points[i][0]}, {ll_points[i][1]}, {nztm_points[i][0]}, {nztm_points[i][1]}, {True}, {basin_fp.name}\n"
+                    to_print_csv = f"{ll_points[i][0]}, {ll_points[i][1]}, {nztm_points[i][0]}, {nztm_points[i][1]}, {True}, {outline_fp.name}\n"
                     to_print_ll = f"{ll_points[i][0]} {ll_points[i][1]} {nztm_points[i][0]}_{nztm_points[i][1]}\n"
                     buffer.write(to_print_csv, to_print_ll)
                     break
 
                 # the basin we tried doesn't contain this point. Try the next one 
                 last_basin_idx += 1
-                last_basin_idx = last_basin_idx % len(basins) # go back to the first basin
+                last_basin_idx = last_basin_idx % len(basin_outlines) # go back to the first basin
                 basin_tested+= 1
 
-                basin_fp = basins[last_basin_idx] #load the details. will be using this for the next iteration
-                basin = np.loadtxt(basin_fp)
-                basin_outline = mpltPath.Path(basin)
+                outline_fp = basin_outlines[last_basin_idx] #load the details. will be using this for the next iteration
+                outline_path = mpltPath.Path(np.loadtxt(outline_fp))
 
 
             buffer.tick(i) # counter increases regardless of this point being in/out of  basin
