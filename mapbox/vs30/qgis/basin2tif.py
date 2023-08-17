@@ -76,6 +76,7 @@ BASINS = {
     "Motu_bay1_Outline_WGS84.txt": 33,
     "Motu_bay2_Outline_WGS84.txt": 33,
     "Motu_bay3_Outline_WGS84.txt": 33,
+    "Whangaparoa_outline_WGS84.txt": 34,
 }
 
 
