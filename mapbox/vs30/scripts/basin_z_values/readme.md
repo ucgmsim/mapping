@@ -81,7 +81,7 @@ cd ../
 
 This creates 80 splits named `basin_stats.ll_0001` etc.
 
-## Coputing Z values for given locations
+## Computing Z values for given locations
 
 (Duration: 6 hours)
 
