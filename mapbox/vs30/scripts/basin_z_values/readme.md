@@ -79,14 +79,28 @@ split -l80000 -d -a4 ../basin_stats.ll basin_stats.ll_
 cd ../
 ```
 
-This creates 80 splits named `basin_stats.ll_0001` etc.
+This creates approximately 80 splits named `basin_stats.ll_0001` etc. Check how many splits you have.
 
 ## Computing Z values for given locations
 
 (Duration: 6 hours)
 
 We will be computing Z values using NZVM. This requires quite a large memory (96Gb peak), and it is recommended to run on Maui using the supplied SLURM script.
-From above, we have 80 split files to process - if you chose to go with a different number, update the SLURM script.
+From above, we have 80 split files to process - if you have a different number, update the SLURM script.
+
+In particular, you will need to update 
+```
+#SBATCH --array=0-79%4 # 80 array jobs with 4 jobs running at a time
+
+```
+
+The following variables will be automatically set.
+```
+$SLURM_ARRAY_TASK_ID  0-79
+$SLURM_ARRAY_TASK_MIN 0
+$SLURM_ARRAY_TASK_MAX 79
+````
+
 
 Find your VMDIR as above and replace it in the below example
 
