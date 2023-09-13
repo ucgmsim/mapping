@@ -47,7 +47,10 @@ Don't forget to add the GeoTIFF files into the qgis directory containing the qgs
 And then access it at [http://hostname.canterbury.ac.nz](http://hostname.canterbury.ac.nz) for the map access token to work.
 
 ## Basin Data
-After retrieving data (sample in `qgis/sample_out_raster.csv`), update params and run `basin2tif.py`.
+You need to generate a 100m grid data and which basin each grid point belongs to (A sample basin_stats_z.csv can be obtained from  [Dropbox link](https://www.dropbox.com/scl/fi/95q6ysyv3arq7hbdkl6ze/basin_stats_z.csv?rlkey=0extrc3rn0am2jq2e7bjfogrv&dl=0) ). For a fresh generation, follow instructions in qgis/scripts/basin_z_values/readme.md
+
+Then update and run `basin2tif.py`. ￼
+
 When adding new basins, update `basin2tif.py`, grouping multiple segments of the same basin together with the same index.
 
 ![Screen Shot 2021-09-01 at 11 14 51 AM](https://user-images.githubusercontent.com/466989/131588062-7584cba9-8bd6-4f95-b117-8069910c2a08.png)
