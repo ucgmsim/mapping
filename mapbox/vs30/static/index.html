@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Interactive Vs30 Map">
+    <meta name="author" content="SeisTech">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Vs30 Map</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="map.css"/>
+</head>
+
+<body>
+
+<div id="map"></div>
+<div class="m-2" id="control">
+<div class="d-flex">
+  <div class="dropdown d-inline" id="menu_layer" style="width: 5rem;">
+    <button class="btn btn-secondary btn-sm dropdown-toggle mb-1" type="button" id="menubutton_layer"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layer</button>
+    <div class="dropdown-menu" aria-labelledby="menubutton_layer">
+      <a class="dropdown-item" href="#" id="Geology ID">Geology Category</a>
+      <a class="dropdown-item" href="#" id="Geology Vs30 (m/s)">Geology Vs30</a>
+      <a class="dropdown-item" href="#" id="Geology Standard Deviation">Geology Standard Deviation</a>
+      <a class="dropdown-item" href="#" id="Slope">Slope</a>
+      <a class="dropdown-item" href="#" id="Coast Distance (m)">Coast Distance</a>
+      <a class="dropdown-item" href="#" id="Terrain ID">Terrain Category</a>
+      <a class="dropdown-item" href="#" id="Terrain Vs30 (m/s)">Terrain Vs30</a>
+      <a class="dropdown-item" href="#" id="Terrain Standard Deviation">Terrain Standard Deviation</a>
+      <a class="dropdown-item active" href="#" id="Combined Vs30 (m/s)">Combined Vs30</a>
+      <a class="dropdown-item" href="#" id="Combined Standard Deviation">Combined Standard Deviation</a>
+      <a class="dropdown-item" href="#" id="Z 1.0">Z<sub>1.0</sub></a>
+      <a class="dropdown-item" href="#" id="Z 2.5">Z<sub>2.5</sub></a>
+    </div>
+  </div>
+  <div class="d-inline slide-width pl-0 pt-2">
+    <input type="range" id="opacity" onchange="update_opacity();" oninput="update_opacity();" class="form-control-range" min=0 max=1 step=0.01 value=0.8>
+  </div>
+</div>
+<div class="collapse show" id="collapse_dem">
+  <div class="d-flex">
+    <div class="d-inline my-1">
+      <span class="fix-lbl fix-bg rounded justify-content-center py-1 px-2 mr-3">DEM</span>
+    </div>
+    <div class="d-inline pl-0 pt-2 slide-width-dem">
+      <input type="range" id="dem"
+        onchange="update_dem();" oninput="update_dem();"
+        class="form-control-range" min=0 max=2 step=0.1 value=0>
+    </div>
+  </div>
+</div>
+
+<div class="input-group input-group-sm my-1 mt-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_lon">Longitude</span>
+  </div>
+  <input type="text" id="lon" onkeydown="map_lnglatselect(this);" class="form-control" aria-label="Longitude" aria-describedby="lbl_lon">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_lat">Latitude</span>
+  </div>
+  <input type="text" id="lat" onkeydown="map_lnglatselect(this);" class="form-control" aria-label="Latitude" aria-describedby="lbl_lat">
+</div>
+<div class="d-flex justify-content-center my-1 bg-light rounded">
+  <div class="form-check" id="chk_mouse">
+    <input class="form-check-input" type="checkbox" onclick="follow_mouse(this);" id="follow_mouse">
+    <label class="fix-lbl form-check-label" for="follow_mouse">follows mouse</label>
+  </div>
+</div>
+<!-- geology -->
+<div class="input-group input-group-sm mt-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="geocat">Geology</span>
+  </div>
+  <input type="text" id="gid_aak" readonly class="form-control" placeholder="NA" aria-label="Geology Category" aria-describedby="geocat">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_aak_vs30">Vs30<sub>(m/s)</sub></span>
+  </div>
+  <input type="text" id="aak_vs30" readonly class="form-control fix-bg" placeholder="NA" aria-label="Vs30 (m/s)" aria-describedby="lbl_aak_vs30">
+  <div class="input-group-append">
+    <span class="input-group-text" id="lbl_aak_stdv">stdev</span>
+  </div>
+  <input type="text" id="aak_stdv" readonly class="form-control fix-bg" placeholder="NA" aria-label="Standard Deviation" aria-describedby="lbl_aak_stdv">
+</div>
+<!-- terrain -->
+<div class="input-group input-group-sm mt-2">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="tercat">Terrain</span>
+  </div>
+  <input type="text" id="gid_yca" readonly class="form-control" placeholder="NA" aria-label="Terrain Category" aria-describedby="tercat">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_yca_vs30">Vs30<sub>(m/s)</sub></span>
+  </div>
+  <input type="text" id="yca_vs30" readonly class="form-control fix-bg" placeholder="NA" aria-label="Vs30 (m/s)" aria-describedby="lbl_yca_vs30">
+  <div class="input-group-append">
+    <span class="input-group-text" id="lbl_yca_stdv">stdev</span>
+  </div>
+  <input type="text" id="yca_stdv" readonly class="form-control fix-bg" placeholder="NA" aria-label="Standard Deviation" aria-describedby="lbl_yca_stdv">
+</div>
+<!-- combined -->
+<label class="fix-lbl fix-bg rounded d-flex justify-content-center mt-2 mb-1" for="com_vs30">Combined Geology / Terrain</label>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_com_vs30">Vs30<sub>(m/s)</sub></span>
+  </div>
+  <input type="text" id="com_vs30" readonly class="form-control" placeholder="NA" aria-label="Vs30 (m/s)" aria-describedby="lbl_com_vs30">
+  <div class="input-group-append">
+    <span class="input-group-text" id="lbl_com_stdv">stdev</span>
+  </div>
+  <input type="text" id="com_stdv" readonly class="form-control" placeholder="NA" aria-label="Standard Deviation" aria-describedby="lbl_com_stdv">
+</div>
+<!-- z -->
+<div class="input-group input-group-sm mt-2">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basin">Basin</span>
+  </div>
+  <input type="text" id="id_basin" readonly class="form-control" placeholder="NA" aria-label="Basin Description" aria-describedby="basin">
+</div>
+<div class="input-group input-group-sm my-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="lbl_z1p0">Z<sub>1.0(km)</sub></span>
+  </div>
+  <input type="text" id="val_z1p0" readonly class="form-control fix-bg" placeholder="NA" aria-label="Z 1.0" aria-describedby="lbl_z1p0">
+  <div class="input-group-append">
+    <span class="input-group-text" id="lbl_z2p5">Z<sub>2.5(km)</sub></span>
+  </div>
+  <input type="text" id="val_z2p5" readonly class="form-control fix-bg" placeholder="NA" aria-label="Z 2.5" aria-describedby="lbl_z2p5">
+</div>
+
+
+</div>
+<div id="logo" class="fixed-bottom mb-4 ml-1">
+  <img src="watermark.png" width="508.5px">
+</div>
+<div id="spinnero" class="spinner-border text-dark" role="status">
+</div>
+<div id="spinner" class="spinner-border text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<div id="legend" class="d-flex">
+    <div class="align-self-end">
+        <img id="img-legend" class="pull-right">
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<!-- for calculating sun position in mapbox sky layer -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<script type="text/javascript" src="map.js"></script>
+</body>
+</html>
+

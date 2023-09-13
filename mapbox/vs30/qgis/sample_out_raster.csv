@@ -1,0 +1,15 @@
+NZGD_lon,NZGD_lat,in_basin,Z1.0,Z2.5,basin_name
+1609100,5433600,True,0.605,0.825,Nelson_Polygon_WGS84.txt
+1609100,5434100,True,0.605,0.775,Nelson_Polygon_WGS84.txt
+1609100,5434600,True,0.605,0.775,Nelson_Polygon_WGS84.txt
+1609100,5435100,True,0.605,0.725,Nelson_Polygon_WGS84.txt
+1609100,5435600,True,0.605,0.625,Nelson_Polygon_WGS84.txt
+1609100,5436100,True,0.515,0.525,Nelson_Polygon_WGS84.txt
+1609100,5436600,True,0.445,0.475,Nelson_Polygon_WGS84.txt
+1609100,5437100,True,0.435,0.475,Nelson_Polygon_WGS84.txt
+1609100,5437600,True,0.575,0.575,Nelson_Polygon_WGS84.txt
+1609100,5438100,True,0.605,0.875,Nelson_Polygon_WGS84.txt
+1609100,5438600,True,0.605,1.075,Nelson_Polygon_WGS84.txt
+1609100,5439100,True,0.605,1.025,Nelson_Polygon_WGS84.txt
+1609100,5439600,True,0.605,0.975,Nelson_Polygon_WGS84.txt
+1609100,5440100,True,0.605,0.875,Nelson_Polygon_WGS84.txt

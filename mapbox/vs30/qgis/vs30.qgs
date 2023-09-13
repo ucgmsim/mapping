@@ -1,0 +1,2352 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis saveUserFull="Sung Bae" saveDateTime="2021-09-01T12:19:53" saveUser="sungbae" projectname="" version="3.16.4-Hannover">
+  <homePath path=""/>
+  <title></title>
+  <autotransaction active="0"/>
+  <evaluateDefaultValues active="0"/>
+  <trust active="0"/>
+  <projectCrs>
+    <spatialrefsys>
+      <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+      <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>177</srsid>
+      <srid>2193</srid>
+      <authid>EPSG:2193</authid>
+      <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+      <projectionacronym>tmerc</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </projectCrs>
+  <layer-tree-group>
+    <customproperties/>
+    <layer-tree-layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" source="../../../../Vs30/vs30/data/combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Vs30 (m/s)" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Standard Deviation" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/geology_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Geology Vs30 (m/s)" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/geology_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Geology Standard Deviation" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/terrain_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Terrain Vs30 (m/s)" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/terrain_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Terrain Standard Deviation" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="basins_a4116292_a19e_4c66_ba17_5beee17ea12e" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/basins.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Z 1.0" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="basins_e7f45375_24f2_488d_96d0_ae7963b6de4f" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/basins.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Z 2.5" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/gid.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Geology ID" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/qmap" expanded="1" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="QMap" providerKey="ogr">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/tid.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Terrain ID" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/slope.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Slope" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer id="coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0" checked="Qt::Unchecked" source="../../../../Vs30/vs30/data/coast.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Coast Distance (m)" providerKey="gdal">
+      <customproperties/>
+    </layer-tree-layer>
+    <custom-order enabled="0">
+      <item>coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0</item>
+      <item>gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5</item>
+      <item>slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e</item>
+      <item>tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d</item>
+      <item>geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623</item>
+      <item>terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf</item>
+      <item>combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f</item>
+      <item>qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c</item>
+      <item>combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691</item>
+      <item>geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b</item>
+      <item>terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df</item>
+      <item>basins_e7f45375_24f2_488d_96d0_ae7963b6de4f</item>
+      <item>basins_a4116292_a19e_4c66_ba17_5beee17ea12e</item>
+    </custom-order>
+  </layer-tree-group>
+  <snapping-settings unit="1" self-snapping="0" minScale="0" enabled="0" intersection-snapping="0" scaleDependencyMode="0" maxScale="0" tolerance="12" mode="2" type="1">
+    <individual-layer-settings>
+      <layer-setting id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" minScale="0" enabled="0" maxScale="0" tolerance="12" units="1" type="1"/>
+    </individual-layer-settings>
+  </snapping-settings>
+  <relations/>
+  <mapcanvas annotationsVisible="1" name="theMapCanvas">
+    <units>meters</units>
+    <extent>
+      <xmin>1559654.09529802249744534</xmin>
+      <ymin>5156300.19486833922564983</ymin>
+      <xmax>1591574.20501518296077847</xmax>
+      <ymax>5194415.14768905751407146</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+        <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>177</srsid>
+        <srid>2193</srid>
+        <authid>EPSG:2193</authid>
+        <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+        <projectionacronym>tmerc</projectionacronym>
+        <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
+  <projectModels/>
+  <legend updateDrawingOrder="true">
+    <legendlayer checked="Qt::Checked" open="false" showFeatureCount="0" drawingOrder="-1" name="Combined Vs30 (m/s)">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Combined Standard Deviation">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Geology Vs30 (m/s)">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Geology Standard Deviation">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Terrain Vs30 (m/s)">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Terrain Standard Deviation">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Z 1.0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="basins_a4116292_a19e_4c66_ba17_5beee17ea12e" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Z 2.5">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="basins_e7f45375_24f2_488d_96d0_ae7963b6de4f" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Geology ID">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="true" showFeatureCount="0" drawingOrder="-1" name="QMap">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Terrain ID">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Slope">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Unchecked" open="false" showFeatureCount="0" drawingOrder="-1" name="Coast Distance (m)">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0" visible="0"/>
+      </filegroup>
+    </legendlayer>
+  </legend>
+  <mapViewDocks/>
+  <mapViewDocks3D/>
+  <main-annotation-layer refreshOnNotifyMessage="" autoRefreshTime="0" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" type="annotation">
+    <id>Annotations_021bb3ce_6ef8_4a9f_adde_4ef3adf7bff4</id>
+    <datasource></datasource>
+    <keywordList>
+      <value></value>
+    </keywordList>
+    <layername>Annotations</layername>
+    <srs>
+      <spatialrefsys>
+        <wkt></wkt>
+        <proj4></proj4>
+        <srsid>0</srsid>
+        <srid>0</srid>
+        <authid></authid>
+        <description></description>
+        <projectionacronym></projectionacronym>
+        <ellipsoidacronym></ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </srs>
+    <resourceMetadata>
+      <identifier></identifier>
+      <parentidentifier></parentidentifier>
+      <language></language>
+      <type></type>
+      <title></title>
+      <abstract></abstract>
+      <links/>
+      <fees></fees>
+      <encoding></encoding>
+      <crs>
+        <spatialrefsys>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </crs>
+      <extent/>
+    </resourceMetadata>
+    <items/>
+    <layerOpacity>1</layerOpacity>
+  </main-annotation-layer>
+  <projectlayers>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1224550</xmin>
+        <ymin>4850150</ymin>
+        <xmax>2038050</xmax>
+        <ymax>5905150</ymax>
+      </extent>
+      <id>basins_a4116292_a19e_4c66_ba17_5beee17ea12e</id>
+      <datasource>../../../../Vs30/vs30/data/basins.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Z 1.0</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+        <noDataList bandNo="3" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour"/>
+        </provider>
+        <rasterrenderer band="2" nodataColor="" classificationMax="1.355" alphaBand="-1" opacity="1" classificationMin="0.005" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="1.355" labelPrecision="4" minimumValue="0.0050000000000000001" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="0.0050" color="#ff4040" value="0.005"/>
+              <item alpha="255" label="0.1277" color="#ff9740" value="0.127727272727273"/>
+              <item alpha="255" label="0.2505" color="#ffee40" value="0.250454545454545"/>
+              <item alpha="255" label="0.3732" color="#baff40" value="0.373181818181818"/>
+              <item alpha="255" label="0.4959" color="#63ff40" value="0.495909090909091"/>
+              <item alpha="255" label="0.6186" color="#40ff74" value="0.618636363636364"/>
+              <item alpha="255" label="0.7414" color="#40ffcb" value="0.741363636363636"/>
+              <item alpha="255" label="0.8641" color="#40ddff" value="0.864090909090909"/>
+              <item alpha="255" label="0.9868" color="#4085ff" value="0.986818181818182"/>
+              <item alpha="255" label="1.1095" color="#5140ff" value="1.109545454545455"/>
+              <item alpha="255" label="1.2323" color="#a840ff" value="1.232272727272727"/>
+              <item alpha="255" label="1.3550" color="#ff40ff" value="1.355"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1224550</xmin>
+        <ymin>4850150</ymin>
+        <xmax>2038050</xmax>
+        <ymax>5905150</ymax>
+      </extent>
+      <id>basins_e7f45375_24f2_488d_96d0_ae7963b6de4f</id>
+      <datasource>../../../../Vs30/vs30/data/basins.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Z 2.5</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+        <noDataList bandNo="3" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour"/>
+        </provider>
+        <rasterrenderer band="3" nodataColor="" classificationMax="9.625" alphaBand="-1" opacity="1" classificationMin="0.225" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="9.625" labelPrecision="4" minimumValue="0.22500000000000001" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="0.2250" color="#ff4040" value="0.225"/>
+              <item alpha="255" label="1.0795" color="#ff9740" value="1.079545454545455"/>
+              <item alpha="255" label="1.9341" color="#ffee40" value="1.93409090909091"/>
+              <item alpha="255" label="2.7886" color="#baff40" value="2.788636363636364"/>
+              <item alpha="255" label="3.6432" color="#63ff40" value="3.643181818181819"/>
+              <item alpha="255" label="4.4977" color="#40ff74" value="4.497727272727273"/>
+              <item alpha="255" label="5.3523" color="#40ffcb" value="5.352272727272728"/>
+              <item alpha="255" label="6.2068" color="#40ddff" value="6.206818181818182"/>
+              <item alpha="255" label="7.0614" color="#4085ff" value="7.061363636363637"/>
+              <item alpha="255" label="7.9159" color="#5140ff" value="7.915909090909091"/>
+              <item alpha="255" label="8.7705" color="#a840ff" value="8.770454545454546"/>
+              <item alpha="255" label="9.6250" color="#ff40ff" value="9.625"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0</id>
+      <datasource>../../../../Vs30/vs30/data/coast.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Coast Distance (m)</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="65535" alphaBand="-1" opacity="1" classificationMin="20" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="65535" labelPrecision="0" minimumValue="20" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="20" color="#ff4040" value="20"/>
+              <item alpha="255" label="5976" color="#ff9740" value="5975.909090909091"/>
+              <item alpha="255" label="11932" color="#ffee40" value="11931.818181818182"/>
+              <item alpha="255" label="17888" color="#baff40" value="17887.727272727272"/>
+              <item alpha="255" label="23844" color="#63ff40" value="23843.636363636364"/>
+              <item alpha="255" label="29800" color="#40ff74" value="29799.545454545456"/>
+              <item alpha="255" label="35755" color="#40ffcb" value="35755.454545454544"/>
+              <item alpha="255" label="41711" color="#40dcff" value="41711.36363636364"/>
+              <item alpha="255" label="47667" color="#4085ff" value="47667.27272727273"/>
+              <item alpha="255" label="53623" color="#5140ff" value="53623.181818181816"/>
+              <item alpha="255" label="59579" color="#a840ff" value="59579.09090909091"/>
+              <item alpha="255" label="65535+" color="#ff40ff" value="65535"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691</id>
+      <datasource>../../../../Vs30/vs30/data/combined_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Combined Standard Deviation</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="2" nodataColor="" classificationMax="0.9239391" alphaBand="-1" opacity="1" classificationMin="0.0830088" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="0.92393910000000001" labelPrecision="3" minimumValue="0.083008799999999994" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="0.083" color="#ff4040" value="0.0830088"/>
+              <item alpha="255" label="0.159" color="#ff9740" value="0.159457009090909"/>
+              <item alpha="255" label="0.236" color="#ffee40" value="0.235905218181818"/>
+              <item alpha="255" label="0.312" color="#baff40" value="0.312353427272727"/>
+              <item alpha="255" label="0.389" color="#63ff40" value="0.388801636363636"/>
+              <item alpha="255" label="0.465" color="#40ff74" value="0.465249845454545"/>
+              <item alpha="255" label="0.542" color="#40ffcb" value="0.541698054545454"/>
+              <item alpha="255" label="0.618" color="#40ddff" value="0.618146263636364"/>
+              <item alpha="255" label="0.695" color="#4085ff" value="0.694594472727273"/>
+              <item alpha="255" label="0.771" color="#5140ff" value="0.771042681818182"/>
+              <item alpha="255" label="0.847" color="#a840ff" value="0.847490890909091"/>
+              <item alpha="255" label="0.924" color="#ff40ff" value="0.9239391"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f</id>
+      <datasource>../../../../Vs30/vs30/data/combined_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Combined Vs30 (m/s)</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="880.1893311" alphaBand="-1" opacity="1" classificationMin="136.3252869" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="880.1893311" labelPrecision="0" minimumValue="136.32528690000001" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="136" color="#ff4040" value="136.3252869"/>
+              <item alpha="255" label="204" color="#ff9740" value="203.94929091818182"/>
+              <item alpha="255" label="272" color="#ffee40" value="271.57329493636365"/>
+              <item alpha="255" label="339" color="#baff40" value="339.19729895454543"/>
+              <item alpha="255" label="407" color="#63ff40" value="406.82130297272727"/>
+              <item alpha="255" label="474" color="#40ff74" value="474.4453069909091"/>
+              <item alpha="255" label="542" color="#40ffcb" value="542.0693110090909"/>
+              <item alpha="255" label="610" color="#40ddff" value="609.6933150272728"/>
+              <item alpha="255" label="677" color="#4085ff" value="677.3173190454546"/>
+              <item alpha="255" label="745" color="#5140ff" value="744.9413230636364"/>
+              <item alpha="255" label="813" color="#a840ff" value="812.5653270818183"/>
+              <item alpha="255" label="880" color="#ff40ff" value="880.1893311000001"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b</id>
+      <datasource>../../../../Vs30/vs30/data/geology_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Geology Standard Deviation</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="2" nodataColor="" classificationMax="0.9949647" alphaBand="-1" opacity="1" classificationMin="0.0797546" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="0.99496470000000004" labelPrecision="3" minimumValue="0.079754599999999995" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="0.080" color="#ff4040" value="0.0797546"/>
+              <item alpha="255" label="0.163" color="#ff9740" value="0.162955518181818"/>
+              <item alpha="255" label="0.246" color="#ffee40" value="0.246156436363636"/>
+              <item alpha="255" label="0.329" color="#baff40" value="0.329357354545455"/>
+              <item alpha="255" label="0.413" color="#63ff40" value="0.412558272727273"/>
+              <item alpha="255" label="0.496" color="#40ff74" value="0.495759190909091"/>
+              <item alpha="255" label="0.579" color="#40ffcb" value="0.578960109090909"/>
+              <item alpha="255" label="0.662" color="#40ddff" value="0.662161027272727"/>
+              <item alpha="255" label="0.745" color="#4085ff" value="0.745361945454545"/>
+              <item alpha="255" label="0.829" color="#5140ff" value="0.828562863636364"/>
+              <item alpha="255" label="0.912" color="#a840ff" value="0.911763781818182"/>
+              <item alpha="255" label="0.995" color="#ff40ff" value="0.9949647"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623</id>
+      <datasource>../../../../Vs30/vs30/data/geology_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Geology Vs30 (m/s)</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="933.5745239" alphaBand="-1" opacity="1" classificationMin="128.3021698" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="933.57452390000003" labelPrecision="0" minimumValue="128.3021698" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="128" color="#ff4040" value="128.3021698"/>
+              <item alpha="255" label="202" color="#ff9740" value="201.50874744545456"/>
+              <item alpha="255" label="275" color="#ffee40" value="274.7153250909091"/>
+              <item alpha="255" label="348" color="#baff40" value="347.9219027363636"/>
+              <item alpha="255" label="421" color="#63ff40" value="421.1284803818182"/>
+              <item alpha="255" label="494" color="#40ff74" value="494.33505802727274"/>
+              <item alpha="255" label="568" color="#40ffcb" value="567.5416356727272"/>
+              <item alpha="255" label="641" color="#40ddff" value="640.7482133181818"/>
+              <item alpha="255" label="714" color="#4085ff" value="713.9547909636364"/>
+              <item alpha="255" label="787" color="#5140ff" value="787.1613686090909"/>
+              <item alpha="255" label="860" color="#a840ff" value="860.3679462545455"/>
+              <item alpha="255" label="934" color="#ff40ff" value="933.5745239"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5</id>
+      <datasource>../../../../Vs30/vs30/data/gid.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Geology ID</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="15" alphaBand="-1" opacity="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="15" labelPrecision="0" minimumValue="0" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="G00" color="#ff4040" value="0"/>
+              <item alpha="255" label="G01" color="#ff8040" value="1"/>
+              <item alpha="255" label="G04" color="#ffbf40" value="2"/>
+              <item alpha="255" label="G05" color="#ffff40" value="3"/>
+              <item alpha="255" label="G06" color="#bfff40" value="4"/>
+              <item alpha="255" label="G08" color="#80ff40" value="5"/>
+              <item alpha="255" label="G09" color="#40ff40" value="6"/>
+              <item alpha="255" label="G10" color="#40ff80" value="7"/>
+              <item alpha="255" label="G11" color="#40ffbf" value="8"/>
+              <item alpha="255" label="G12" color="#40ffff" value="9"/>
+              <item alpha="255" label="G13" color="#40bfff" value="10"/>
+              <item alpha="255" label="G14" color="#4080ff" value="11"/>
+              <item alpha="255" label="G15" color="#4040ff" value="12"/>
+              <item alpha="255" label="G16" color="#8040ff" value="13"/>
+              <item alpha="255" label="G17" color="#bf40ff" value="14"/>
+              <item alpha="255" label="G18" color="#ff40ff" value="15"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer autoRefreshEnabled="0" maxScale="0" styleCategories="AllStyleCategories" simplifyLocal="1" hasScaleBasedVisibilityFlag="0" simplifyAlgorithm="0" refreshOnNotifyMessage="" wkbType="MultiPolygon" simplifyMaxScale="1" type="vector" simplifyDrawingHints="1" simplifyDrawingTol="1" autoRefreshTime="0" minScale="100000000" labelsEnabled="0" readOnly="0" refreshOnNotifyEnabled="0" geometry="Polygon">
+      <extent>
+        <xmin>1089955.19689999986439943</xmin>
+        <ymin>4747863.66160000022500753</ymin>
+        <xmax>2091985.26939999964088202</xmax>
+        <ymax>6223138.31170000042766333</ymax>
+      </extent>
+      <id>qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c</id>
+      <datasource>../../../../Vs30/vs30/data/qmap</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>QMap</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["unknown",BASEGEOGCRS["GCS_unknown",DATUM["D_Unknown_based_on_GRS80_ellipsoid",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1],ID["EPSG",7019]]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]]],CONVERSION["unnamed",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +units=m +no_defs +type=crs</proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description>unknown</description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="ISO-8859-1">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal accumulate="0" durationUnit="min" endField="" enabled="0" endExpression="" startExpression="" startField="" fixedDuration="0" mode="0" durationField="">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <renderer-v2 symbollevels="0" enableorderby="0" forceraster="0" type="singleSymbol">
+        <symbols>
+          <symbol alpha="1" name="0" force_rhr="0" type="fill" clip_to_extent="1">
+            <layer locked="0" class="SimpleFill" enabled="1" pass="0">
+              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="color" v="114,155,111,0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="35,35,35,255"/>
+              <prop k="outline_style" v="no"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties" type="Map">
+                    <Option name="fillColor" type="Map">
+                      <Option name="active" value="true" type="bool"/>
+                      <Option name="field" value="gid" type="QString"/>
+                      <Option name="transformer" type="Map">
+                        <Option name="d" type="Map">
+                          <Option name="colorramp" type="Map">
+                            <Option name="name" value="[source]" type="QString"/>
+                            <Option name="properties" type="Map">
+                              <Option name="color1" value="255,64,64,255" type="QString"/>
+                              <Option name="color2" value="255,64,255,255" type="QString"/>
+                              <Option name="discrete" value="0" type="QString"/>
+                              <Option name="rampType" value="gradient" type="QString"/>
+                              <Option name="stops" value="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255" type="QString"/>
+                            </Option>
+                            <Option name="type" value="gradient" type="QString"/>
+                          </Option>
+                          <Option name="maxValue" value="14" type="double"/>
+                          <Option name="minValue" value="0" type="double"/>
+                          <Option name="nullColor" value="0,0,0,255" type="QString"/>
+                          <Option name="rampName" value="" type="QString"/>
+                        </Option>
+                        <Option name="t" value="2" type="int"/>
+                      </Option>
+                      <Option name="type" value="2" type="int"/>
+                    </Option>
+                  </Option>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <labeling type="simple">
+        <settings calloutType="simple">
+          <text-style fontFamily="Noto Sans" allowHtml="0" fontWeight="50" textOrientation="horizontal" capitalization="0" fontSize="10" fontWordSpacing="0" fontLetterSpacing="0" fieldName="gid" blendMode="0" fontStrikeout="0" textColor="0,0,0,255" namedStyle="Regular" fontSizeUnit="Point" previewBkgrdColor="255,255,255,255" fontKerning="1" fontItalic="0" multilineHeight="1" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" isExpression="0" useSubstitutions="0" textOpacity="1">
+            <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferColor="255,255,255,255" bufferSize="1" bufferNoFill="1" bufferBlendMode="0" bufferOpacity="1" bufferJoinStyle="128" bufferSizeUnits="MM" bufferDraw="0"/>
+            <text-mask maskEnabled="0" maskSizeUnits="MM" maskType="0" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskJoinStyle="128" maskSize="1.5" maskOpacity="1" maskedSymbolLayers=""/>
+            <background shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeSizeY="0" shapeRadiiUnit="MM" shapeRadiiY="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeSizeUnit="MM" shapeBorderColor="128,128,128,255" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBlendMode="0" shapeDraw="0" shapeRotationType="0" shapeOffsetX="0" shapeOffsetUnit="MM" shapeBorderWidthUnit="MM" shapeJoinStyle="64" shapeSizeX="0" shapeSizeType="0" shapeRadiiX="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeRotation="0" shapeSVGFile="" shapeFillColor="255,255,255,255" shapeBorderWidth="0" shapeOpacity="1" shapeOffsetY="0" shapeType="0">
+              <symbol alpha="1" name="markerSymbol" force_rhr="0" type="marker" clip_to_extent="1">
+                <layer locked="0" class="SimpleMarker" enabled="1" pass="0">
+                  <prop k="angle" v="0"/>
+                  <prop k="color" v="213,180,60,255"/>
+                  <prop k="horizontal_anchor_point" v="1"/>
+                  <prop k="joinstyle" v="bevel"/>
+                  <prop k="name" v="circle"/>
+                  <prop k="offset" v="0,0"/>
+                  <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                  <prop k="offset_unit" v="MM"/>
+                  <prop k="outline_color" v="35,35,35,255"/>
+                  <prop k="outline_style" v="solid"/>
+                  <prop k="outline_width" v="0"/>
+                  <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                  <prop k="outline_width_unit" v="MM"/>
+                  <prop k="scale_method" v="diameter"/>
+                  <prop k="size" v="2"/>
+                  <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                  <prop k="size_unit" v="MM"/>
+                  <prop k="vertical_anchor_point" v="1"/>
+                  <data_defined_properties>
+                    <Option type="Map">
+                      <Option name="name" value="" type="QString"/>
+                      <Option name="properties"/>
+                      <Option name="type" value="collection" type="QString"/>
+                    </Option>
+                  </data_defined_properties>
+                </layer>
+              </symbol>
+            </background>
+            <shadow shadowRadiusUnit="MM" shadowBlendMode="6" shadowUnder="0" shadowRadius="1.5" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowOpacity="0.69999999999999996" shadowOffsetDist="1" shadowScale="100" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowColor="0,0,0,255" shadowOffsetGlobal="1" shadowOffsetAngle="135" shadowDraw="0" shadowOffsetUnit="MM" shadowRadiusAlphaOnly="0"/>
+            <dd_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </dd_properties>
+            <substitutions/>
+          </text-style>
+          <text-format wrapChar="" leftDirectionSymbol="&lt;" decimals="3" formatNumbers="0" autoWrapLength="0" reverseDirectionSymbol="0" placeDirectionSymbol="0" useMaxLineLengthForAutoWrap="1" rightDirectionSymbol=">" addDirectionSymbol="0" multilineAlign="3" plussign="0"/>
+          <placement lineAnchorType="0" repeatDistanceUnits="MM" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" fitInPolygonOnly="0" overrunDistanceUnit="MM" preserveRotation="1" polygonPlacementFlags="2" dist="0" placement="0" offsetType="0" geometryGeneratorEnabled="0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" lineAnchorPercent="0.5" xOffset="0" layerType="PolygonGeometry" maxCurvedCharAngleOut="-25" rotationAngle="0" quadOffset="4" maxCurvedCharAngleIn="25" geometryGeneratorType="PointGeometry" yOffset="0" distMapUnitScale="3x:0,0,0,0,0,0" repeatDistance="0" offsetUnits="MM" centroidInside="0" priority="5" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" overrunDistanceMapUnitScale="3x:0,0,0,0,0,0" distUnits="MM" placementFlags="10" centroidWhole="0" geometryGenerator="" overrunDistance="0"/>
+          <rendering scaleMin="0" limitNumLabels="0" fontLimitPixelSize="0" obstacle="1" fontMaxPixelSize="10000" labelPerPart="0" scaleVisibility="0" displayAll="0" obstacleFactor="1" zIndex="0" maxNumLabels="2000" minFeatureSize="0" mergeLines="0" obstacleType="1" scaleMax="0" upsidedownLabels="0" drawLabels="1" fontMinPixelSize="3"/>
+          <dd_properties>
+            <Option type="Map">
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties"/>
+              <Option name="type" value="collection" type="QString"/>
+            </Option>
+          </dd_properties>
+          <callout type="simple">
+            <Option type="Map">
+              <Option name="anchorPoint" value="pole_of_inaccessibility" type="QString"/>
+              <Option name="ddProperties" type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+              <Option name="drawToAllParts" value="false" type="bool"/>
+              <Option name="enabled" value="0" type="QString"/>
+              <Option name="labelAnchorPoint" value="point_on_exterior" type="QString"/>
+              <Option name="lineSymbol" value="&lt;symbol alpha=&quot;1&quot; name=&quot;symbol&quot; force_rhr=&quot;0&quot; type=&quot;line&quot; clip_to_extent=&quot;1&quot;>&lt;layer locked=&quot;0&quot; class=&quot;SimpleLine&quot; enabled=&quot;1&quot; pass=&quot;0&quot;>&lt;prop k=&quot;align_dash_pattern&quot; v=&quot;0&quot;/>&lt;prop k=&quot;capstyle&quot; v=&quot;square&quot;/>&lt;prop k=&quot;customdash&quot; v=&quot;5;2&quot;/>&lt;prop k=&quot;customdash_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;prop k=&quot;customdash_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;dash_pattern_offset&quot; v=&quot;0&quot;/>&lt;prop k=&quot;dash_pattern_offset_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;prop k=&quot;dash_pattern_offset_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;draw_inside_polygon&quot; v=&quot;0&quot;/>&lt;prop k=&quot;joinstyle&quot; v=&quot;bevel&quot;/>&lt;prop k=&quot;line_color&quot; v=&quot;60,60,60,255&quot;/>&lt;prop k=&quot;line_style&quot; v=&quot;solid&quot;/>&lt;prop k=&quot;line_width&quot; v=&quot;0.3&quot;/>&lt;prop k=&quot;line_width_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;offset&quot; v=&quot;0&quot;/>&lt;prop k=&quot;offset_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;prop k=&quot;offset_unit&quot; v=&quot;MM&quot;/>&lt;prop k=&quot;ring_filter&quot; v=&quot;0&quot;/>&lt;prop k=&quot;tweak_dash_pattern_on_corners&quot; v=&quot;0&quot;/>&lt;prop k=&quot;use_custom_dash&quot; v=&quot;0&quot;/>&lt;prop k=&quot;width_map_unit_scale&quot; v=&quot;3x:0,0,0,0,0,0&quot;/>&lt;data_defined_properties>&lt;Option type=&quot;Map&quot;>&lt;Option name=&quot;name&quot; value=&quot;&quot; type=&quot;QString&quot;/>&lt;Option name=&quot;properties&quot;/>&lt;Option name=&quot;type&quot; value=&quot;collection&quot; type=&quot;QString&quot;/>&lt;/Option>&lt;/data_defined_properties>&lt;/layer>&lt;/symbol>" type="QString"/>
+              <Option name="minLength" value="0" type="double"/>
+              <Option name="minLengthMapUnitScale" value="3x:0,0,0,0,0,0" type="QString"/>
+              <Option name="minLengthUnit" value="MM" type="QString"/>
+              <Option name="offsetFromAnchor" value="0" type="double"/>
+              <Option name="offsetFromAnchorMapUnitScale" value="3x:0,0,0,0,0,0" type="QString"/>
+              <Option name="offsetFromAnchorUnit" value="MM" type="QString"/>
+              <Option name="offsetFromLabel" value="0" type="double"/>
+              <Option name="offsetFromLabelMapUnitScale" value="3x:0,0,0,0,0,0" type="QString"/>
+              <Option name="offsetFromLabelUnit" value="MM" type="QString"/>
+            </Option>
+          </callout>
+        </settings>
+      </labeling>
+      <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+        <DiagramCategory minScaleDenominator="0" opacity="1" lineSizeScale="3x:0,0,0,0,0,0" minimumSize="0" showAxis="1" direction="0" penAlpha="255" scaleDependency="Area" maxScaleDenominator="1e+08" width="15" rotationOffset="270" barWidth="5" spacing="5" spacingUnit="MM" backgroundAlpha="255" labelPlacementMethod="XHeight" enabled="0" height="15" penWidth="0" lineSizeType="MM" diagramOrientation="Up" sizeType="MM" backgroundColor="#ffffff" spacingUnitScale="3x:0,0,0,0,0,0" penColor="#000000" sizeScale="3x:0,0,0,0,0,0" scaleBasedVisibility="0">
+          <fontProperties style="Regular" description="Noto Sans,10,-1,0,50,0,0,0,0,0,Regular"/>
+          <attribute label="" field="" color="#000000"/>
+          <axisSymbol>
+            <symbol alpha="1" name="" force_rhr="0" type="line" clip_to_extent="1">
+              <layer locked="0" class="SimpleLine" enabled="1" pass="0">
+                <prop k="align_dash_pattern" v="0"/>
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="dash_pattern_offset" v="0"/>
+                <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="dash_pattern_offset_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="35,35,35,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0.26"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="ring_filter" v="0"/>
+                <prop k="tweak_dash_pattern_on_corners" v="0"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option name="name" value="" type="QString"/>
+                    <Option name="properties"/>
+                    <Option name="type" value="collection" type="QString"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </axisSymbol>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings dist="0" linePlacementFlags="18" obstacle="0" placement="1" showAll="1" priority="0" zIndex="0">
+        <properties>
+          <Option type="Map">
+            <Option name="name" value="" type="QString"/>
+            <Option name="properties"/>
+            <Option name="type" value="collection" type="QString"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks/>
+        <checkConfiguration type="Map">
+          <Option name="QgsGeometryGapCheck" type="Map">
+            <Option name="allowedGapsBuffer" value="0" type="double"/>
+            <Option name="allowedGapsEnabled" value="false" type="bool"/>
+            <Option name="allowedGapsLayer" value="" type="QString"/>
+          </Option>
+        </checkConfiguration>
+      </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field name="gid" configurationFlags="None">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias index="0" field="gid" name=""/>
+      </aliases>
+      <defaults>
+        <default applyOnUpdate="0" field="gid" expression=""/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="gid" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" exp="" field="gid"/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+        <columns>
+          <column width="-1" name="gid" hidden="0" type="field"/>
+          <column width="-1" hidden="1" type="actions"/>
+        </columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable>
+        <field name="gid" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field name="gid" labelOnTop="0"/>
+      </labelOnTop>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression>"gid"</previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e</id>
+      <datasource>../../../../Vs30/vs30/data/slope.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Slope</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="1.6886621" alphaBand="-1" opacity="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="1.6886620999999999" labelPrecision="4" minimumValue="0" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="0.0000" color="#ff4040" value="0"/>
+              <item alpha="255" label="0.1535" color="#ff9740" value="0.153514736363636"/>
+              <item alpha="255" label="0.3070" color="#ffee40" value="0.307029472727273"/>
+              <item alpha="255" label="0.4605" color="#baff40" value="0.460544209090909"/>
+              <item alpha="255" label="0.6141" color="#63ff40" value="0.614058945454545"/>
+              <item alpha="255" label="0.7676" color="#40ff74" value="0.767573681818182"/>
+              <item alpha="255" label="0.9211" color="#40ffcb" value="0.921088418181818"/>
+              <item alpha="255" label="1.0746" color="#40ddff" value="1.074603154545454"/>
+              <item alpha="255" label="1.2281" color="#4085ff" value="1.228117890909091"/>
+              <item alpha="255" label="1.3816" color="#5140ff" value="1.381632627272727"/>
+              <item alpha="255" label="1.5351" color="#a840ff" value="1.535147363636364"/>
+              <item alpha="255" label="1.6887" color="#ff40ff" value="1.6886621"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf</id>
+      <datasource>../../../../Vs30/vs30/data/terrain_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Terrain Vs30 (m/s)</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="830.2351685" alphaBand="-1" opacity="1" classificationMin="144.3945007" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="830.23516849999999" labelPrecision="0" minimumValue="144.39450070000001" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="144" color="#ff4040" value="144.3945007"/>
+              <item alpha="255" label="207" color="#ff9740" value="206.74365231818183"/>
+              <item alpha="255" label="269" color="#ffee40" value="269.0928039363637"/>
+              <item alpha="255" label="331" color="#baff40" value="331.4419555545455"/>
+              <item alpha="255" label="394" color="#63ff40" value="393.79110717272727"/>
+              <item alpha="255" label="456" color="#40ff74" value="456.1402587909091"/>
+              <item alpha="255" label="518" color="#40ffcb" value="518.489410409091"/>
+              <item alpha="255" label="581" color="#40ddff" value="580.8385620272727"/>
+              <item alpha="255" label="643" color="#4085ff" value="643.1877136454546"/>
+              <item alpha="255" label="706" color="#5140ff" value="705.5368652636364"/>
+              <item alpha="255" label="768" color="#a840ff" value="767.8860168818183"/>
+              <item alpha="255" label="830" color="#ff40ff" value="830.2351685"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df</id>
+      <datasource>../../../../Vs30/vs30/data/terrain_mvn.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Terrain Standard Deviation</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="2" nodataColor="" classificationMax="0.4999748" alphaBand="-1" opacity="1" classificationMin="0.08614" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>MinMax</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="0.4999748" labelPrecision="3" minimumValue="0.086139999999999994" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="0.086" color="#ff4040" value="0.08614"/>
+              <item alpha="255" label="0.124" color="#ff9740" value="0.123761345454545"/>
+              <item alpha="255" label="0.161" color="#ffee40" value="0.161382690909091"/>
+              <item alpha="255" label="0.199" color="#baff40" value="0.199004036363636"/>
+              <item alpha="255" label="0.237" color="#63ff40" value="0.236625381818182"/>
+              <item alpha="255" label="0.274" color="#40ff74" value="0.274246727272727"/>
+              <item alpha="255" label="0.312" color="#40ffcb" value="0.311868072727273"/>
+              <item alpha="255" label="0.349" color="#40ddff" value="0.349489418181818"/>
+              <item alpha="255" label="0.387" color="#4085ff" value="0.387110763636364"/>
+              <item alpha="255" label="0.425" color="#5140ff" value="0.424732109090909"/>
+              <item alpha="255" label="0.462" color="#a840ff" value="0.462353454545455"/>
+              <item alpha="255" label="0.500" color="#ff40ff" value="0.4999748"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minScale="1e+08" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" autoRefreshTime="0" maxScale="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" type="raster">
+      <extent>
+        <xmin>1060050</xmin>
+        <ymin>4730050</ymin>
+        <xmax>2120050</xmax>
+        <ymax>6250050</ymax>
+      </extent>
+      <id>tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d</id>
+      <datasource>../../../../Vs30/vs30/data/tid.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Terrain ID</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>177</srsid>
+          <srid>2193</srid>
+          <authid>EPSG:2193</authid>
+          <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxz="0" miny="0" minz="0" dimensions="2" maxy="0" minx="0" maxx="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property key="WMSBackgroundLayer" value="false"/>
+        <property key="WMSPublishDataSourceUrl" value="false"/>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling maxOversampling="2" enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="bilinear"/>
+        </provider>
+        <rasterrenderer band="1" nodataColor="" classificationMax="16" alphaBand="-1" opacity="1" classificationMin="1" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" classificationMode="2" maximumValue="16" labelPrecision="0" minimumValue="1" clip="0">
+              <colorramp name="[source]" type="gradient">
+                <prop k="color1" v="255,64,64,255"/>
+                <prop k="color2" v="255,64,255,255"/>
+                <prop k="discrete" v="0"/>
+                <prop k="rampType" v="gradient"/>
+                <prop k="stops" v="0.2;255,255,64,255:0.4;64,255,64,255:0.6;64,255,255,255:0.8;64,64,255,255"/>
+              </colorramp>
+              <item alpha="255" label="1" color="#ff4040" value="1"/>
+              <item alpha="255" label="2" color="#ff8040" value="2"/>
+              <item alpha="255" label="3" color="#ffbf40" value="3"/>
+              <item alpha="255" label="4" color="#ffff40" value="4"/>
+              <item alpha="255" label="5" color="#bfff40" value="5"/>
+              <item alpha="255" label="6" color="#80ff40" value="6"/>
+              <item alpha="255" label="7" color="#40ff40" value="7"/>
+              <item alpha="255" label="8" color="#40ff80" value="8"/>
+              <item alpha="255" label="9" color="#40ffbf" value="9"/>
+              <item alpha="255" label="10" color="#40ffff" value="10"/>
+              <item alpha="255" label="11" color="#40bfff" value="11"/>
+              <item alpha="255" label="12" color="#4080ff" value="12"/>
+              <item alpha="255" label="13" color="#4040ff" value="13"/>
+              <item alpha="255" label="14" color="#8040ff" value="14"/>
+              <item alpha="255" label="15" color="#bf40ff" value="15"/>
+              <item alpha="255" label="16" color="#ff40ff" value="16"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast gamma="1" brightness="0" contrast="0"/>
+        <huesaturation colorizeStrength="100" grayscaleMode="0" colorizeBlue="128" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+  </projectlayers>
+  <layerorder>
+    <layer id="coast_13c1629c_cfd2_4738_adb3_4b0f931d97e0"/>
+    <layer id="gid_be12dfa1_9561_4bbf_b8d8_92c78cbdd3b5"/>
+    <layer id="slope_60851b2a_2bac_4c28_88fb_ddc70a2e218e"/>
+    <layer id="tid_659f77bb_d901_4a48_92c2_2a3d5f7d121d"/>
+    <layer id="geology_mvn_2763055f_63e7_4b58_b7f9_d2afb9408623"/>
+    <layer id="terrain_mvn_050db6a9_5401_400a_80c4_bc6f46af7bdf"/>
+    <layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f"/>
+    <layer id="qmap_748e1bf8_8a34_40f2_a312_6d01ed52060c"/>
+    <layer id="combined_mvn_069040fb_f665_44d6_a3b5_ba4d74e1a691"/>
+    <layer id="geology_mvn_23caccc8_64b2_417f_8af2_031166ae095b"/>
+    <layer id="terrain_mvn_9dd7ff7f_387a_46f6_88bf_97a06f4223df"/>
+    <layer id="basins_e7f45375_24f2_488d_96d0_ae7963b6de4f"/>
+    <layer id="basins_a4116292_a19e_4c66_ba17_5beee17ea12e"/>
+  </layerorder>
+  <properties>
+    <Digitizing>
+      <AvoidIntersectionsMode type="int">0</AvoidIntersectionsMode>
+    </Digitizing>
+    <Gui>
+      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+    </Gui>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
+    <Measure>
+      <Ellipsoid type="QString">EPSG:7019</Ellipsoid>
+    </Measure>
+    <Measurement>
+      <AreaUnits type="QString"></AreaUnits>
+      <DistanceUnits type="QString"></DistanceUnits>
+    </Measurement>
+    <PAL>
+      <CandidatesLinePerCM type="double">5</CandidatesLinePerCM>
+      <CandidatesPolygonPerCM type="double">2.5</CandidatesPolygonPerCM>
+      <DrawRectOnly type="bool">false</DrawRectOnly>
+      <DrawUnplaced type="bool">false</DrawUnplaced>
+      <PlacementEngineVersion type="int">1</PlacementEngineVersion>
+      <SearchMethod type="int">0</SearchMethod>
+      <ShowingAllLabels type="bool">false</ShowingAllLabels>
+      <ShowingCandidates type="bool">false</ShowingCandidates>
+      <ShowingPartialsLabels type="bool">true</ShowingPartialsLabels>
+      <TextFormat type="int">0</TextFormat>
+      <UnplacedColor type="QString">255,0,0,255</UnplacedColor>
+    </PAL>
+    <Paths>
+      <Absolute type="bool">false</Absolute>
+    </Paths>
+    <PositionPrecision>
+      <Automatic type="bool">true</Automatic>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+    </PositionPrecision>
+    <SpatialRefSys>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+    </SpatialRefSys>
+  </properties>
+  <dataDefinedServerProperties>
+    <Option type="Map">
+      <Option name="name" value="" type="QString"/>
+      <Option name="properties"/>
+      <Option name="type" value="collection" type="QString"/>
+    </Option>
+  </dataDefinedServerProperties>
+  <visibility-presets/>
+  <transformContext/>
+  <projectMetadata>
+    <identifier></identifier>
+    <parentidentifier></parentidentifier>
+    <language></language>
+    <type></type>
+    <title></title>
+    <abstract></abstract>
+    <links/>
+    <author>Live User</author>
+    <creation>2021-02-05T14:44:30</creation>
+  </projectMetadata>
+  <Annotations/>
+  <Layouts/>
+  <Bookmarks/>
+  <ProjectViewSettings UseProjectScales="0">
+    <Scales/>
+    <DefaultViewExtent ymin="5156300.19486833922564983" xmin="1552947.59254227788187563" ymax="5194415.14768905751407146" xmax="1598280.70777092757634819">
+      <spatialrefsys>
+        <wkt>PROJCRS["NZGD2000 / New Zealand Transverse Mercator 2000",BASEGEOGCRS["NZGD2000",DATUM["New Zealand Geodetic Datum 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4167]],CONVERSION["New Zealand Transverse Mercator 2000",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",173,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",1600000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (N)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (E)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["New Zealand - onshore"],BBOX[-47.33,166.37,-34.1,178.63]],ID["EPSG",2193]]</wkt>
+        <proj4>+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>177</srsid>
+        <srid>2193</srid>
+        <authid>EPSG:2193</authid>
+        <description>NZGD2000 / New Zealand Transverse Mercator 2000</description>
+        <projectionacronym>tmerc</projectionacronym>
+        <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </DefaultViewExtent>
+  </ProjectViewSettings>
+  <ProjectTimeSettings timeStep="1" cumulativeTemporalRange="0" frameRate="1" timeStepUnit="h"/>
+  <ProjectDisplaySettings>
+    <BearingFormat id="bearing">
+      <Option type="Map">
+        <Option name="decimal_separator" value="" type="QChar"/>
+        <Option name="decimals" value="6" type="int"/>
+        <Option name="direction_format" value="0" type="int"/>
+        <Option name="rounding_type" value="0" type="int"/>
+        <Option name="show_plus" value="false" type="bool"/>
+        <Option name="show_thousand_separator" value="true" type="bool"/>
+        <Option name="show_trailing_zeros" value="false" type="bool"/>
+        <Option name="thousand_separator" value="" type="QChar"/>
+      </Option>
+    </BearingFormat>
+  </ProjectDisplaySettings>
+</qgis>
