@@ -382,10 +382,15 @@ function switch_layer(e) {
     var src = WMS_TILES + e.target.id;
     layer._options.tiles = [src];
     layer.load();
-    if (e.target.id.substr(e.target.id.length - 2) === "ID") {
-        document.getElementById("img-legend").src = WMS_LEGEND_CAT + e.target.id;
+    if (e.target.id === "Basins") {
+	    document.getElementById("img-legend").style.display='none';
     } else {
-        document.getElementById("img-legend").src = WMS_LEGEND + e.target.id;
+            document.getElementById("img-legend").style.display='block';
+	if (e.target.id.substr(e.target.id.length - 2) === "ID") {
+            document.getElementById("img-legend").src = WMS_LEGEND_CAT + e.target.id;
+	} else {
+            document.getElementById("img-legend").src = WMS_LEGEND + e.target.id;
+        }
     }
 
     // update values
