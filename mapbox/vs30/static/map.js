@@ -419,3 +419,21 @@ $(document).ready(function ()
 {
     load_map();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById('popup');
+    var closeButton = document.getElementById('popup-close');
+
+    // Check if the cookie exists
+    if (document.cookie.indexOf('disclaimer_accepted=true') === -1) {
+        // If the cookie does not exist, show the popup
+        popup.style.display = 'block';
+    }
+
+    // Close the popup and set the cookie when the user clicks OK
+    closeButton.addEventListener('click', function() {
+        popup.style.display = 'none';
+        document.cookie = 'disclaimer_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+    });
+});
+
