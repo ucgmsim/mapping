@@ -26,17 +26,18 @@ Make sure this file contains all the basins you want, and their outline files ar
 ```
 Enter the following command.
 
-`python gen_siutes_in_basin.py --remove_not_in_basin`
+`python gen_sites_in_basin.py`
 
 This will generate 100m * 100m grid points, filter out offshore locations, and determines if a site is inside one of the 
 specified basins.
-The output is stored (by default) as "sites_in_basin.csv" The `--remove_not_in_basin` option removes the sites not in 
+The output is stored (by default) as "sites_in_basin.csv".
+The `--keep_outer_basin` option keeps the sites even if they are not in 
 any basins from the output file. This takes about 15 minutes on a good desktop PC.
 
 If you have a station file containing station name, longitude and latitude, you can use it as an input.
 You will need to specify the index for these columns as below. 
 
-`python gen_siutes_in_basin.py --stat_file station_file.csv --stat_name_col 0 --lat_col 1 --lon_col 2 --sep , --skiprows 1`
+`python gen_sites_in_basin.py --stat_file station_file.csv --stat_name_col 0 --lat_col 1 --lon_col 2 --sep , --skiprows 1`
 
 
 ## Computing Z values for given locations
