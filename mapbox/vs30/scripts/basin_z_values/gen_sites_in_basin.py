@@ -1,8 +1,9 @@
-# Description: This script generates a CSV file of stations that are within a basin.
-# The script takes a station file as input and generates a CSV file containing station names, longitudes, latitudes
-# NZGD longitudes, NZGD latitudes, and basin names.
-# If no station file is given, the script generates stations at every GRID_SPACING in the land mask and assigns random
-# station names.
+"""
+This script generates a CSV file of stations that are within a basin.
+
+The script takes a station file as input and generates a CSV file containing station names, longitudes, latitudes, NZGD longitudes, NZGD latitudes, and basin names.
+If no station file is given, the script generates stations at every GRID_SPACING in the land mask and assigns random station names.
+"""
 
 from pathlib import Path
 import time
@@ -29,7 +30,7 @@ def get_args():
     )
     arg(
         "--keep_outer_basin",
-        help="Remove stations outside basins",
+        help="Keep stations outside basins",
         action="store_true",
     )
     arg("--grid_spacing", help="Grid spacing in meters", default=GRID_SPACING)
