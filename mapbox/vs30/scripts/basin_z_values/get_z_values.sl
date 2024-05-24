@@ -21,8 +21,8 @@
 #1. locate the root dir of Velocity-Model (VMDIR), then
 #2. submit with sbatch --export=ALL,VMDIR=.... get_z_values.sl
 
-#We are using SLURM job arrays. As defined above, we ave
-#$SLURM_ARRAY_TASK_ID  0-79
+#We are using SLURM job arrays. Internally we have the following variables set.
+#$SLURM_ARRAY_TASK_ID  one in the range of 0-79
 #echo $SLURM_ARRAY_TASK_MIN 0
 #echo $SLURM_ARRAY_TASK_MAX 79
 
@@ -31,8 +31,8 @@
 export PYTHONPATH=$VMDIR:$PYTHONPATH
 
 i=`printf %04d $SLURM_ARRAY_TASK_ID` # convert to 4-digit number eg. 1 --> 0001
-infile=basin_stats.ll_${i} # eg. basin_stats.ll_0001
-outfile=${infile/.ll/.z} # eg. basin_stats.z_0001
+infile= sites_in_basin_whole_nz.csv_${i} # eg.  sites_in_basin_whole_nz.csv_0001
+outfile=${infile/.csv/.z} # eg. sites_in_basin_whole_nz.z_0001
 
 indir=splits
 outdir=z_values
