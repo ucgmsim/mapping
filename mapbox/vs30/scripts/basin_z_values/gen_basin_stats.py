@@ -6,7 +6,7 @@ from pathlib import Path
 import matplotlib.path as mpltPath
 import numpy as np
 
-from qcore import geo
+from qcore import coordinates
 
 from Velocity_Model.z import basin_outlines_dict
 from mpi4py import MPI
