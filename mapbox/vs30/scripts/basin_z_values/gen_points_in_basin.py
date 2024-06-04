@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from Velocity_Model.z import basin_outlines_dict
 #from basins import basin_outlines_dict
-from qcore import geo
+from qcore import coordinates
 import pygmt
 
 GRID_SPACING = 100
@@ -80,9 +80,11 @@ if __name__ == '__main__':
     # land_lon = land_mask.lon.values[land_indices[1]]
     # land_lat = land_mask.lat.values[land_indices[0]]
 
-    ll_points = np.column_stack((land_lon, land_lat)) #zip them into an array of (lon, lat) pairs
+    # wgs_depth_to_nztm expects (n x 3) input, so we need to add a column of zeros for depth
+    ll_points = np.column_stack((land_lat, land_lon, np.zeros_like(land_lat)))
 
-    nztm_points = geo.wgs_nztm2000x(ll_points) # convert to NZGD lon and NZGD lat
+    nztm_points = coordinates.wgs_depth_to_nztm(ll_points)[:, :2]
+    nztm_points = nztm_points[::-1] # Compatability with the old code requires we reverse the coordinates
     stat_names = [f'{i:06X}' for i in range(len(nztm_points))] # generate hexadecimal station names
 
     print(f"Number of points: {ll_points.shape[0]}")

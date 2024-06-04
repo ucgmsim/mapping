@@ -118,7 +118,10 @@ if __name__ == "__main__":
     if len(nztm_points) > 0:
         
         start = datetime.datetime.now()
-        ll_points = geo.wgs_nztm2000x(nztm_points) # nztm_points shouldn't be empty
+        # wgs_depth_to_nztm expects (n x 3) input, so we need to add a column of zeros for depth
+        nztm_depth = np.c_[nztm_points, np.zeros_like(nztm_points[:, 0])]
+        ll_points = coordinates.nztm_to_wgs_depth(nztm_depth)[:, :2]
+        ll_points = ll_points[:, ::-1] # Compatability with the old code requires we reverse the coordinates 
         n_points = len(ll_points)
 
         buffer = Buffer(rank, out_csv, out_ll, checkpoint, n_points-1, start_time=start)
