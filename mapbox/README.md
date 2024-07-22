@@ -4,6 +4,75 @@ The tiles can be placed between or above layers and will appear the same way the
 QGIS server allows a few other things such as retrieving the legend for the layer.
 A `.qgs` project file contains a QGIS project which discribes layers and how they should be displayed.
 
+## Installing QGIS server
+It seems the best version for Ubuntu/Debian is 3.10.14+dfsg-1 as the color bars are squashed in later versions and they tend to load tiles very slowly. 
+To install this specific version, 
+```
+sudo mkdir -m755 -p /etc/apt/keyrings  # not needed since apt version 2.4.0 like Debian 12 and Ubuntu 22 or newer
+sudo wget -O /etc/apt/keyrings/qgis-archive-keyring.gpg https://download.qgis.org/downloads/qgis-archive-keyring.gpg
+sudo vim /etc/apt/sources.list.d/qgis.sources
+```
+and edit
+
+```
+(mamba310) seb56@hypocentre:~$ cat /etc/apt/sources.list.d/qgis.sources
+Types: deb deb-src
+URIs: https://qgis.org/debian
+Suites: bullseye <== your distribution codename `lsb_release -c`
+Architectures: amd64
+Components: main
+Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg
+
+```
+Then 
+
+```
+sudo apt update
+```
+We are installing version 3.10.14 to avoid slow tile loading and squashed colorbar issue found in later versions (It seems version 3.18 and later, including the latest version 3.38 have these issues). To resolve dependency issues, install the following packages in order. 
+
+```
+sudo apt install python3-qgis-common=3.10.14+dfsg-1 qgis-providers-common=3.10.14+dfsg-1
+sudo apt install python3-qgis=3.10.14+dfsg-1 qgis-providers=3.10.14+dfsg-1
+sudo apt install qgis-server=3.10.14+dfsg-1
+```
+
+We will make the QGIS server automatically started by setting up a service
+
+
+Edit a service definition in `/etc/systemd/system/qgis-server.service`
+
+```
+[Unit]
+Description=QGIS server
+After=network.target
+
+[Service]
+;; set env var as needed
+Environment="LANG=en_EN.UTF-8"
+Environment="QGIS_SERVER_PARALLEL_RENDERING=1"
+Environment="QGIS_SERVER_MAX_THREADS=12"
+Environment="QGIS_SERVER_LOG_LEVEL=0"
+Environment="QGIS_SERVER_LOG_STDERR=1"
+;; or use a file:
+;EnvironmentFile=/etc/qgis-server/env
+
+ExecStart=spawn-fcgi -s /var/run/qgisserver.socket -U www-data -G www-data -n /usr/lib/cgi-bin/qgis_mapserv.fcgi
+
+[Install]
+WantedBy=multi-user.target
+```
+Then enable and start the service
+
+```
+systemctl enable --now qgis-server
+```
+If everything went well, it should have created a socket `/var/run/qgisserver.socket`.
+
+
+
+
+
 ## Updating QGS / Data
 You may need to update the project file when the data changes (eg: updated `.tif` dataset). This is because the colour scale may need to be adjusted for a new range.
 Open the project (vs30.qgs) on your computer, edit properties of the layer.
@@ -17,16 +86,39 @@ Click "Classify" and make sure the color scale now uses the new Min and Max valu
 <img width="869" alt="Screen Shot 2021-09-01 at 10 50 06 AM" src="https://user-images.githubusercontent.com/466989/131586674-3d00b6f9-01ed-44bd-a971-b2c2934fb69f.png">
 
 Also note that the number of steps in the colour scale or labels for each colour may have been customised so you will need to make those changes again.
-Save the file, and upload to /data/vs30 at RCC (10.195.0.37), and restart the server.
+Save the file, and upload to /var/www/vs30map_data at Hypocentre (10.195.0.37), and restart the server.
 
 ```
-sudo service qgis restart
+sudo service qgis-server restart
 ```
 
-If something goes wrong,
+Note that /etc/nginx/site-enabled/default has this entry
+
 ```
-sudo service qgis status
+server {
+	listen 8008;
+	server_name hypocentre.canterbury.ac.nz;
+...
+
+	location /wms_vs30 {
+		gzip off;
+		include fastcgi_params;
+		fastcgi_param  QGIS_SERVER_LOG_STDERR  1;
+		fastcgi_param  QGIS_SERVER_LOG_LEVEL   0;
+		fastcgi_param  QGIS_PROJECT_FILE /var/www/vs30map_data/vs30.qgs;
+		fastcgi_pass unix:/var/run/qgisserver.socket;
+	}
+}
+
 ```
+which can be controlled with `sudo service nginx {start|stop|restart|status}` command. Note that it uses `/var/run/qgisserver.socket`. 
+
+
+If something goes wrong, you can check the status by
+```
+sudo service qgis-server status
+```
+
 vs30.qgs may not be able to find the path to TIFF files. 
 
 ```
@@ -55,6 +147,7 @@ The docker image had version 3.16, you must edit the project in QGIS 3.16 or sli
 If the server is also updated, you may want to update the project to 3.18+ but make sure the legend settings are displayed as wanted:
 - Discreet data such as group IDs shouldn't show a gradient in the legend.
 - JS client retrieving legend may want larger legend box to stretch the gradient rather than being just a short box (GET params).
+
 
 ## Running QGIS Server
 Described in subfolders. 
