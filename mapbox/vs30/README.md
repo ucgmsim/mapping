@@ -122,7 +122,8 @@ Go to `https://quakecoresoft.canterbury.ac.nz/vs30`. If you see this page, fanta
 
 
 ## Basin Data
-You need to generate a 100m grid data and which basin each grid point belongs to. Follow instructions in qgis/scripts/basin_z_values/readme.md
+You need to generate a 100m grid data and which basin each grid point belongs to. Follow instructions in [this page](https://github.com/uggmsim/mapping/mapbox/vs30/scripts/basin_z_values/readme.md) 
+
 
 Then update and run `basin2tif.py`. ￼
 
