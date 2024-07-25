@@ -5,8 +5,7 @@ QGIS server allows a few other things such as retrieving the legend for the laye
 A `.qgs` project file contains a QGIS project which discribes layers and how they should be displayed.
 
 ## Installing QGIS server
-It seems the best version for Ubuntu/Debian is 3.10.14+dfsg-1 as the color bars are squashed in later versions and they tend to load tiles very slowly. 
-To install this specific version, 
+To install QGIS server, follow the steps below. 
 ```
 sudo mkdir -m755 -p /etc/apt/keyrings  # not needed since apt version 2.4.0 like Debian 12 and Ubuntu 22 or newer
 sudo wget -O /etc/apt/keyrings/qgis-archive-keyring.gpg https://download.qgis.org/downloads/qgis-archive-keyring.gpg
@@ -29,7 +28,9 @@ Then
 ```
 sudo apt update
 ```
-We are installing version 3.10.14 to avoid slow tile loading and squashed colorbar issue found in later versions (It seems version 3.18 and later, including the latest version 3.38 have these issues). To resolve dependency issues, install the following packages in order. 
+It seems the best version for Ubuntu/Debian is 3.10.14+dfsg-1. Version 3.18 and some newer versions (including latest version 3.38) were tested, but they have an issue with slow tile loading and squashed colorbar.
+
+To resolve dependency issues, install the following packages in order. 
 
 ```
 sudo apt install python3-qgis-common=3.10.14+dfsg-1 qgis-providers-common=3.10.14+dfsg-1
