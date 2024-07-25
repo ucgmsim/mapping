@@ -1,50 +1,119 @@
 # Interactive web interface for Vs30
 
 ## Requirements
-* static webserver
-* v3 <= QGIS server <= v3.16 - versions prior to ~3 won't have JSON support, 3.18 introduces better support for continuous colour palettes but will produce undesirable results with this repo. To fix, the height of the legend for the continuous block should be made greater and discrete data such as IDs should be made to show discrete for 3.18+.
+* static webserver (hosted by ucquakecore2p)
+* QGIS server (hosted by Hypocentre): version 3.10 is the best. Versions prior to ~3 won't have JSON support, 3.18 introduces better support for continuous colour palettes but will produce undesirable results with this repo. (To fix, the height of the legend for the continuous block should be made greater and discrete data such as IDs should be made to show discrete for 3.18+.)
 
 ## Mapbox Service Requirements
 Map data is hosted by Mapbox. Currently this just contains the standard satelite imagery along with the vs30 points which should be updated via the studio.mapbox.com tilesets section. To make updates more simple, vs30 points can be formatted as geojson and loaded from a static file from the webserver using mapbox gl js.
 The access token is limited to specific hosts which can be changed via the studio.mapbox.com account section. Subdomains have been allowed so should make local development possible without using a public access token as long as you use the full URL.
 
-## Running
-The website has a static portion with a QGIS server requirement (for the overlay tilesets, legend and value returning). The simplest setup is with the NGINX web server.
-Start the QGIS Server, you should make this into a service if not already available:
-```
-spawn-fcgi -s /run/qgisserver.socket -U nginx -G nginx -n /usr/bin/qgis_mapserv.fcgi
-```
-The paths and accounts may be different by machine. Debian based distros are usually:
-```
-spawn-fcgi -s /run/qgisserver.socket -U www-data -G www-data -n /usr/lib/cgi-bin/qgis_mapserv.fcgi
-```
-More information: [https://docs.qgis.org/3.16/en/docs/server_manual/getting_started.html]<br />
-QGIS Server capabilities: [https://docs.qgis.org/en/docs/server_manual/services.html]
+## Updating Vs30 map data
+You may need to update the project file when the data changes (eg: updated `.tif` dataset). This is because the colour scale may need to be adjusted for a new range.
+Open the project (vs30.qgs) on your computer, edit properties of the layer.
+<img width="510" alt="Screen Shot 2021-09-01 at 10 48 52 AM" src="https://user-images.githubusercontent.com/466989/131585718-4b27a6e0-364c-45bf-9d9c-ae01e809df43.png">
 
-NGINX configuration:
-link server root or copy files to server root
+QGIS is a little fiddly here. To make sure the min and max are updated, try some random values for min and max (eg.0 and 1000), select User defined, and click apply. Then change it to Min/max and apply again. This should find a new Min and Max values.
+<img width="1063" alt="Screen Shot 2021-09-01 at 10 18 22 AM" src="https://user-images.githubusercontent.com/466989/131585393-e94bddf7-87f4-41df-b209-9c138a5d350d.png">
+
+Click "Classify" and make sure the color scale now uses the new Min and Max values.
+
+<img width="869" alt="Screen Shot 2021-09-01 at 10 50 06 AM" src="https://user-images.githubusercontent.com/466989/131586674-3d00b6f9-01ed-44bd-a971-b2c2934fb69f.png">
+
+Also note that the number of steps in the colour scale or labels for each colour may have been customised so you will need to make those changes again.
+Save the file.
+
+
+## Work with QGIS server
+Upload the saved project file (vs30.qgs) to /var/www/vs30map_data at Hypocentre, and restart the server.
+
 ```
-ln -s <vs30/static> <server-root>
+sudo service qgis-server restart
 ```
+
+Note that /etc/nginx/site-enabled/default has this entry.
 Server root loads the static component, add the gateway location `/wms_vs30`:
 Specifying default project file means it doesn't have to be specified by the client URL.
+
 ```
 server {
-    ...
+	listen 8008;
+	server_name hypocentre.canterbury.ac.nz;
+...
 
-    location /wms_vs30 {
-        gzip off;
-        include fastcgi_params;
-        fastcgi_param  QGIS_SERVER_LOG_STDERR  1;
-        fastcgi_param  QGIS_SERVER_LOG_LEVEL   0;
-        fastcgi_param  QGIS_PROJECT_FILE /path/to/vs30.qgs;
-        fastcgi_pass unix:/run/qgisserver.socket;
-    }
+	location /wms_vs30 {
+		gzip off;
+		include fastcgi_params;
+		fastcgi_param  QGIS_SERVER_LOG_STDERR  1;
+		fastcgi_param  QGIS_SERVER_LOG_LEVEL   0;
+		fastcgi_param  QGIS_PROJECT_FILE /var/www/vs30map_data/vs30.qgs;
+		fastcgi_pass unix:/var/run/qgisserver.socket;
+	}
 }
+
+```
+which can be controlled with `sudo service nginx {start|stop|restart|status}` command. Note that it uses `/var/run/qgisserver.socket`. 
+Note that we will be using port 8008, not the default 80. You might need to tell firewall to allow the traffic on the port.
+
+```
+sudo ufw allow 8008
 ```
 
-Don't forget to add the GeoTIFF files into the qgis directory containing the qgs project file.
-And then access it at [http://hostname.canterbury.ac.nz](http://hostname.canterbury.ac.nz) for the map access token to work.
+
+If something goes wrong, you can check the status by
+```
+sudo service qgis-server status
+```
+
+vs30.qgs may not be able to find the path to TIFF files. 
+
+```
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/combined_mvn.tif: No such fil>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/geology_mvn.tif: No such file>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/geology_mvn.tif: No such file>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/gid.tif: No such file or dire>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/slope.tif: No such file or di>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/terrain_mvn.tif: No such file>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/terrain_mvn.tif: No such file>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/tid.tif: No such file or dire>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/basins.tif: No such file or d>
+Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: More than 1000 errors or warnings have been reported. No mor>
+~
+```
+This happens because the QGIS software auto-finds the path to the local TIFF files and updates them, and the server can't find them.
+It's best to keep the vs30.qgs and all TIFF files in the same directory, and if needed, vs30.qgs can be edited and you can fix the path manually.
+```
+  <customproperties/>
+    <layer-tree-layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" source="./combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Vs30 (m/s)" providerKey="gdal">
+```**
+
+Test if this works by entering `http://hypocentre.canterbury.ac.nz:8008/wms_vs30`
+
+![image](https://github.com/user-attachments/assets/5574aad4-1f5a-467a-9e2c-f83beb6a8842)
+
+## Configure nginx on ucquakecore2p host (external facing)
+
+`ucquakecore2p` is the webserver that can serve the web traffic to/from `quakecoresoft.canterbury.ac.nz`
+
+We have the static portion of Vs30 map service hosted at /var/www/Vs30, which includes `index.html` and `map.js` that sends out requests to an endpoint `/wms_vs30`, which is served by Hypocenter QGIS server. So we have the NGINX configured as below.
+
+`/etc/nginx/sites-enabled/001-quakecore`
+```
+    location  /vs30 {
+        alias /var/www/Vs30;
+    }
+
+    location /wms_vs30 {
+         proxy_pass "http://hypocentre.canterbury.ac.nz:8008/wms_vs30";
+         proxy_read_timeout 12s;
+    }
+
+```
+You need to restart NGINX server
+
+```
+sudo systemctl restart nginx
+```
 
 ## Basin Data
 You need to generate a 100m grid data and which basin each grid point belongs to (A sample basin_stats_z.csv can be obtained from  [Dropbox link](https://www.dropbox.com/scl/fi/95q6ysyv3arq7hbdkl6ze/basin_stats_z.csv?rlkey=0extrc3rn0am2jq2e7bjfogrv&dl=0) ). For a fresh generation, follow instructions in qgis/scripts/basin_z_values/readme.md
