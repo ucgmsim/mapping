@@ -94,7 +94,7 @@ It's best to keep the vs30.qgs and all TIFF files in the same directory, and if 
 
 ### Testing
 
-Test if this works by entering [http://hypocentre.canterbury.ac.nz:8008/wms_vs30](http://hypocentre.canterbury.ac.nz:8008/wms_vs30). If you see a page similar to this, it is all good.
+Test if this works by entering http://hypocentre.canterbury.ac.nz:8008/wms_vs30. If you see a page similar to this, it is all good.
 
 ![image](https://github.com/user-attachments/assets/5574aad4-1f5a-467a-9e2c-f83beb6a8842)
 
@@ -121,7 +121,7 @@ You need to restart NGINX server
 ```
 sudo systemctl restart nginx
 ```
-Go to [https://quakecoresoft.canterbury.ac.nz/vs30]. If you see this page, fantastic.
+Go to https://quakecoresoft.canterbury.ac.nz/vs30. If you see this page, fantastic.
 
 ![image](https://github.com/user-attachments/assets/42ab2c05-c5fe-47f0-84e5-d27d62b449e4)
 
