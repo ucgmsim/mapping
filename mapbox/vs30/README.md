@@ -53,12 +53,15 @@ server {
 
 ```
 which can be controlled with `sudo service nginx {start|stop|restart|status}` command. Note that it uses `/var/run/qgisserver.socket`. 
+
+### Firewall
 Note that we will be using port 8008, not the default 80. You might need to tell firewall to allow the traffic on the port.
 
 ```
 sudo ufw allow 8008
 ```
 
+### Troubleshooting
 
 If something goes wrong, you can check the status by
 ```
@@ -88,6 +91,8 @@ It's best to keep the vs30.qgs and all TIFF files in the same directory, and if 
   <customproperties/>
     <layer-tree-layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" source="./combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Vs30 (m/s)" providerKey="gdal">
 ```
+
+### Testing
 
 Test if this works by entering `http://hypocentre.canterbury.ac.nz:8008/wms_vs30`. If you see a page similar to this, it is all good.
 
