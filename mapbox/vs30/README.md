@@ -79,15 +79,17 @@ Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/tid
 Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: ERROR 4: /../../Vs30/vs30/data/basins.tif: No such file or d>
 Aug 31 18:10:25 UCRCC0304 spawn-fcgi[971561]: More than 1000 errors or warnings have been reported. No mor>
 ~
+
 ```
 This happens because the QGIS software auto-finds the path to the local TIFF files and updates them, and the server can't find them.
+
 It's best to keep the vs30.qgs and all TIFF files in the same directory, and if needed, vs30.qgs can be edited and you can fix the path manually.
 ```
   <customproperties/>
     <layer-tree-layer id="combined_mvn_da971f3a_6dc3_4e65_b7f5_e837a9e6040f" checked="Qt::Checked" source="./combined_mvn.tif" expanded="0" patch_size="-1,-1" legend_exp="" legend_split_behavior="0" name="Combined Vs30 (m/s)" providerKey="gdal">
-```**
+```
 
-Test if this works by entering `http://hypocentre.canterbury.ac.nz:8008/wms_vs30`
+Test if this works by entering `http://hypocentre.canterbury.ac.nz:8008/wms_vs30`. If you see a page similar to this, it is all good.
 
 ![image](https://github.com/user-attachments/assets/5574aad4-1f5a-467a-9e2c-f83beb6a8842)
 
@@ -114,9 +116,13 @@ You need to restart NGINX server
 ```
 sudo systemctl restart nginx
 ```
+Go to `https://quakecoresoft.canterbury.ac.nz/vs30`. If you see this page, fantastic.
+
+![image](https://github.com/user-attachments/assets/42ab2c05-c5fe-47f0-84e5-d27d62b449e4)
+
 
 ## Basin Data
-You need to generate a 100m grid data and which basin each grid point belongs to (A sample basin_stats_z.csv can be obtained from  [Dropbox link](https://www.dropbox.com/scl/fi/95q6ysyv3arq7hbdkl6ze/basin_stats_z.csv?rlkey=0extrc3rn0am2jq2e7bjfogrv&dl=0) ). For a fresh generation, follow instructions in qgis/scripts/basin_z_values/readme.md
+You need to generate a 100m grid data and which basin each grid point belongs to. Follow instructions in qgis/scripts/basin_z_values/readme.md
 
 Then update and run `basin2tif.py`. ￼
 
@@ -128,14 +134,14 @@ After that, update `map.js` and add new basin names
 
 ![Screen Shot 2021-09-01 at 11 16 27 AM](https://user-images.githubusercontent.com/466989/131588093-80383082-5675-48fc-92f9-af37dfbfef66.png)
 
-Note that map.js alongside index.html are hosted on /var/www/Vs30 @ ucquakecore1p server
+Note that map.js alongside index.html are hosted on /var/www/Vs30 @ ucquakecore2p server
 
-### Steps.
+### Summary of Steps.
 1. Run basin2tif.py and produce basins.tif. 
 2. Copy this to where vs30.qgs is located. Open vs30.qgs with QGIS. Make it find basins.tif at ./basins.tif
 3. Update color scale for each property.
 4. Save vs30.qgs
-5. Copy vs30.qgs and basins.tif to /data/vs30/ @ RCC
-6. Copy map.js to /var/www/Vs30 @ ucquakecore1p
-7. Restart qgis server
+5. Copy vs30.qgs and basins.tif to /var/www/vs30map_data @ Hypocentre
+6. Copy map.js to /var/www/Vs30 @ ucquakecore2p (it might have updates to `NAME_BASIN` list)
+7. Restart qgis server at Hypoctnre.
 8. Check the service status - if .tif files are not found, edit vs30.qgs with an editor and fix the paths.
