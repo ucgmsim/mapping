@@ -13,7 +13,7 @@ You may need to update the project file when the data changes (eg: updated `.tif
 Open the project (vs30.qgs) on your computer, edit properties of the layer.
 <img width="510" alt="Screen Shot 2021-09-01 at 10 48 52 AM" src="https://user-images.githubusercontent.com/466989/131585718-4b27a6e0-364c-45bf-9d9c-ae01e809df43.png">
 
-QGIS is a little fiddly here. To make sure the min and max are updated, try some random values for min and max (eg.0 and 1000), select User defined, and click apply. Then change it to Min/max and apply again. This should find a new Min and Max values.
+QGIS is a little fiddly here. To make sure the min and max are updated, try some random values for min and max (e.g. 0 and 1000), select User defined, and click apply. Then change it to Min/max and apply again. This should find a new Min and Max values.
 <img width="1063" alt="Screen Shot 2021-09-01 at 10 18 22 AM" src="https://user-images.githubusercontent.com/466989/131585393-e94bddf7-87f4-41df-b209-9c138a5d350d.png">
 
 Click "Classify" and make sure the color scale now uses the new Min and Max values.
