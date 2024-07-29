@@ -149,5 +149,5 @@ Note that map.js alongside index.html are hosted on /var/www/Vs30 @ ucquakecore2
 4. Save vs30.qgs
 5. Copy vs30.qgs and basins.tif to /var/www/vs30map_data @ Hypocentre
 6. Copy map.js to /var/www/Vs30 @ ucquakecore2p (it might have updates to `NAME_BASIN` list)
-7. Restart qgis server at Hypoctnre.
+7. Restart qgis server at Hypocentre.
 8. Check the service status - if .tif files are not found, edit vs30.qgs with an editor and fix the paths.
