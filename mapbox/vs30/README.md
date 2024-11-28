@@ -23,6 +23,9 @@ Click "Classify" and make sure the color scale now uses the new Min and Max valu
 Also note that the number of steps in the colour scale or labels for each colour may have been customised so you will need to make those changes again.
 Save the file.
 
+## Advertised URL ##
+![image](https://github.com/user-attachments/assets/90564328-8f35-473b-8f13-507d69636129)
+As the data is hosted at hypocentre behind the UC firewall, external users can not access the data via wms_vs30 endpoint, as it will expose the internal hostname's URL. This can be resolved by enforcing Advertised URL in the QGIS Server setting. 
 
 ## Work with QGIS server
 Upload the saved project file (vs30.qgs) to /var/www/vs30map_data at Hypocentre, and restart the server.
