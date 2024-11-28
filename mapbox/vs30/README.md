@@ -25,6 +25,7 @@ Save the file.
 
 ## Advertised URL ##
 ![image](https://github.com/user-attachments/assets/90564328-8f35-473b-8f13-507d69636129)
+
 As the data is hosted at hypocentre behind the UC firewall, external users can not access the data via wms_vs30 endpoint, as it will expose the internal hostname's URL. This can be resolved by enforcing Advertised URL in the QGIS Server setting. 
 
 ## Work with QGIS server
