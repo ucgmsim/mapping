@@ -175,8 +175,7 @@ Reload Nginx:
 sudo nginx -t && sudo systemctl reload nginx
 ```
 ## 5. Testing
-- Open the frontend:
-  [](https://quakecoresoft.canterbury.ac.nz/vs30)
+- Open the frontend: https://quakecoresoft.canterbury.ac.nz/vs30
 - Test WMS GetCapabilities:
 ```perl
 https://quakecoresoft.canterbury.ac.nz/wms_vs30?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0
