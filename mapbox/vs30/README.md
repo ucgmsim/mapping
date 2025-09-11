@@ -64,68 +64,8 @@ Save the project and redeploy if updated.
 ## 2. QGIS Server with Docker
 See this [page](../README.md) and follow installation instruction for QGIS Server with Docker.
 
-### 3. Systemd Service
-If this is the test run, go to step 4 first and come back to this when everything is running smoothly.
 
-To manage QGIS Server as a system service:
-**env file*** `/etc/qgis-vs30.env`
-```ini
-QGIS_PROJECT_FILE=/data/vs30.qgs
-QGIS_SERVER_PARALLEL_RENDERING=1
-QGIS_SERVER_MAX_THREADS=12
-QGIS_SERVER_LOG_LEVEL=0
-QGIS_SERVER_LOG_STDERR=1
-```
-
-**Unit file** `/etc/systemd/system/qgis-vs30.service`
-```ini
-[Unit]
-Description=QGIS Server (VS30) in Docker
-Requires=docker.service
-After=docker.service network-online.target
-Wants=network-online.target
-
-[Service]
-Type=simple
-Restart=always
-RestartSec=3
-TimeoutStartSec=0
-EnvironmentFile=-/etc/qgis-vs30.env
-
-ExecStartPre=-/usr/bin/docker pull openquake/qgis-server:ltr
-ExecStartPre=-/usr/bin/docker rm -f qgis_vs30
-
-ExecStart=/usr/bin/docker run --name qgis_vs30 \
-  --env-file /etc/qgis-vs30.env \
-  -v /var/www/vs30map_data:/data:ro \
-  -p 127.0.0.1:8008:9993 \
-  --restart=no \
-  openquake/qgis-server:ltr
-
-ExecStop=/usr/bin/docker stop -t 10 qgis_vs30
-ExecStopPost=-/usr/bin/docker rm -f qgis_vs30
-
-StandardOutput=journal
-StandardError=journal
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Enable and start:
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable qgis-vs30
-sudo systemctl start qgis-vs30
-```
-
-Check status:
-```bash
-systemctl status qgis-vs30
-journalctl -u qgis-vs30 -f
-```
-
-## 4. Nginx Configuration
+## 3. Nginx Configuration
 Edit `/etc/nginix/site-enabled/000-quakecore`
 Ensure these blocks are present:
 ```nginx
@@ -164,7 +104,7 @@ Reload Nginx:
 ```bash
 sudo nginx -t && sudo systemctl reload nginx
 ```
-## 5. Testing
+## 4. Testing
 - Open the frontend: https://quakecoresoft.canterbury.ac.nz/vs30
 - Test WMS GetCapabilities:
 ```perl
@@ -180,7 +120,7 @@ journalctl -u qgis-vs30 -f
 tail -n 100 /var/log/nginx/error.log
 ```
 
-## 6. Notes
+## 5. Notes
 - Warnings like:
 ```
 WARNING Python error: The extra plugin path '/io/plugins' does not exist!
@@ -188,7 +128,6 @@ INFO Server: No server python plugins are available
 
 ```
 are **harmless** unless you actually plan to install custom server plugins.
-- For reproducibility, consider locking the Docker image to a specific version or digest instead of `:ltr`.
 - The Mapbox access token used by the frontend must allow requests from `quakecoresoft.canterbury.ac.nz`.
 
 ## Other Info
