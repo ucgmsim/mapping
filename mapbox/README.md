@@ -1,11 +1,28 @@
-# QGIS Server
+# Mapbox Services Overview
 
-QGIS Server is used by `vs30` and `code_hazard` to provide map tiles for Mapbox GL JS maps.  
-The tiles can be placed between or above layers and will appear the same way they do in QGIS Desktop.  
-QGIS Server also supports other features such as returning layer legends or metadata.  
+This directory contains web mapping services powered by **QGIS Server** and displayed with **Mapbox GL JS**.  
 
-A `.qgs` project file contains a QGIS project which describes the layers and how they should be displayed.  
-QGIS Server renders from that project and serves it as WMS/WMTS.
+Services currently deployed:
 
-See more details in README pages of each service.
+- [VS30](vs30/README.md)  
+- [Code Hazard](code_hazard/README.md)  
 
+Each service has its own README with **complete installation instructions**.
+
+---
+
+## QGIS Server
+
+Both services use [QGIS Server](https://hub.docker.com/r/openquake/qgis-server) running in Docker on **ucquakecore2p**.  
+QGIS Server renders layers from a `.qgs` project file as WMS/WMTS, which Mapbox GL JS then displays as a tiled overlay.  
+
+- We use the **OpenQuake LTR** Docker image (`openquake/qgis-server:ltr`), exposing FastCGI on port 9993.  
+- Nginx proxies FastCGI to public endpoints (`/wms_vs30`, `/wms_codehazard`).  
+- Each service has a dedicated systemd unit to run QGIS Server in Docker.  
+
+---
+
+## Notes
+
+- See [vs30/README.md](vs30/README.md) or [code_hazard/README.md](code_hazard/README.md) for detailed installation and configuration steps.  
+- The old instructions referencing **Hypocentre** or direct QGIS installs are deprecated.  
