@@ -62,17 +62,7 @@ https://quakecoresoft.canterbury.ac.nz/wms_vs30
 Save the project and redeploy if updated.
 
 ## 2. QGIS Server with Docker
-We now use the [OpenQuake QGIS Server LTR image](https://hub.docker.com/r/openquake/qgis-server), which exposes FastCGI on port 9993.
-Test run manually:
-
-```bash
-docker run --rm \
-  -v /var/www/vs30map_data:/data:ro \
-  -e QGIS_PROJECT_FILE=/data/vs30.qgs \
-  -p 127.0.0.1:8008:9993 \
-  openquake/qgis-server:ltr
-```
-This starts QGIS Server and maps FastCGI to 127.0.0.1:8008.
+See this [page](../README.md) and follow installation instruction for QGIS Server with Docker.
 
 ### 3. Systemd Service
 If this is the test run, go to step 4 first and come back to this when everything is running smoothly.
