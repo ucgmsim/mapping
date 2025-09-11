@@ -62,7 +62,89 @@ https://quakecoresoft.canterbury.ac.nz/wms_vs30
 Save the project and redeploy if updated.
 
 ## 2. QGIS Server with Docker
-See this [page](../README.md) and follow installation instruction for QGIS Server with Docker.
+
+We use the [OpenQuake QGIS Server LTR image](https://hub.docker.com/r/openquake/qgis-server), which exposes FastCGI on port **9993**.
+Nginx proxies this FastCGI port to an external path (e.g. `/wms_vs30`).
+
+### Test run manually
+
+```bash
+docker run --rm \
+  -v /var/www/vs30map_data:/data:ro \
+  -e QGIS_PROJECT_FILE=/data/vs30.qgs \
+  -p 127.0.0.1:8008:9993 \
+  openquake/qgis-server:ltr
+```
+This starts QGIS Server and maps FastCGI to 127.0.0.1:8008.
+
+You can then configure Nginx: See [Vs30 README](vs30/README.md) for example.
+
+### Running as a System Service.
+
+After fully tested, it is preferrable to run QGIS Server as a system service:
+
+**env file*** `/etc/qgis-vs30.env`
+```ini
+QGIS_PROJECT_FILE=/data/vs30.qgs
+QGIS_SERVER_PARALLEL_RENDERING=1
+QGIS_SERVER_MAX_THREADS=12
+QGIS_SERVER_LOG_LEVEL=0
+QGIS_SERVER_LOG_STDERR=1
+```
+
+**Unit file** `/etc/systemd/system/qgis-vs30.service`
+```ini
+[Unit]
+Description=QGIS Server (VS30) in Docker
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+TimeoutStartSec=0
+EnvironmentFile=-/etc/qgis-vs30.env
+
+ExecStartPre=-/usr/bin/docker pull openquake/qgis-server:ltr
+ExecStartPre=-/usr/bin/docker rm -f qgis_vs30
+
+ExecStart=/usr/bin/docker run --name qgis_vs30 \
+  --env-file /etc/qgis-vs30.env \
+  -v /var/www/vs30map_data:/data:ro \
+  -p 127.0.0.1:8008:9993 \
+  --restart=no \
+  openquake/qgis-server:ltr
+
+ExecStop=/usr/bin/docker stop -t 10 qgis_vs30
+ExecStopPost=-/usr/bin/docker rm -f qgis_vs30
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable qgis-vs30
+sudo systemctl start qgis-vs30
+```
+
+Check status:
+```bash
+systemctl status qgis-vs30
+journalctl -u qgis-vs30 -f
+```
+
+### QGIS Versions
+- The openquake/qgis-server:ltr image is based on the Long Term Release (LTR) line of QGIS.
+- This version is old but stable, and it correctly renders discrete color legends (important for VS30).
+- Using :ltr ensures consistency across deployments.
+- For reproducibility, you may lock to a specific tag or digest instead of tracking :ltr.
 
 
 ## 3. Nginx Configuration
